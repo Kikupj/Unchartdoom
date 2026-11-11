@@ -1,0 +1,165 @@
+actor BruteGL
+{
+  scale 1.15
+  obituary "%o got blown to bits by a oversize Merc"
+  health 800
+  radius 20
+  height 56
+  mass 200
+  speed 10
+  painchance 100
+  seesound "bruteGL/see"
+  painsound "bruteGL/pain"
+  deathsound "bruteGL/die"
+  activesound " "
+  dropitem "RocketBox"
+  dropitem "RocketAmmo" 180
+  dropitem "RocketAmmo" 180
+  Tag "Brute Grenadier"
+  Translation "112:127=174:191"
+  DamageFactor "Enemy", 0.0
+  DamageFactor "Fire", 0.0
+  DamageFactor "Weak", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  +BOSS
+  states
+  {
+  Spawn:
+    BRU2 H 10 A_Look
+    loop
+  See:
+    BRU2 AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    BRU2 E 7 A_FaceTarget
+	BRU2 E 0 BRIGHT A_PlayWeaponSound("en/glaunch")
+    BRU2 F 8 BRIGHT A_CustomMissile("MiniRocket",36,5,0)
+    BRU2 E 4 A_FaceTarget
+	BRU2 E 0 BRIGHT A_PlayWeaponSound("en/glaunch")
+	BRU2 F 8 BRIGHT A_CustomMissile("MiniRocket",36,5,0)
+	BRU2 E 4 A_FaceTarget
+	BRU2 E 0 BRIGHT A_PlayWeaponSound("en/glaunch")
+	BRU2 F 8 BRIGHT A_CustomMissile("MiniRocket",36,5,0)
+	BRU2 E 4
+    goto See
+  Pain:
+    BRU2 H 3
+    BRU2 H 3 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(60,"Headshot")
+    BRU2 I 5
+    BRU2 J 5 A_Scream
+    BRU2 K 5 A_BossDeath
+    BRU2 L 5 A_NoBlocking
+	BRU2 M -1
+    stop
+  Headshot:
+    BRU2 N 2 A_PlaySound("head/shot")
+    BRU2 O 5 A_BossDeath
+    BRU2 P 5 A_NoBlocking
+    BRU2 Q 5
+    BRU2 S -1
+    stop
+  Idle:
+    BRU2 AA 4 A_Wander
+    BRU2 A 0 A_Look
+    BRU2 BB 4 A_Wander
+    BRU2 A 0 A_Look
+    BRU2 CC 4 A_Wander
+    BRU2 A 0 A_Look
+    BRU2 DD 4 A_Wander
+    BRU2 A 0 A_Look
+    loop
+  }
+}
+
+actor BruteMiniGUN
+{
+  scale 1.15
+  obituary "%o got shredded to bits by a oversize Merc"
+  health 800
+  radius 20
+  height 56
+  mass 200
+  speed 10
+  painchance 100
+  seesound "bruteCG/see"
+  painsound "bruteCG/pain"
+  deathsound "bruteCG/die"
+  activesound " "
+  dropitem "CellPack"
+  dropitem "CellPack" 160
+  dropitem "Cell" 110
+  Tag "Brute Chaingunner"
+  Translation "112:127=174:191"
+  DamageFactor "Enemy", 0.0
+  DamageFactor "Fire", 0.0
+  DamageFactor "Weak", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  +MISSILEEVENMORE
+  +BOSS
+  states
+  {
+  Spawn:
+    BRU3 R 10 A_Look
+    loop
+  See:
+    BRU3 AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    BRU3 E 16 A_FaceTarget
+	BRU3 F 0 BRIGHT A_PlayWeaponSound("weapons/chaingun")
+    BRU3 F 0 BRIGHT A_CustomMissile("EnemyChaingunTracer",34,0,random(-11,11))
+	BRU3 F 1 BRIGHT A_CustomMissile("EnemyChaingunTracer",34,0,random(-11,11))
+	BRU3 G 2
+	BRU3 F 0 BRIGHT A_PlayWeaponSound("weapons/chaingun")
+    BRU3 F 0 BRIGHT A_CustomMissile("EnemyChaingunTracer",34,0,random(-11,11))
+	BRU3 F 1 BRIGHT A_CustomMissile("EnemyChaingunTracer",34,0,random(-11,11))
+	BRU3 G 2
+	BRU3 F 0 BRIGHT A_PlayWeaponSound("weapons/chaingun")
+    BRU3 F 0 BRIGHT A_CustomMissile("EnemyChaingunTracer",34,0,random(-11,11))
+	BRU3 F 1 BRIGHT A_CustomMissile("EnemyChaingunTracer",34,0,random(-11,11))
+	BRU3 G 2
+	BRU3 F 0 BRIGHT A_PlayWeaponSound("weapons/chaingun")
+    BRU3 F 0 BRIGHT A_CustomMissile("EnemyChaingunTracer",34,0,random(-11,11))
+	BRU3 F 1 BRIGHT A_CustomMissile("EnemyChaingunTracer",34,0,random(-11,11))
+	BRU3 G 2 BRIGHT A_SentinelRefire
+    goto Missile+1
+  Pain:
+    BRU3 R 3
+    BRU3 R 3 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(110,"ADeath1")
+    BRU3 I 5
+    BRU3 J 5 A_Scream
+    BRU3 K 5 A_BossDeath
+    BRU3 L 5 A_NoBlocking
+	BRU3 M -1
+    stop
+  ADeath1:
+    BRU3 N 5
+    BRU3 O 5 A_Scream
+    BRU3 P 5 A_BossDeath
+    BRU3 Q 5 A_NoBlocking
+	BRU3 S -1
+    stop
+  Idle:
+    BRU3 AA 4 A_Wander
+    BRU3 A 0 A_Look
+    BRU3 BB 4 A_Wander
+    BRU3 A 0 A_Look
+    BRU3 CC 4 A_Wander
+    BRU3 A 0 A_Look
+    BRU3 DD 4 A_Wander
+    BRU3 A 0 A_Look
+    loop
+  }
+}

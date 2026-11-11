@@ -1,0 +1,554 @@
+actor RussianF : HumanF
+{
+  scale 1.0
+  obituary "%o was riddled by a Russian Smugler."
+  health 60
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "sab/See"
+  attacksound "en/mac10"
+  painsound "sab/pain"
+  deathsound "sab/die"
+  activesound ""
+  dropitem "Chaingun" 256
+  Translation "192:207=160:167","112:127=64:79"
+  Tag "Smugler"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    AMZ1 T 10 A_Look
+    loop
+  See:
+    AMZ1 AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    AMZ1 EE 5 A_FaceTarget
+	AMZ1 F 0 A_PlayWeaponSound("en/mac10")
+    AMZ1 F 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-8,8))
+    AMZ1 E 2 A_SentinelRefire
+    goto Missile+2
+  Pain:
+    AMZ1 H 3
+    AMZ1 H 3 A_Pain
+    goto See
+  Death:
+   	TNT1 A 0 A_Jump(80, "ADeath1")
+    AMZ1 I 5
+    AMZ1 J 5 A_Scream
+    AMZ1 K 5 A_NoBlocking
+    AMZ1 L 5
+    AMZ1 M -1
+    stop
+  ADeath1:
+    AMZ1 N 6
+    AMZ1 O 6 A_Scream
+    AMZ1 P 6 A_NoBlocking
+    AMZ1 Q 6
+    AMZ1 R -1
+    stop
+  Death.Weak:
+    EG5B I 5
+    EG5B J 5 A_PlaySound("sab/pain")
+    EG5B K 5
+	EG5B L 5
+    EG5B M -1 A_NoBlocking
+    stop
+  Idle:
+    AMZ1 AA 4 A_Wander
+    AMZ1 A 0 A_Look
+    AMZ1 BB 4 A_Wander
+    AMZ1 A 0 A_Look
+    AMZ1 CC 4 A_Wander
+    AMZ1 A 0 A_Look
+    AMZ1 DD 4 A_Wander
+    AMZ1 A 0 A_Look
+    loop
+  }
+}
+
+actor RussianFbrownBlack : RussianF
+{
+  Translation "192:207=5:8","112:127=64:79"
+}
+
+actor RussianFbrownred : RussianF
+{
+  Translation "192:207=176:191","112:127=64:79"
+}
+
+actor RussianFtanBlack : RussianF
+{
+  Translation "192:207=5:8","118:127=144:151"
+}
+
+actor RussianFtanBlonde : RussianF
+{
+  Translation "192:207=160:167","118:127=144:151"
+}
+
+actor RussianFtanBrown : RussianF
+{
+  Translation "192:207=236:239","118:127=144:151"
+}
+
+actor RussianFkakBlack : RussianF
+{
+  Translation "192:207=5:8","118:127=152:159"
+}
+
+actor RussianFkakBlonde : RussianF
+{
+  Translation "192:207=160:167","118:127=152:159"
+}
+
+actor RussianFkakBrown : RussianF
+{
+  Translation "192:207=236:239","118:127=152:159"
+}
+
+actor RussianM : HumanMb
+{
+  scale 1.0
+  obituary "%o was riddled by a Russian Smugler."
+  health 60
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "russ1/See"
+  attacksound "en/ak47"
+  painsound "russ1/pain"
+  deathsound "russ1/die"
+  activesound ""
+  dropitem "Chaingun" 256
+  Tag "Smugler"
+  Translation "120:127=5:8"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EG1A T 10 A_Look
+    loop
+  See:
+    EG1A AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    EG1A EF 5 A_FaceTarget
+	EG1A G 0 A_PlayWeaponSound("en/ak47")
+    EG1A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-8,8))
+    EG1A F 2 A_SentinelRefire
+    goto Missile+2
+  Pain:
+    EG1A H 3
+    EG1A H 3 A_Pain
+    goto See
+  Death:
+   	TNT1 A 0 A_Jump(80, "ADeath1")
+    EG1A I 5
+    EG1A J 5 A_Scream
+    EG1A K 5 A_NoBlocking
+    EG1A L 5
+	EG1A M 5
+    EG1A N -1
+    stop
+  ADeath1:
+    EG1A O 6
+    EG1A P 6 A_Scream
+    EG1A Q 6 A_NoBlocking
+    EG1A R 6
+    EG1A S -1
+    stop
+  Death.Weak:
+    EG1B I 5
+    EG1B J 5 A_PlaySound("russ1/pain")
+    EG1B K 5
+	EG1B L 5
+    EG1B M -1 A_NoBlocking
+    stop
+  Idle:
+    EG1A AA 4 A_Wander
+    EG1A A 0 A_Look
+    EG1A BB 4 A_Wander
+    EG1A A 0 A_Look
+    EG1A CC 4 A_Wander
+    EG1A A 0 A_Look
+    EG1A DD 4 A_Wander
+    EG1A A 0 A_Look
+    loop
+  }
+}
+
+actor RussianMblackgrey : RussianM
+{
+  Translation "192:207=96:111","120:127=5:8"
+}
+
+actor RussianMblacktan : RussianM
+{
+  Translation "192:207=128:143","120:127=5:8"
+}
+
+actor RussianMblackkak : RussianM
+{
+  Translation "194:207=152:159","120:127=5:8"
+}
+
+actor RussianMbrown : RussianM
+{
+  Translation "120:127=236:239"
+}
+
+actor RussianMbrowngrey : RussianM
+{
+  Translation "120:127=236:239","192:207=96:111"
+}
+
+actor RussianMbrownkak : RussianM
+{
+  Translation "120:127=236:239","194:207=152:159"
+}
+
+actor RussianMnavygrey : RussianM
+{
+  Translation "192:207=96:111","120:127=240:245"
+}
+
+actor RussianMnavytan : RussianM
+{
+  Translation "192:207=128:143","120:127=240:245"
+}
+
+actor RussianMjadetan : RussianM
+{
+  Translation "192:207=128:143","120:127=9:12"
+}
+
+actor RussianMjadekak : RussianM
+{
+  Translation "194:207=152:159","120:127=9:12"
+}
+
+actor Bandit : HumanMb
+{
+  scale 1.0
+  obituary "%o was riddled by a Russian Bandit."
+  health 60
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "russ1/See"
+  attacksound "en/smg"
+  painsound "russ1/pain"
+  deathsound "russ1/die"
+  activesound ""
+  dropitem "Chaingun" 256
+  Tag "Bandit"
+  Translation "119:127=5:8"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EG2A T 10 A_Look
+    loop
+  See:
+    EG2A AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    EG2A EF 5 A_FaceTarget
+	EG2A G 0 A_PlayWeaponSound("en/smg")
+    EG2A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+    EG2A F 2 A_SentinelRefire
+    goto Missile+2
+  Pain:
+    EG2A H 3
+    EG2A H 3 A_Pain
+    goto See
+  Death:
+    EG2A I 5
+    EG2A J 5 A_Scream
+    EG2A K 5 A_NoBlocking
+    EG2A L 5
+    EG2A m -1
+    stop
+  Death.Weak:
+    EG2B I 5
+    EG2B J 5 A_PlaySound("russ1/pain")
+    EG2B K 5
+	EG2B L 5
+    EG2B M -1 A_NoBlocking
+    stop
+  Idle:
+    EG2A AA 4 A_Wander
+    EG2A A 0 A_Look
+    EG2A BB 4 A_Wander
+    EG2A A 0 A_Look
+    EG2A CC 4 A_Wander
+    EG2A A 0 A_Look
+    EG2A DD 4 A_Wander
+    EG2A A 0 A_Look
+    loop
+  }
+}
+
+actor BanditBrown : Bandit
+{
+  Translation "192:207=64:79","119:127=5:8"
+}
+
+actor Banditgrey : Bandit
+{
+  Translation "192:207=80:109","119:127=5:8"
+}
+
+actor BanditBrownNavy : Bandit
+{
+  Translation "192:207=64:79","119:127=240:246"
+}
+
+actor BanditgreyNavy : Bandit
+{
+  Translation "192:207=80:109","119:127=240:246"
+}
+
+actor GunmanR : HumanMb
+{
+  scale 1.0
+  obituary "%o was riddled by a Russian Gunman."
+  health 60
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "russ2/See"
+  attacksound "en/ak47"
+  painsound "russ2/pain"
+  deathsound "russ1/die"
+  activesound ""
+  dropitem "Chaingun" 256
+  Translation "192:207=160:166","117:127=236:239"
+  Tag "Gunman"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EG3A T 10 A_Look
+    loop
+  See:
+    EG3A AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    EG3A EF 5 A_FaceTarget
+	EG3A G 0 A_PlayWeaponSound("en/ak47")
+    EG3A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-8,8))
+    EG3A F 2 A_SentinelRefire
+    goto Missile+2
+  Pain:
+    EG3A H 3
+    EG3A H 3 A_Pain
+    goto See
+  Death:
+    EG3A I 5
+    EG3A J 5 A_Scream
+    EG3A K 5 A_NoBlocking
+    EG3A L 5
+    EG3A M -1
+    stop
+  Death.Weak:
+    EG3B I 5
+    EG3B J 5 A_PlaySound("russ2/pain")
+    EG3B K 5
+	EG3B L 5
+    EG3B M -1 A_NoBlocking
+    stop
+  Idle:
+    EG3A AA 4 A_Wander
+    EG3A A 0 A_Look
+    EG3A BB 4 A_Wander
+    EG3A A 0 A_Look
+    EG3A CC 4 A_Wander
+    EG3A A 0 A_Look
+    EG3A DD 4 A_Wander
+    EG3A A 0 A_Look
+    loop
+  }
+}
+
+actor GunmanRgreyblonde : GunmanR
+{
+  Translation "192:207=160:166","112:127=96:111"
+}
+
+actor GunmanRkakblonde : GunmanR
+{
+  Translation "192:207=160:166","112:126=152:159"
+}
+
+actor GunmanRtanblonde : GunmanR
+{
+  Translation "192:207=160:166","112:126=144:151"
+}
+
+actor GunmanRgreybrown : GunmanR
+{
+  Translation "192:207=236:239","112:127=96:111"
+}
+
+actor GunmanRkakbrown : GunmanR
+{
+  Translation "192:207=236:239","112:126=152:159"
+}
+
+actor GunmanRtanbrown : GunmanR
+{
+  Translation "192:207=236:239","112:126=144:151"
+}
+
+actor GunmanRbrowngrey : GunmanR
+{
+  Translation "192:207=96:111","117:127=236:239"
+}
+
+actor BigRussian
+{
+  scale 1.0
+  obituary "%o was riddled by a Big Russian."
+  health 80
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "russ2/See"
+  attacksound "en/smg"
+  painsound "russ2/pain"
+  deathsound "russ1/die"
+  activesound ""
+  dropitem "Chaingun" 256
+  Tag "Big Gunman"
+  Translation "192:207=160:166","112:127=64:79"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EG4A E 10 A_Look
+    loop
+  See:
+    EG4A AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    EG4A EF 5 A_FaceTarget
+	EG4A G 0 A_PlayWeaponSound("en/smg")
+    EG4A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-8,8))
+    EG4A F 2 A_SentinelRefire
+    goto Missile+2
+  Pain:
+    EG4A H 3
+    EG4A H 3 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(80, "ADeath1")
+    EG4A I 5
+    EG4A J 5 A_Scream
+    EG4A K 5 A_NoBlocking
+    EG4A L 5
+    EG4A M -1
+    stop
+  ADeath1:
+    EG4A N 5
+    EG4A O 5 A_Scream
+    EG4A P 5 A_NoBlocking
+    EG4A Q 5
+    EG4A R -1
+    stop
+  Death.Weak:
+    EG4B I 5
+    EG4B J 5 A_PlaySound("russ2/pain")
+    EG4B K 5
+	EG4B L 5
+    EG4B M -1 A_NoBlocking
+    stop
+  Death.Fire:
+		EF1d A 5 BRIGHT
+		EF1d B 5 BRIGHT A_PlaySound("death/burning")
+		EF1d CDCB 5 BRIGHT 
+		EF1d ABCD 5 BRIGHT
+		EF1d E 5 BRIGHT A_NoBlocking
+		EF1d EFG 5 bright
+		EF1d H 5 BRIGHT
+		EF1d I -1
+		Stop
+  Idle:
+    EG4A AA 4 A_Wander
+    EG4A A 0 A_Look
+    EG4A BB 4 A_Wander
+    EG4A A 0 A_Look
+    EG4A CC 4 A_Wander
+    EG4A A 0 A_Look
+    EG4A DD 4 A_Wander
+    EG4A A 0 A_Look
+    loop
+  }
+}
+
+actor BigRussianbrownBrown : BigRussian
+{
+  Translation "192:207=236:239","112:127=64:79"
+}
+
+actor BigRussianbrownGrey : BigRussian
+{
+  Translation "192:207=96:111","112:127=64:79"
+}
+
+actor BigRussiankakblonde : BigRussian
+{
+  Translation "192:207=160:166","117:127=152:159"
+}
+
+actor BigRussiankakbrown : BigRussian
+{
+  Translation "192:207=236:239","117:127=152:159"
+}
+
+actor BigRussiankakgrey : BigRussian
+{
+  Translation "192:207=96:111","117:127=152:159"
+}
+
+actor BigRussiangreyblonde : BigRussian
+{
+  Translation "192:207=160:166","117:127=96:111"
+}
+
+actor BigRussiangreybrown : BigRussian
+{
+  Translation "192:207=236:239","117:127=96:111"
+}

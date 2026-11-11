@@ -1,0 +1,354 @@
+actor specopM : HumanMb
+{
+  scale 1.0
+  obituary "%o was put down by a tooled up killer."
+  health 50
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "EliteN/see"
+  painsound "EliteN/pain"
+  deathsound "EliteN/die"
+  activesound ""
+  dropitem "Chaingun" 256
+  Tag "hired killer"
+  Translation "192:204=109:111","205:207=5:8","118:121=109:111","122:127=5:8"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EW1A T 10 A_Look
+    loop
+  See:
+    EW1A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    EW1A EF 5 A_FaceTarget
+	EW1A G 0 A_PlayWeaponSound("en/silsmg")
+    EW1A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	EW1A F 2 A_FaceTarget
+	EW1A G 0 A_PlayWeaponSound("en/silsmg")
+    EW1A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	EW1A F 2 A_FaceTarget
+	EW1A G 0 A_PlayWeaponSound("en/silsmg")
+    EW1A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	EW1A F 2 A_FaceTarget
+	EW1A G 0 A_PlayWeaponSound("en/silsmg")
+    EW1A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	EW1A F 2 A_FaceTarget
+	EW1A G 0 A_PlayWeaponSound("en/silsmg")
+    EW1A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+    EW1A F 2
+    goto See
+  Pain:
+    EW1A H 3
+    EW1A H 3 A_Pain
+    goto See
+  Death:
+    EW1A I 5
+    EW1A J 5 A_Scream
+    EW1A K 5 A_NoBlocking
+    EW1A L 5
+    EW1A M -1
+    stop
+  Death.Weak:
+    EW1B I 6
+    EW1B J 6 A_PlaySound("EliteN/pain")
+    EW1B K 6
+	EW1B L 6
+    EW1B M -1 A_NoBlocking
+    stop
+  Idle:
+    EW1A AA 4 A_Wander
+    EW1A A 0 A_Look
+    EW1A BB 4 A_Wander
+	EW1A A 0 A_Look
+    EW1A CC 4 A_Wander
+    EW1A A 0 A_Look
+    EW1A DD 4 A_Wander
+    EW1A A 0 A_Look
+    loop
+  }
+}
+
+actor specopMgrey : specopM
+{
+  Translation "192:204=109:111","205:207=5:8","117:127=96:111"
+}
+
+actor specopMbrown : specopM
+{
+  Translation "192:204=109:111","205:207=5:8","117:127=64:79"
+}
+
+actor specopMsilver : specopM
+{
+  Translation "192:204=109:111","205:207=5:8","117:127=80:111"
+}
+
+actor specopMkak : specopM
+{
+  Translation "192:204=109:111","205:207=5:8","117:127=152:159"
+}
+
+actor specopMbrowngrey : specopM
+{
+  Translation "192:207=64:79","117:127=96:111"
+}
+
+actor specopMbrownsilver : specopM
+{
+  Translation "192:207=64:79","117:127=80:111"
+}
+
+actor specopMbrownkak : specopM
+{
+  Translation "192:207=64:79","117:127=152:159"
+}
+
+actor specopF : HumanFb
+{
+  scale 1.0
+  obituary "%o was put down by a tooled up killer."
+  health 50
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "eliteF/see"
+  painsound "eliteF/pain"
+  deathsound "eliteF/die"
+  activesound ""
+  dropitem "Chaingun" 256
+  Tag "hired killer"
+ Translation "192:202=109:111","203:207=5:8","117:120=109:111","121:127=5:8"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EW2A T 10 A_Look
+    loop
+  See:
+    EW2A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    EW2A EF 5 A_FaceTarget
+	EW2A G 0 A_PlayWeaponSound("en/silsmg")
+    EW2A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	EW2A F 2 A_FaceTarget
+	EW2A G 0 A_PlayWeaponSound("en/silsmg")
+    EW2A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	EW2A F 2 A_FaceTarget
+	EW2A G 0 A_PlayWeaponSound("en/silsmg")
+    EW2A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	EW2A F 2 A_FaceTarget
+	EW2A G 0 A_PlayWeaponSound("en/silsmg")
+    EW2A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	EW2A F 2 A_FaceTarget
+	EW2A G 0 A_PlayWeaponSound("en/silsmg")
+    EW2A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+    EW2A F 2
+    goto See
+  Pain:
+    EW2A H 3
+    EW2A H 3 A_Pain
+    goto See
+  Death:
+    EW2A I 5
+    EW2A J 5 A_Scream
+    EW2A K 5 A_NoBlocking
+    EW2A L 5
+    EW2A M -1
+    stop
+  Death.Weak:
+    EW2B I 6
+    EW2B J 6 A_PlaySound("eliteF/pain")
+    EW2B K 6
+	EW2B L 6
+    EW2B M -1 A_NoBlocking
+    stop
+  Idle:
+    EW2A AA 4 A_Wander
+    EW2A A 0 A_Look
+    EW2A BB 4 A_Wander
+	EW2A A 0 A_Look
+    EW2A CC 4 A_Wander
+    EW2A A 0 A_Look
+    EW2A DD 4 A_Wander
+    EW2A A 0 A_Look
+    loop
+  }
+}
+
+actor specopFbrowngrey : specopF
+{
+ Translation "192:207=64:79","112:127=96:111"
+}
+
+actor specopFbrownkak : specopF
+{
+ Translation "192:207=64:79","112:127=152:159"
+}
+
+actor specopFgrey : specopF
+{
+ Translation "192:202=109:111","203:207=5:8","112:127=96:111"
+}
+
+actor specopFbrown : specopF
+{
+ Translation "192:202=109:111","203:207=5:8","112:127=64:79"
+}
+
+actor specopFkak : specopF
+{
+ Translation "192:202=109:111","203:207=5:8","112:127=152:159"
+}
+
+actor terrorist : HumanM
+{
+  scale 1.0
+  obituary "%o was put down by a tooled up terrorist."
+  health 50
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "buddyM/see"
+  painsound "buddyM/hit"
+  deathsound "buddyM/die"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Tag "terrorist"
+  Translation "192:207=64:79"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EW3A T 10 A_Look
+    loop
+  See:
+    EW3A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    EW3A EE 5 A_FaceTarget
+	EW3A F 0 A_PlayWeaponSound("en/mac10")
+    EW3A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-8,8))
+	EW3A E 2 A_FaceTarget
+	EW3A F 0 A_PlayWeaponSound("en/mac10")
+    EW3A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-8,8))
+	EW3A E 2 A_FaceTarget
+	EW3A F 0 A_PlayWeaponSound("en/mac10")
+    EW3A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-8,8))
+	EW3A E 2 A_FaceTarget
+	EW3A F 0 A_PlayWeaponSound("en/mac10")
+    EW3A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-8,8))
+	EW3A E 2 A_FaceTarget
+	EW3A F 0 A_PlayWeaponSound("en/mac10")
+    EW3A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-8,8))
+    EW3A E 2
+    goto See
+  Pain:
+    EW3A H 3
+    EW3A H 3 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(80, "ADeath1")
+    EW3A I 5
+    EW3A J 5 A_Scream
+    EW3A K 5 A_NoBlocking
+    EW3A L 5
+    EW3A M -1
+    stop
+ ADeath1:
+    EW3A N 5
+    EW3A O 5 A_Scream
+    EW3A P 5 A_NoBlocking
+    EW3A Q 5
+    EW3A R -1
+    stop
+  Death.Weak:
+    EW3B I 6
+    EW3B J 6 A_PlaySound("buddyM/hit")
+    EW3B K 6
+	EW3B L 6
+    EW3B M -1 A_NoBlocking
+    stop
+  Idle:
+    EW3A AA 4 A_Wander
+    EW3A A 0 A_Look
+    EW3A BB 4 A_Wander
+	EW3A A 0 A_Look
+    EW3A CC 4 A_Wander
+    EW3A A 0 A_Look
+    EW3A DD 4 A_Wander
+    EW3A A 0 A_Look
+    loop
+  }
+}
+
+actor terroristbrowngrey: terrorist
+{
+  Translation "192:207=64:79","112:127=96:111"
+}
+
+actor terroristbrownred: terrorist
+{
+  Translation "192:207=64:79","112:127=16:47"
+}
+
+actor terroristbrownkak: terrorist
+{
+  Translation "192:207=64:79","112:127=152:159"
+}
+
+actor terroristbrown: terrorist
+{
+  Translation "192:207=64:79","112:127=64:79"
+}
+
+actor terroristgreenbrown: terrorist
+{
+  Translation "192:207=112:127","112:127=64:79"
+}
+
+actor terroristgreensilver: terrorist
+{
+  Translation "192:207=112:127","112:127=80:111"
+}
+
+actor terroristgreysilver: terrorist
+{
+  Translation "192:207=96:111","112:127=80:111"
+}
+
+actor terroristgreyred: terrorist
+{
+  Translation "192:207=96:111","112:127=16:47"
+}
+
+actor terroristgreybrown: terrorist
+{
+  Translation "192:207=96:111","112:127=64:79"
+}
+
+actor terroristgreygreen: terrorist
+{
+  Translation "192:207=96:111"
+}

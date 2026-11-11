@@ -1,0 +1,156 @@
+
+actor Gnome1
+{
+  obituary "%o was blasted by a urban Gnome."
+  health 60
+  painchance 180
+  speed 8
+  radius 20
+  height 56
+  mass 100
+  seesound "Gnome/see"
+  painsound "gnomeP"
+  deathsound "Gnome/die"
+  Tag "Gnome"
+  dropitem "Shotgun" 256
+  Translation "192:207=96:111"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EO2A T 10 A_Look
+    Loop
+  See:
+	EO2A AABBCCDD 2 A_Chase
+	loop
+Missile:
+    EO2A EF 10 A_FaceTarget
+	EO2A G 0 A_PlayWeaponSound("en/shotgun")
+    EO2A G 8 BRIGHT A_CustomMissile("EnemyLMGTracer",32,0,random(-1,1))
+    EO2A F 1
+	EO2A H 0 A_PlayWeaponSound("en/shotgun")
+    EO2A H 8 BRIGHT A_CustomMissile("EnemyLMGTracer",32,0,random(-1,1))
+	EO2A FE 4
+    goto See
+  Pain:
+    EO2A I 2
+    EO2A I 2 A_Pain
+    goto See
+  Death:
+    EO2A J 8
+    EO2A K 8 A_Scream
+    EO2A L 6
+	EO2A M 6
+    EO2A N -1 A_NoBlocking
+    stop
+  Death.Weak:
+    EO2B I 8
+    EO2B J 8 A_Scream
+    EO2B K 6
+	EO2B L 6
+    EO2B M -1 A_NoBlocking
+    stop
+	Death.Fire:
+		EF1A A 5 BRIGHT
+		EF1A B 5 BRIGHT A_PlaySound("Gnome/die")
+		EF1A CDCB 5 BRIGHT 
+		EF1A ABCD 5 BRIGHT
+		EF1A E 5 BRIGHT A_NoBlocking
+		EF1A EFGH 5 BRIGHT
+		EF1A I -1
+		Stop
+  Idle:
+    EO2A AA 4 A_Wander
+    EO2A A 0 A_Look
+    EO2A BB 4 A_Wander
+    EO2A A 0 A_Look
+    EO2A CC 4 A_Wander
+    EO2A A 0 A_Look
+    EO2A DD 4 A_Wander
+    EO2A A 0 A_Look
+    loop
+  }
+}
+
+actor Gnome1red : Gnome1
+{
+  Translation "112:127=16:47","192:207=96:111"
+}
+
+actor Gnome1brown : Gnome1
+{
+  Translation "112:127=64:79","192:207=96:111"
+}
+
+actor Gnome1navy : Gnome1
+{
+  Translation "112:127=240:245","192:207=96:111"
+}
+
+actor Gnome1grey : Gnome1
+{
+  Translation "112:127=96:111","192:207=144:151"
+}
+
+actor Gnome1black: Gnome1
+{
+  Translation "112:127=5:8","192:207=144:151"
+}
+
+actor Edrone
+{
+	Scale 0.9
+	obituary "%o was popped by a Drone."
+	health 25
+	radius 12
+	height 55
+	mass 1000
+	speed 15
+	painchance 255
+	seesound "drone/fly"
+	painsound "vech/pain"
+	deathsound "vech/pain"
+	activesound "drone/fly"
+	DropItem "Clip" 255
+	Translation "112:127=176:191"
+	DamageFactor "Enemy", 0.0
+	Tag "Drone"
+	MONSTER
+	+FLOAT
+	+NOGRAVITY
+	+NOTARGET
+	+NOINFIGHTING
+	+MISSILEEVENMORE
+	+NOBLOOD
+	+FLOATBOB
+	States
+	{
+	Spawn:
+		EO1A A 0 A_LoopActiveSound
+		EO1A A 10 A_Look
+		Loop
+	See:
+		EO1A A 0 A_LoopActiveSound
+		EO1A A 3 A_Chase
+		Loop
+	Missile:
+		EO1A A 5 A_FaceTarget
+		EO1A F 0 A_PlayWeaponSound("en/glock")
+		EO1A F 2 BRIGHT A_CustomMissile("EnemyPistolTracer",20,0,random(-4,4))
+		EO1A A 5
+		Goto See
+	Pain:
+		EO1A H 4 A_Pain
+		Goto See
+	Death:
+	  	EO1A I 0 A_ChangeFlag("FLOATBOB",0)
+		EO1A J 5 A_Scream
+		EO1A K 5
+		EO1A K -1 A_NoBlocking
+		Stop
+	}
+}

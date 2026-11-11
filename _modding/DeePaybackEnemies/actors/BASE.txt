@@ -1,0 +1,63 @@
+actor HumanM
+{
+	States
+	{
+	Death.Fire:
+		EF1b A 5 BRIGHT
+		EF1b B 5 BRIGHT A_PlaySound("death/burning")
+		EF1b CDCB 5 BRIGHT 
+		EF1b ABCD 5 BRIGHT
+		EF1b E 5 BRIGHT A_NoBlocking
+		EF1b EFGH 5 BRIGHT
+		EF1b I -1
+		Stop
+	}
+}
+
+actor HumanMb
+{
+	States
+	{
+	Death.Fire:
+		EF1e A 5 BRIGHT
+		EF1e B 5 BRIGHT A_PlaySound("death/burning")
+		EF1e CDCB 5 BRIGHT 
+		EF1e ABCD 5 BRIGHT
+		EF1e E 5 BRIGHT A_NoBlocking
+		EF1e EFGH 5 BRIGHT
+		EF1e I -1
+		Stop
+	}
+}
+
+actor HumanF
+{
+	States
+	{
+	Death.Fire:
+		EF1c A 5 BRIGHT
+		EF1c B 5 BRIGHT A_PlaySound("girl/burn")
+		EF1c CDCB 5 BRIGHT 
+		EF1c ABCD 5 BRIGHT
+		EF1c E 5 BRIGHT A_NoBlocking
+		EF1c EFGH 5 BRIGHT
+		EF1c I -1
+		Stop
+	}
+}
+
+actor HumanFb
+{
+	States
+	{
+	Death.Fire:
+		EF1f A 5 BRIGHT
+		EF1f B 5 BRIGHT A_PlaySound("girl/burn")
+		EF1f CDCB 5 BRIGHT 
+		EF1f ABCD 5 BRIGHT
+		EF1f E 5 BRIGHT A_NoBlocking
+		EF1f EFGH 5 BRIGHT
+		EF1f I -1
+		Stop
+	}
+}

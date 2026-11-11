@@ -1,0 +1,268 @@
+actor HitmanTommy : HumanMb
+{
+  scale 1.0
+  obituary "%o was riddled by a Mob Hitman."
+  health 70
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "mobs/See"
+  attacksound "en/ak47"
+  painsound "mobs/pain"
+  deathsound "mobs/die"
+  activesound ""
+  dropitem "Chaingun" 256
+  Tag "Mob Hitman"
+  Translation "112:127=64:79"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EC3A T 10 A_Look
+    loop
+  See:
+    EC3A AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    EC3A EE 5 A_FaceTarget
+	EC3A F 0 A_PlayWeaponSound("en/ak47")
+    EC3A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-8,8))
+    EC3A E 2 A_SentinelRefire
+    goto Missile+2
+  Pain:
+    EC3A H 3
+    EC3A H 3 A_Pain
+    goto See
+  Death:
+   	TNT1 A 0 A_Jump(80, "ADeath1")
+    EC2A I 5
+    EC2A J 5 A_Scream
+    EC2A K 5 A_NoBlocking
+    EC2A L 5
+    EC2A M -1
+    stop
+  ADeath1:
+    EC2A N 5
+    EC2A O 5 A_Scream
+    EC2A P 5 A_NoBlocking
+    EC2A Q 5
+    EC2A R -1
+    stop
+  Death.Weak:
+    EC2B I 6
+    EC2B J 6 A_PlaySound("mobs/pain")
+    EC2B K 6 A_NoBlocking
+    EC2B L 6
+    EC2B M -1
+    stop
+  Idle:
+    EC3A AA 4 A_Wander
+    EC3A A 0 A_Look
+    EC3A BB 4 A_Wander
+    EC3A A 0 A_Look
+    EC3A CC 4 A_Wander
+    EC3A A 0 A_Look
+    EC3A DD 4 A_Wander
+    EC3A A 0 A_Look
+    loop
+  }
+}
+
+actor HitmanTommyGrey : HitmanTommy
+{
+  Translation "112:127=96:111"
+}
+
+actor HitmanTommyBlack : HitmanTommy
+{
+  Translation "118:127=5:8"
+}
+
+actor HitmanTommyTan : HitmanTommy
+{
+  Translation "118:127=152:159"
+}
+
+actor HitmanShotgun : HumanMb
+{
+  scale 1.0
+  obituary "%o was blasted by a Mob Hitman."
+  health 70
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "mobs/See"
+  painsound "mobs/pain"
+  deathsound "mobs/die"
+  activesound ""
+  dropitem "Shotgun" 256
+  Tag "Mob Hitman"
+  Translation "112:127=64:79"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EC2A T 10 A_Look
+    loop
+  See:
+    EC2A AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    EC2A EE 10 A_FaceTarget
+	EC2A F 0 A_PlayWeaponSound("en/shotgun")
+    EC2A F 8 BRIGHT A_CustomMissile("EnemyLMGTracer",32,0,random(-5,5))
+    EC2A E 4
+	EC2A G 4 A_PlaySound("en/shotpump")
+    goto See
+  Pain:
+    EC2A H 3
+    EC2A H 3 A_Pain
+    goto See
+  Death:
+   	TNT1 A 0 A_Jump(80, "ADeath1")
+    EC2A I 5
+    EC2A J 5 A_Scream
+    EC2A K 5 A_NoBlocking
+    EC2A L 5
+    EC2A M -1
+    stop
+  ADeath1:
+    EC2A N 5
+    EC2A O 5 A_Scream
+    EC2A P 5 A_NoBlocking
+    EC2A Q 5
+    EC2A R -1
+    stop
+  Death.Weak:
+    EC2B I 6
+    EC2B J 6 A_PlaySound("mobs/pain")
+    EC2B K 6 A_NoBlocking
+    EC2B L 6
+    EC2B M -1
+    stop
+  Idle:
+    EC2A AA 4 A_Wander
+    EC2A A 0 A_Look
+    EC2A BB 4 A_Wander
+    EC2A A 0 A_Look
+    EC2A CC 4 A_Wander
+    EC2A A 0 A_Look
+    EC2A DD 4 A_Wander
+    EC2A A 0 A_Look
+    loop
+  }
+}
+
+actor HitmanShotgunGrey : HitmanShotgun
+{
+  Translation "112:127=96:111"
+}
+
+actor HitmanShotgunBlack : HitmanShotgun
+{
+  Translation "118:127=5:8"
+}
+
+actor HitmanShotgunTan : HitmanShotgun
+{
+  Translation "118:127=152:159"
+}
+
+actor Jetpacker
+{
+  scale 1.0
+  obituary "%o was slaughtered by a experimental jetpack mercenary."
+  health 100
+  radius 20
+  height 56
+  mass 100
+  speed 13
+  painchance 160
+  seesound "jetpack/see"
+  painsound "jet/pain"
+  deathsound "jet/die"
+  activesound "jet/fly"
+  DropItem "Pistol" 255
+  DropItem "Pistol" 255
+  DamageFactor "Enemy", 0.0
+   DamageFactor "Fire", 0.0
+  Tag "Jetpacker"
+  MONSTER
+  	+FLOAT
+	+NOGRAVITY
+	+NOTARGET
+	+NOINFIGHTING
+	+MISSILEEVENMORE
+	+FLOATBOB
+  states
+  {
+  Spawn:
+	EC1A A 0 A_LoopActiveSound
+    EC1A A 10 A_Look
+    loop
+  See:
+	EC1A A 0 A_LoopActiveSound
+	EC1A A 6 A_FastChase
+	EC1A AA 6 A_Chase
+    loop
+  Missile:
+    EC1A AA 5 A_FaceTarget
+	EC1A E 0 A_PlayWeaponSound("en/smg")
+    EC1A E 2 BRIGHT A_CustomMissile("EnemyPistolTracer",32,0,random(-12,12))
+	EC1A A 2 A_FaceTarget
+	EC1A F 0 A_PlayWeaponSound("en/smg")
+    EC1A F 2 BRIGHT A_CustomMissile("EnemyPistolTracer",32,0,random(-12,12))
+	EC1A A 2 A_FaceTarget
+	EC1A E 0 A_PlayWeaponSound("en/smg")
+    EC1A E 2 BRIGHT A_CustomMissile("EnemyPistolTracer",32,0,random(-12,12))
+	EC1A A 2 A_FaceTarget
+	EC1A F 0 A_PlayWeaponSound("en/smg")
+    EC1A F 2 BRIGHT A_CustomMissile("EnemyPistolTracer",32,0,random(-12,12))
+	EC1A A 2 A_FaceTarget
+	EC1A E 0 A_PlayWeaponSound("en/smg")
+    EC1A E 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-12,12))
+	EC1A A 2 A_FaceTarget
+	EC1A F 0 A_PlayWeaponSound("en/smg")
+    EC1A F 2 BRIGHT A_CustomMissile("EnemyPistolTracer",32,0,random(-12,12))
+    EC1A A 2
+    goto See
+  Pain:
+    EC1A A 3
+    EC1A A 3 A_Pain
+    goto See
+  Death:
+    EC1A H 4  A_StopSound
+	EC1A H 4 A_NoBlocking
+	EC1A I 4 A_Scream
+	EC1A I 0 A_ChangeFlag("FLOATBOB",0)
+	EC1A J 5
+    EC1A J 5
+    EC1A K 5
+    EC1A L 5
+    EC1A L -1
+    stop
+  Death.Weak:
+	EC1A M 4  A_StopSound
+	EC1A M 4 A_NoBlocking
+	EC1A N 4 A_Scream
+	EC1A N 0 A_ChangeFlag("FLOATBOB",0)
+	EC1A O 5
+    EC1A O 5
+    EC1A P 5
+    EC1A Q 5
+    EC1A Q -1
+    stop
+  }
+}

@@ -1,0 +1,2 @@
+// Ancient Bounties profile: lives in the config file, not in savegames (roguelite persistence).
+nosave string ab_profile = "";

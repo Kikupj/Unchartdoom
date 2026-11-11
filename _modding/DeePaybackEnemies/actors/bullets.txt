@@ -1,0 +1,321 @@
+//all tracers are straight from from WW_Nazis
+ACTOR Tracer : FastProjectile
+{
+	Alpha 0.90
+	RenderStyle Add
+	Radius 2
+	Height 2
+	Speed 75
+	PROJECTILE
+	+BLOODSPLATTER
+	Scale 0.4
+	MissileType TracerTrail
+	MissileHeight 8
+	Decal BulletChip
+	States
+	{
+	Spawn:
+		PUFF A 1 BRIGHT
+		PUFF A 1 BRIGHT A_CheckSightOrRange(192,"Whiz")
+		Loop
+	Whiz:
+		PUFF A 1 BRIGHT A_PlaySound("whiz",1.0,0,ATTN_NONE)
+	SpawnNoWhiz:
+		PUFF A 1 BRIGHT
+		Loop
+	Death:
+	Crash:
+		PUFF A 2 BRIGHT A_SpawnDebris("TracerSpark")
+		PUFF B 1 BRIGHT A_SetTranslucent(0.9,0)
+		PUFF B 1 BRIGHT A_PlaySound("ricochet")
+		PUFF CD 2 BRIGHT
+		Stop
+	XDeath:
+		TNT1 A 3 A_PlaySound("hitflesh")
+		Stop
+	}
+}
+
+ACTOR TracerTrail
+{ 
+	Alpha 0.75
+	RenderStyle Add
+	Speed 0
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+NOTELEPORT
+	+CANNOTPUSH
+	+NODAMAGETHRUST
+	Scale 0.4
+	States
+	{
+	Spawn:
+		PUFF A 1 BRIGHT A_FadeOut(0.3)
+		Loop
+	}
+}
+
+ACTOR TracerSpark
+{
+	Health 4
+	radius 3
+	height 6
+	speed .1
+	RenderStyle ADD
+	Alpha		1
+	Scale 0.5
+	Mass		0
+	+missile
+	+doombounce
+	+FLOORCLIP
+	+DONTSPLASH
+	+NOTELEPORT
+	States
+	{
+		PUFF A 1
+		PUFF AAAAA 1  Bright A_SetTranslucent(.8,1)
+		PUFF AAAAAA 1  Bright A_SetTranslucent(.6,1)
+		PUFF AAAAAAAA 1  Bright A_SetTranslucent(.4,1)
+		PUFF AAAAAAAAAA 1 Bright A_SetTranslucent(.2,1)
+		Stop
+	}
+}
+
+// Used by Summonalble ally
+ACTOR AllyTracer : Tracer
+{
+	Damage (random(14,18))
+	Speed 120
+}
+
+// Enemy tracer from WW_Nazis
+
+ACTOR EnemyPistolTracer : Tracer
+{
+	Damage (random(4,8))
+	DamageType "Enemy"
+}
+
+ACTOR EnemySMGTracer : Tracer
+{
+	Damage (random(6,7))
+	DamageType "Enemy"
+}
+
+ACTOR EnemyRifleTracer : Tracer
+{
+	Damage (random(15,30))
+	DamageType "Enemy"
+}
+
+ACTOR EnemyLMGTracer : Tracer
+{
+	Damage (random(7,8))
+	DamageType "Enemy"
+}
+
+ACTOR EnemyChaingunTracer : Tracer
+{
+	Damage (random(6,8))
+	DamageType "Enemy"
+}
+
+ACTOR Flamebolt
+{ 
+    Damage 1
+    Alpha 0.90
+    RenderStyle Add
+    Speed 25
+    ExplosionDamage 2
+    ExplosionRadius 64
+	Radius 16
+	Scale 0.1
+    PROJECTILE
+    +Ripper
+    +FIREDAMAGE
+    +STRIFEDAMAGE
+    SeeSound "weapons/flamer"
+	DamageType Fire
+	Decal Scorch
+    States
+  {
+  Spawn:
+     FBLX A 2 BRIGHT A_SetScale(0.15,0.15)
+	 FBLX B 2 BRIGHT A_SetScale(0.2,0.2)
+	 FBLX C 2 BRIGHT A_SetScale(0.25,0.25)
+	 FBLX D 2 BRIGHT A_SetScale(0.3,0.3)
+     FBLX E 0 BRIGHT A_Explode
+	 FBLX E 2 BRIGHT A_SetScale(0.35,0.35)
+     FBLX F 2 BRIGHT A_SetScale(0.4,0.4)
+	 FBLX G 2 BRIGHT A_SetScale(0.5,0.5)
+	 FBLX H 2 BRIGHT A_SetScale(0.6,0.6)
+	 FBLX I 2 BRIGHT A_SetScale(0.7,0.7)
+	 FBLX J 2 BRIGHT A_SetScale(0.85,0.85)
+	 FBLX K 2 BRIGHT A_SetScale(1.0,1.0)
+     Stop
+  Death:
+     FBLX A 1 Bright A_Explode
+     FBLX BCDEFGHIJK 1 BRIGHT
+     Stop
+  }
+}
+
+ACTOR EnemyFlamerShot : Flamebolt
+{
+	-Ripper
+	DamageType "Enemy"
+}
+
+ACTOR Flameball
+{ 
+   Damage 30
+   Alpha 0.90
+   RenderStyle Add
+   Speed 20
+   Radius 16
+   PROJECTILE
+   +FIREDAMAGE
+   SeeSound "weapons/napalm"
+   DamageType Fire
+   Decal Scorch
+   States
+   {
+   Spawn:
+      FBAL ABC 3 BRIGHT
+      Loop
+   Death:
+      FBLX A 0 BRIGHT A_PlaySound("weapons/nebxpl")
+      FBLX A 2 BRIGHT A_Explode(96,128)
+      FBLX BCDEFGHIJK 2 BRIGHT
+      Stop
+   }
+}
+
+ACTOR EnemyFlamebolt : Flameball
+{
+	DamageType "Enemy"
+	Damage 8
+	Scale 0.5
+	States
+   {
+   Spawn:
+      FBAL ABC 3 BRIGHT
+      Loop
+   Death:
+      FBLX A 0 BRIGHT A_PlaySound("weapons/nebxpl")
+      FBLX A 2 BRIGHT A_Explode(8,64)
+      FBLX BCDEFGHIJK 2 BRIGHT
+      Stop
+   }
+}
+
+ACTOR EnemyFlamebolt2 : Flameball
+{
+	DamageType "Enemy"
+	Damage 5
+	Scale 0.35
+	+STRIFEDAMAGE
+	States
+   {
+   Spawn:
+      FBAL ABC 3 BRIGHT
+      Loop
+   Death:
+      FBLX A 0 BRIGHT A_PlaySound("weapons/nebxpl")
+      FBLX ABCDEFGHIJK 2 BRIGHT
+      Stop
+   }
+}
+
+ACTOR RocketFlameSpawner
+{
+	Projectile
+	Speed 0
+	Scale 0.15
+	Alpha 0.5
+	Height 0
+	+NOCLIP
+	+NOTELEPORT
+	+NOBLOCKMAP
+	-FLOORCLIP
+	Renderstyle None
+	States
+	{
+		Spawn:
+			TNT1 A 1
+			TNT1 A 1 A_CustomMissile("RocketFlame",random(-1,1),random(-1,1),0)
+			Stop
+	}
+}
+
+ACTOR RocketFlame
+{
+	Projectile
+	Speed 0
+	Scale 0.15
+	Alpha 0.5
+	Height 0
+	+NOCLIP
+	+NOTELEPORT
+	+NOBLOCKMAP
+	-FLOORCLIP
+	Renderstyle Add
+	States
+	{
+		Spawn:
+			XPLO AB 2 BRIGHT 
+			XPLO C 2 BRIGHT A_CustomMissile("RPG8RocketTrail",1,random(-1,1),0)
+			Stop
+	}
+}
+
+ACTOR RPG8RocketTrail
+{
+    PROJECTILE
+    Height 1
+    Radius 1
+    Scale 0.18
+    Alpha 0.6
+    Renderstyle Add
+    States
+    {
+    Spawn:
+      SMOK ABCDEFGHIJKLMNOP 1
+      SMOK Q 1 A_FadeOut
+      Stop
+	}
+}
+
+actor MiniRocket
+{
+  Game Doom
+  SpawnID 127
+  Radius 11
+  Height 8
+  Speed 15
+  Damage 5
+  Projectile
+  +RANDOMIZE
+  DamageType "Enemy"
+  SeeSound "weapons/rocklf"
+  DeathSound "weapons/rocklx"
+  Obituary "$OB_MPROCKET" // "%o rode %k's rocket."
+  States
+  {
+  Spawn:
+    MISL A 1 bright A_CustomMissile("RocketFlameSpawner",0,0,0,5)
+    loop
+  Death:
+    FRME A 1 bright A_Explode(20,40)
+	FRME BCDEFGHIHJKLMNOPQRS 1 bright
+    stop
+  }
+}
+
+actor MiniMiniRocket : MiniRocket
+{
+	Scale 0.8
+	Damage 4
+	+STRIFEDAMAGE
+	DeathSound "weapons/nebxpl"
+}

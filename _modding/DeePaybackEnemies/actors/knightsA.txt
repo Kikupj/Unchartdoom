@@ -1,0 +1,593 @@
+actor Elite1 : HumanM
+{
+  scale 1.0
+  obituary "%o was shot to pieces by a Elite merc"
+  health 130
+  radius 20
+  height 56
+  mass 100
+  speed 6
+  painchance 200
+  seesound "EliteN/see"
+  attacksound "en/m4car"
+  painsound "EliteN/pain"
+  deathsound "EliteN/die"
+  Tag "Elite Mercenary"
+  activesound ""
+  dropitem "PlasmaRifle" 256
+  Translation "112:127=174:191"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EK1A S 10 A_Look
+    loop
+  See:
+    EK1A AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    EK1A EE 5 A_FaceTarget
+	EK1A F 0 A_PlayWeaponSound("en/m4car")
+    EK1A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-4,4))
+    EK1A E 4 A_SentinelRefire
+    goto Missile+2
+  Pain:
+    EK1A H 3
+    EK1A H 3 A_Pain
+    goto See
+  Death:
+    EK1A I 5
+    EK1A J 5 A_Scream
+    EK1A K 5 A_NoBlocking
+    EK1A L 5
+    EK1A M-1
+    stop
+  Death.Weak:
+    EK1B I 6
+    EK1B J 6 A_PlaySound("EliteN/pain")
+    EK1B K 6
+	EK1B L 6
+    EK1B M -1 A_NoBlocking
+    stop
+  Idle:
+    EK1A AA 4 A_Wander
+    EK1A A 0 A_Look
+    EK1A BB 4 A_Wander
+    EK1A A 0 A_Look
+    EK1A CC 4 A_Wander
+    EK1A A 0 A_Look
+    EK1A DD 4 A_Wander
+    EK1A A 0 A_Look
+    loop
+  }
+}
+
+actor Elite1w : HumanM
+{
+  scale 1.0
+  obituary "%o was shot to pieces by a Veteran merc"
+  health 100
+  radius 20
+  height 56
+  mass 100
+  speed 6
+  painchance 200
+  seesound "japa3/sight"
+  attacksound "en/m4car"
+  painsound "jap2/pain"
+  deathsound "jap2/pain"
+  Tag "Veteran Mercenary"
+  activesound ""
+  dropitem "PlasmaRifle" 256
+  Translation "112:127=96:111"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EK1A T 10 A_Look
+    loop
+  See:
+    EK1B AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    EK1B EE 5 A_FaceTarget
+	EK1B F 0 A_PlayWeaponSound("en/m4car")
+    EK1B F 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-4,4))
+    EK1B E 4 A_SentinelRefire
+    goto Missile+2
+  Pain:
+    EK1A H 3
+    EK1A H 3 A_Pain
+    goto See
+  Death:
+    EK1A I 5
+    EK1A J 5 A_Scream
+    EK1A K 5 A_NoBlocking
+    EK1A L 5
+    EK1A M-1
+    stop
+  Death.Weak:
+    EK1B I 6
+    EK1B J 6 A_PlaySound("jap2/pain")
+    EK1B K 6
+	EK1B L 6
+    EK1B M -1 A_NoBlocking
+    stop
+  Idle:
+    EK1B AA 4 A_Wander
+    EK1B A 0 A_Look
+    EK1B BB 4 A_Wander
+    EK1B A 0 A_Look
+    EK1B CC 4 A_Wander
+    EK1B A 0 A_Look
+    EK1B DD 4 A_Wander
+    EK1B A 0 A_Look
+    loop
+  }
+}
+
+actor EliteF1 : HumanF
+{
+  scale 1.0
+  obituary "%o was shot to pieces by a Elite merc"
+  health 130
+  radius 20
+  height 56
+  mass 100
+  speed 6
+  painchance 200
+  seesound "eliteF/see"
+  attacksound "en/m4car"
+  painsound "eliteF/pain"
+  deathsound "eliteF/die"
+  Tag "Elite Mercenary"
+  activesound ""
+  dropitem "PlasmaRifle" 256
+  Translation "112:127=174:191"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EK5A S 10 A_Look
+    loop
+  See:
+    EK5A AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    EK5A EE 5 A_FaceTarget
+	EK5A F 0 A_PlayWeaponSound("en/m4car")
+    EK5A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-4,4))
+    EK5A E 4 A_SentinelRefire
+    goto Missile+2
+  Pain:
+    EK5A H 3
+    EK5A H 3 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(80, "ADeath1")
+    EK5A I 5
+    EK5A J 5 A_Scream
+    EK5A K 5 A_NoBlocking
+    EK5A L 5
+    EK5A M-1
+    stop
+  ADeath1:
+    EK5A N 5
+    EK5A O 5 A_Scream
+    EK5A P 5 A_NoBlocking
+    EK5A Q 5
+    EK5A R-1
+    stop
+  Death.Weak:
+    EK5B I 6
+    EK5B J 6 A_PlaySound("eliteF/pain")
+    EK5B K 6
+	EK5B L 6
+    EK5B M -1 A_NoBlocking
+    stop
+  Idle:
+    EK5A AA 4 A_Wander
+    EK5A A 0 A_Look
+    EK5A BB 4 A_Wander
+    EK5A A 0 A_Look
+    EK5A CC 4 A_Wander
+    EK5A A 0 A_Look
+    EK5A DD 4 A_Wander
+    EK5A A 0 A_Look
+    loop
+  }
+}
+
+actor EliteF1w : HumanF
+{
+  scale 1.0
+  obituary "%o was shot to pieces by a Veteran merc"
+  health 100
+  radius 20
+  height 56
+  mass 100
+  speed 6
+  painchance 200
+  seesound "kari/see"
+  attacksound "en/m4car"
+  painsound "kari/pain"
+  deathsound "kari/die"
+  Tag "Veteran Mercenary"
+  activesound ""
+  dropitem "PlasmaRifle" 256
+  Translation "112:127=96:111"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EK5A T 10 A_Look
+    loop
+  See:
+    EK5B AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    EK5B EE 5 A_FaceTarget
+	EK5B F 0 A_PlayWeaponSound("en/m4car")
+    EK5B F 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-4,4))
+    EK5B E 4 A_SentinelRefire
+    goto Missile+2
+  Pain:
+    EK5A H 3
+    EK5A H 3 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(80, "ADeath1")
+    EK5A I 5
+    EK5A J 5 A_Scream
+    EK5A K 5 A_NoBlocking
+    EK5A L 5
+    EK5A M-1
+    stop
+  ADeath1:
+    FER1 U 5 A_PlaySound("girl/neckcut")
+    FER1 V 5
+    FER1 W 5 A_NoBlocking
+    FER1 X 5
+    FER1 Y-1
+    stop
+  Death.Weak:
+    EK5B I 6
+    EK5B J 6 A_PlaySound("kari/pain")
+    EK5B K 6
+	EK5B L 6
+    EK5B M -1 A_NoBlocking
+    stop
+  Idle:
+    EK5B AA 4 A_Wander
+    EK5B A 0 A_Look
+    EK5B BB 4 A_Wander
+    EK5B A 0 A_Look
+    EK5B CC 4 A_Wander
+    EK5B A 0 A_Look
+    EK5B DD 4 A_Wander
+    EK5B A 0 A_Look
+    loop
+  }
+}
+
+actor EliteShotgun : HumanM
+{
+  scale 1.0
+  obituary "%o was blasted by a Elite Shotgunner"
+  health 130
+  radius 20
+  height 56
+  mass 100
+  speed 6
+  painchance 200
+  seesound "EliteN/see"
+  attacksound "en/m4car"
+  painsound "EliteN/pain"
+  deathsound "EliteN/die"
+  Tag "Elite Shotgunner"
+  activesound ""
+  dropitem "Shotgun" 256
+  Translation "112:127=174:191"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EK2A T 10 A_Look
+    loop
+  See:
+    EK2A AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    EK2A EE 10 A_FaceTarget
+	EK2A F 0 A_PlayWeaponSound("en/shotgun")
+    EK2A F 8 BRIGHT A_CustomMissile("EnemyRifleTracer",32,0,random(-1,1))
+    EK2A E 4
+	EK2A E 4 A_PlaySound("en/shotpump")
+    goto See
+  Pain:
+    EK2A H 3
+    EK2A H 3 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(80, "ADeath1")
+    EK2A I 5
+    EK2A J 5 A_Scream
+    EK2A K 5 A_NoBlocking
+    EK2A L 5
+    EK2A M-1
+    stop
+  ADeath1:
+    EK2A N 2 A_PlaySound("head/shot")
+    EK2A N 5
+    EK2A O 5 A_NoBlocking
+    EK2A P 5
+    EK2A Q-1
+    stop
+  Death.Weak:
+    EK2B I 6
+    EK2B J 6 A_PlaySound("EliteN/pain")
+    EK2B K 6
+	EK2B L 6
+    EK2B M -1 A_NoBlocking
+    stop
+  Idle:
+    EK2A AA 4 A_Wander
+    EK2A A 0 A_Look
+    EK2A BB 4 A_Wander
+    EK2A A 0 A_Look
+    EK2A CC 4 A_Wander
+    EK2A A 0 A_Look
+    EK2A DD 4 A_Wander
+    EK2A A 0 A_Look
+    loop
+  }
+}
+
+actor EliteShotgunW : HumanM
+{
+  scale 1.0
+  obituary "%o was blasted by a Veteran Shotgunner"
+  health 80
+  radius 20
+  height 56
+  mass 100
+  speed 6
+  painchance 200
+  seesound "jap2/sight"
+  attacksound "en/m4car"
+  painsound "jap2/pain"
+  deathsound "jap2/die"
+  Tag "Veteran Shotgunner"
+  activesound ""
+  dropitem "Shotgun" 256
+  Translation "112:127=96:111"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EK4A T 10 A_Look
+    loop
+  See:
+    EK4A AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    EK4A EE 10 A_FaceTarget
+	EK4A F 0 A_PlayWeaponSound("en/shotgun")
+    EK4A F 8 BRIGHT A_CustomMissile("EnemyRifleTracer",32,0,random(-1,1))
+    EK4A E 4
+	EK4A E 4 A_PlaySound("en/shotpump")
+    goto See
+  Pain:
+    EK4A H 3
+    EK4A H 3 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(80, "ADeath1")
+    EK4A I 5
+    EK4A J 5 A_Scream
+    EK4A K 5 A_NoBlocking
+    EK4A L 5
+    EK4A M-1
+    stop
+  ADeath1:
+    EK4A N 5
+    EK4A O 5 A_Scream
+    EK4A P 5 A_NoBlocking
+    EK4A Q 5
+    EK4A R-1
+    stop
+  Death.Weak:
+    EK4B I 6
+    EK4B J 6 A_PlaySound("jap2/pain")
+    EK4B K 6
+	EK4B L 6
+    EK4B M -1 A_NoBlocking
+    stop
+  Idle:
+    EK4A AA 4 A_Wander
+    EK4A A 0 A_Look
+    EK4A BB 4 A_Wander
+    EK4A A 0 A_Look
+    EK4A CC 4 A_Wander
+    EK4A A 0 A_Look
+    EK4A DD 4 A_Wander
+    EK4A A 0 A_Look
+    loop
+  }
+}
+
+actor Elite1w2 : HumanM
+{
+  scale 1.0
+  obituary "%o was shot to pieces by a mercenary"
+  health 80
+  radius 20
+  height 56
+  mass 100
+  speed 6
+  painchance 200
+  seesound "jap2/sight"
+  attacksound "en/m4car"
+  painsound "jap2/pain"
+  deathsound "jap2/die"
+  Tag "Mercenary"
+  activesound ""
+  dropitem "PlasmaRifle" 256
+    Translation "112:127=96:111","192:207=96:111"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EK3A x 10 A_Look
+    loop
+  See:
+    EK3A AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    EK3A GG 5 A_FaceTarget
+	EK3A H 0 A_PlayWeaponSound("en/m4car")
+    EK3A H 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-4,4))
+    EK3A G 4 A_SentinelRefire
+    goto Missile+2
+  Pain:
+    EK3A I 3
+    EK3A I 3 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(80, "ADeath1")
+    EK3A J 5
+    EK3A K 5 A_Scream
+    EK3A L 5 A_NoBlocking
+    EK3A M 5
+    EK3A N-1
+    stop
+  ADeath1:
+    EK3A O 5
+    EK3A P 5 A_Scream
+    EK3A Q 5 A_NoBlocking
+    EK3A R 5
+    EK3A S-1
+    stop
+  Death.Weak:
+    EK3B I 6
+    EK3B J 6 A_PlaySound("jap2/pain")
+    EK3B K 6
+	EK3B L 6
+    EK3B M -1 A_NoBlocking
+    stop
+  Idle:
+    EK3A AA 4 A_Wander
+    EK3A A 0 A_Look
+    EK3A BB 4 A_Wander
+    EK3A A 0 A_Look
+    EK3A CC 4 A_Wander
+    EK3A A 0 A_Look
+    EK3A DD 4 A_Wander
+    EK3A A 0 A_Look
+    loop
+  }
+}
+
+actor EliteF1w2 : HumanF
+{
+  scale 1.0
+  obituary "%o was shot to pieces by a mercenary"
+  health 100
+  radius 20
+  height 56
+  mass 100
+  speed 6
+  painchance 200
+  seesound "femajap/sight"
+  attacksound "en/m4car"
+  painsound "femajap/hurt"
+  deathsound "femajap/hurt"
+  Tag "Mercenary"
+  activesound ""
+  dropitem "PlasmaRifle" 256
+  Translation "112:127=96:111","192:207=96:111"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EK6A T 10 A_Look
+    loop
+  See:
+    EK6A AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    EK6A GG 5 A_FaceTarget
+	EK6A H 0 A_PlayWeaponSound("en/m4car")
+    EK6A H 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-4,4))
+    EK6A G 4 A_SentinelRefire
+    goto Missile+2
+  Pain:
+    EK6A I 3
+    EK6A I 3 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(80, "ADeath1")
+    EK6A J 5
+    EK6A K 5 A_Scream
+    EK6A L 5 A_NoBlocking
+    EK6A M 5
+    EK6A N-1
+    stop
+  ADeath1:
+    EK6A O 5
+    EK6A P 5 A_Scream
+    EK6A Q 5 A_NoBlocking
+    EK6A R 5
+    EK6A S-1
+    stop
+  Death.Weak:
+    EK6B I 6
+    EK6B J 6 A_PlaySound("femajap/hurt")
+    EK6B K 6
+	EK6B L 6
+    EK6B M -1 A_NoBlocking
+    stop
+  Idle:
+    EK6A AA 4 A_Wander
+    EK6A A 0 A_Look
+    EK6A BB 4 A_Wander
+    EK6A A 0 A_Look
+    EK6A CC 4 A_Wander
+    EK6A A 0 A_Look
+    EK6A DD 4 A_Wander
+    EK6A A 0 A_Look
+    loop
+  }
+}

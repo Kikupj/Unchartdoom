@@ -1,0 +1,304 @@
+actor Ninja1 : HumanMb
+{
+  hitobituary "%o was beaten down by a martial arts ninja."
+  health 60
+  painchance 180
+  speed 10
+  radius 20
+  height 56
+  mass 100
+  Meleedamage 1
+  seesound ""
+  attacksound "en/punch"
+  painsound "Yaka/pain"
+  deathsound "Yaka/die"
+   Tag "Ninja"
+     Translation "112:127=64:79"
+    DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +FASTMELEE
+  +JUMPDOWN
+   +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EE1A T 10 A_Look
+    Loop
+  See:
+	EE1A AABBCCDD 2 A_Chase
+	loop
+  Melee:
+    TNT1 A 0 A_Jump(120,"Melee2")
+    EE1A E 4 A_FaceTarget
+    EE1A E 4 A_MeleeAttack
+	EE1A F 6 A_PlayWeaponSound("en/smack")
+	EE1A E 3
+    goto See
+  Melee2:
+    EE1A I 4 A_FaceTarget
+    EE1A I 4 A_MeleeAttack
+	EE1A J 6 A_PlayWeaponSound("en/smack")
+	EE1A I 3
+    goto See
+  Pain:
+    EE1A H 2
+    EE1A H 2 A_Pain
+    goto See
+  Death:
+    EE3A I 5
+    EE3A J 5 A_Scream
+    EE3A K 5
+	EE3A L 5
+	EE3A M 5
+    EE3A N -1 A_NoBlocking
+    stop
+  Death.Weak:
+    EE3A O 6
+    EE3A P 6 A_PlaySound("Yaka/pain")
+    EE3A Q 6
+	EE3A R 6
+    EE3A S -1 A_NoBlocking
+    stop
+  Idle:
+    EE1A AA 4 A_Wander
+    EE1A A 0 A_Look
+    EE1A BB 4 A_Wander
+    EE1A A 0 A_Look
+    EE1A CC 4 A_Wander
+    EE1A A 0 A_Look
+    EE1A DD 4 A_Wander
+    EE1A A 0 A_Look
+    loop
+  }
+}
+
+actor Ninja2 : HumanMb
+{
+  hitobituary "%o was sliced up by a Katana ninja."
+  health 60
+  painchance 180
+  speed 9
+  radius 20
+  height 56
+  mass 100
+  Meleedamage 2
+  seesound ""
+  attacksound "en/slash"
+  painsound "Yaka/pain"
+  deathsound "Yaka/die"
+   Tag "Ninja"
+   Translation "112:127=96:111"
+    DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +FASTMELEE
+  +JUMPDOWN
+   +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EE2A B 10 A_Look
+    Loop
+  See:
+	EE2A AABBCCDD 2 A_Chase
+	loop
+  Melee:
+    TNT1 A 0 A_Jump(120,"Melee2")
+    EE2A E 4 A_FaceTarget
+    EE2A F 4 A_MeleeAttack
+	EE2A G 6 A_PlayWeaponSound("en/stab")
+	EE2A FE 3
+    goto See
+  Melee2:
+    EE2A I 4 A_FaceTarget
+    EE2A I 4 A_MeleeAttack
+	EE2A J 6 A_PlayWeaponSound("en/stab")
+	EE2A I 3
+    goto See
+  Pain:
+    EE2A H 2
+    EE2A H 2 A_Pain
+    goto See
+  Death:
+    EE3A I 5
+    EE3A J 5 A_Scream
+    EE3A K 5
+	EE3A L 5
+	EE3A M 5
+    EE3A N -1 A_NoBlocking
+    stop
+  Death.Weak:
+    EE3A O 6
+    EE3A P 6 A_PlaySound("Yaka/pain")
+    EE3A Q 6
+	EE3A R 6
+    EE3A S -1 A_NoBlocking
+    stop
+  Idle:
+    EE2A AA 4 A_Wander
+    EE2A A 0 A_Look
+    EE2A BB 4 A_Wander
+    EE2A A 0 A_Look
+    EE2A CC 4 A_Wander
+    EE2A A 0 A_Look
+    EE2A DD 4 A_Wander
+    EE2A A 0 A_Look
+    loop
+  }
+}
+
+actor Ninja3 : HumanMb
+{
+  hitobituary "%o was gunned down by a ninja."
+  health 40
+  painchance 180
+  speed 9
+  radius 20
+  height 56
+  mass 100
+  seesound ""
+  painsound "Yaka/pain"
+  deathsound "Yaka/die"
+  dropitem "Thuggundropper" 256
+   Tag "Ninja"
+    Translation "112:127=64:79"
+    DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +JUMPDOWN
+   +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EE3A T 10 A_Look
+    Loop
+  See:
+	EE4A AABBCCDD 2 A_Chase
+	loop
+ Missile:
+    EE3A FF 5 A_FaceTarget
+	EE3A G 0 A_PlayWeaponSound("en/silsmg")
+    EE3A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	EE3A F 2 A_FaceTarget
+	EE3A G 0 A_PlayWeaponSound("en/silsmg")
+    EE3A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	EE3A F 2 A_FaceTarget
+	EE3A G 0 A_PlayWeaponSound("en/silsmg")
+    EE3A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+    EE3A F 2
+    goto See
+  Pain:
+    EE3A H 2
+    EE3A H 2 A_Pain
+    goto See
+  Death:
+    EE3A I 5
+    EE3A J 5 A_Scream
+    EE3A K 5
+	EE3A L 5
+	EE3A M 5
+    EE3A N -1 A_NoBlocking
+    stop
+  Death.Weak:
+    EE3A O 6
+    EE3A P 6 A_PlaySound("Yaka/pain")
+    EE3A Q 6
+	EE3A R 6
+    EE3A S -1 A_NoBlocking
+    stop
+  Idle:
+    EE4A AA 4 A_Wander
+    EE4A A 0 A_Look
+    EE4A BB 4 A_Wander
+    EE4A A 0 A_Look
+    EE4A CC 4 A_Wander
+    EE4A A 0 A_Look
+    EE4A DD 4 A_Wander
+    EE4A A 0 A_Look
+    loop
+  }
+}
+
+actor Ninja4 : HumanMb
+{
+  hitobituary "%o was gunned down by a Elite Ninja."
+  health 80
+  painchance 180
+  speed 10
+  radius 20
+  height 56
+  mass 100
+  seesound ""
+  painsound "Yaka/pain"
+  deathsound "Yaka/die"
+   Tag "Elite Ninja"
+  dropitem "Thuggundropper" 256
+   Translation "112:127=176:191"
+    DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +JUMPDOWN
+   +NOTARGET
+  +NOINFIGHTING
+    +MISSILEMORE
+  states
+  {
+  Spawn:
+    EE3A T 10 A_Look
+    Loop
+  See:
+	EE3A AABBCCDD 2 A_Chase
+	loop
+ Missile:
+    EE3A EF 5 A_FaceTarget
+	EE3A G 0 A_PlayWeaponSound("en/silsmg")
+    EE3A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	EE3A F 2 A_FaceTarget
+	EE3A G 0 A_PlayWeaponSound("en/silsmg")
+    EE3A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	EE3A F 2 A_FaceTarget
+	EE3A G 0 A_PlayWeaponSound("en/silsmg")
+    EE3A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	EE3A F 2 A_FaceTarget
+	EE3A G 0 A_PlayWeaponSound("en/silsmg")
+    EE3A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	EE3A F 2 A_FaceTarget
+	EE3A G 0 A_PlayWeaponSound("en/silsmg")
+    EE3A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+    EE3A F 2
+    goto See
+  Pain:
+    EE3A H 2
+    EE3A H 2 A_Pain
+    goto See
+  Death:
+    EE3A I 5
+    EE3A J 5 A_Scream
+    EE3A K 5
+	EE3A L 5
+	EE3A M 5
+    EE3A N -1 A_NoBlocking
+    stop
+  Death.Weak:
+    EE3A O 6
+    EE3A P 6 A_PlaySound("Yaka/pain")
+    EE3A Q 6
+	EE3A R 6
+    EE3A S -1 A_NoBlocking
+    stop
+  Idle:
+    EE3A AA 4 A_Wander
+    EE3A A 0 A_Look
+    EE3A BB 4 A_Wander
+    EE3A A 0 A_Look
+    EE3A CC 4 A_Wander
+    EE3A A 0 A_Look
+    EE3A DD 4 A_Wander
+    EE3A A 0 A_Look
+    loop
+  }
+}

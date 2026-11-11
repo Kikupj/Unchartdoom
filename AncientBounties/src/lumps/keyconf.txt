@@ -1,0 +1,10 @@
+alias ab_dodge "netevent ab_dodge"
+alias ab_medkit "netevent ab_medkit"
+alias ab_camp "netevent ab_openmenu"
+addkeysection "Ancient Bounties" AncientBounties
+addmenukey "Dodge Roll" ab_dodge
+addmenukey "Use Medkit" ab_medkit
+addmenukey "Camp Manager / Field Journal" ab_camp
+defaultbind q ab_dodge
+defaultbind f ab_medkit
+defaultbind b ab_camp

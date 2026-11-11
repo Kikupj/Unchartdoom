@@ -1,0 +1,142 @@
+actor GangBike1
+{
+  scale 1.0
+  obituary "%o got mowed down in a drive by."
+  health 200
+  radius 30
+  height 56
+  mass 600
+  speed 12
+  painchance 110
+  seesound "Carm/see"
+  painsound "vech/pain"
+  deathsound "perv1/pa"
+  activesound "bike/idle"
+  dropitem "Thuggundropper" 256
+  Tag "Gang Bike"
+  Translation "115:127=5:8"
+  DamageFactor "Enemy", 0.0
+  DamageFactor "Weak", 0.5
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  -CANUSEWALLS
+  +MISSILEMORE
+  +NOBLOOD
+  +BOSS
+  states
+  {
+  Spawn:
+    PBK1 A 10 A_Look
+    loop
+  See:
+  	PBK1 A 0 A_PlaySound ("bike/idle")
+    PBK1 AABBAABB 2 A_Chase
+    loop
+  Missile:
+    PBK1 EE 5 A_FaceTarget
+	PBK1 F 0 A_PlayWeaponSound("en/beretta")
+    PBK1 F 8 BRIGHT A_CustomMissile("EnemyPistolTracer",45,0,random(-8,8))
+    PBK1 E 4 A_SentinelRefire
+    goto Missile+2
+   Pain:
+    PBK1 H 3
+    PBK1 H 3 A_Pain
+    goto See
+  Death:
+    PBK1 I 8
+    PBK1 J 6 A_Scream
+    PBK1 K 6 A_NoBlocking
+    PBK1 L 6
+	PBK1 M 6 A_BossDeath
+	PBK1 O 6 A_PlaySound ("bike/die")
+    PBK1 O -1
+    stop
+  Death.Weak:
+    PBK1 P 8
+    PBK1 Q 6 A_Scream
+    PBK1 R 6 A_NoBlocking
+    PBK1 S 6
+	PBK1 T 6 A_BossDeath
+	PBK1 V 6 A_PlaySound ("bike/die")
+    PBK1 V -1
+    stop
+  Idle:
+    PBK1 A 0 A_PlaySound ("bike/idle")
+    PBK1 AA 3 A_Wander
+    PBK1 A 0 A_Look
+    PBK1 BB 3 A_Wander
+    PBK1 A 0 A_Look
+    PBK1 AA 3 A_Wander
+    PBK1 A 0 A_Look
+    PBK1 BB 3 A_Wander
+    PBK1 A 0 A_Look
+    loop
+  }
+}
+
+actor GangBike1Red : GangBike1
+{
+  Translation "115:127=5:8","195:207=176:191"
+  }
+  
+  actor GangBike1Pink : GangBike1
+{
+  Translation "115:127=5:8","195:207=250:254"
+  }
+  
+  actor GangBike1Green : GangBike1
+{
+  Translation "115:127=5:8","195:207=112:127"
+  }
+  
+  actor GangBike1Yellow : GangBike1
+{
+  Translation "115:127=5:8","195:207=160:166"
+  }
+  
+  actor GangBike1RedBrown : GangBike1
+{
+  Translation "112:127=64:79","195:207=176:191"
+  }
+  
+  actor GangBike1BlueBrown : GangBike1
+{
+  Translation "112:127=64:79"
+  }
+  
+  actor GangBike1PinkBrown : GangBike1
+{
+  Translation "112:127=64:79","195:207=250:254"
+  }
+  
+  actor GangBike1GreenBrown : GangBike1
+{
+  Translation "112:127=64:79","195:207=112:127"
+  }
+  
+  actor GangBike1YellowBrown : GangBike1
+{
+  Translation "112:127=64:79","195:207=160:166"
+  }
+  
+  actor GangBike1PinkRed : GangBike1
+{
+  Translation "112:127=16:47","195:207=250:254"
+  }
+  
+  actor GangBike1GreenRed : GangBike1
+{
+  Translation "112:127=16:47","195:207=112:127"
+  }
+  
+  actor GangBike1YellowRed : GangBike1
+{
+  Translation "112:127=16:47","195:207=160:166"
+  }
+  
+    actor GangBike1BlueRed : GangBike1
+{
+  Translation "112:127=16:47"
+  }

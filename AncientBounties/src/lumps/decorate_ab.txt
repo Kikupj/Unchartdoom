@@ -1,0 +1,18 @@
+// Ancient Bounties bosses (built on DeePaybackEnemies brutes)
+actor AB_Thorne : BruteMiniGUN
+{
+	Health 3000
+	Tag "Magnus Thorne"
+	Obituary "%o was personally terminated by Magnus Thorne."
+	PainChance 24
+	Scale 1.12
+	+BOSS
+	+NOINFIGHTING
+}
+actor AB_Lieutenant : BruteGL
+{
+	Health 650
+	Tag "Meridian Lieutenant"
+	Obituary "%o was flattened by a Meridian Lieutenant."
+	PainChance 60
+}

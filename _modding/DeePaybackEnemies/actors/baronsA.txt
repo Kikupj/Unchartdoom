@@ -1,0 +1,261 @@
+actor BadassElite
+{
+  scale 1.0
+  obituary "%o was shredded by a Elite Badass"
+  health 400
+  radius 20
+  height 56
+  mass 200
+  speed 10
+  painchance 110
+  seesound "badass/see"
+  painsound "badass/pain"
+  deathsound "badass/DIE"
+  activesound " "
+  dropitem "PlasmaRifle"
+  Tag "Badass Elite"
+  Translation "112:127=174:191"
+  DamageFactor "Enemy", 0.0
+  DamageFactor "Fire", 0.0
+  DamageFactor "Weak", 0.5
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  +BOSS
+  states
+  {
+  Spawn:
+    EB1A S 10 A_Look
+    loop
+  See:
+    EB1A AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    EB1A EE 5 A_FaceTarget
+	EB1A F 0 A_PlayWeaponSound("en/m4car")
+    EB1A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-4,4))
+    EB1A E 4 A_SentinelRefire
+    goto Missile+2
+  Pain:
+    EB1A H 3
+    EB1A H 3 A_Pain
+    goto See
+  Death:
+    EB1A I 5
+    EB1A J 5 A_Scream
+    EB1A K 5 A_BossDeath
+    EB1A L 5 A_NoBlocking
+	EB1A M -1
+    stop
+  Death.Weak:
+    EB1B I 6
+    EB1B J 6 A_PlaySound("badass/pain")
+    EB1B K 6 A_BossDeath
+    EB1B L 6 A_NoBlocking
+	EB1B M -1
+    stop
+  Idle:
+    EB1A AA 4 A_Wander
+    EB1A A 0 A_Look
+    EB1A BB 4 A_Wander
+    EB1A A 0 A_Look
+    EB1A CC 4 A_Wander
+    EB1A A 0 A_Look
+    EB1A DD 4 A_Wander
+    EB1A A 0 A_Look
+    loop
+  }
+}
+
+actor BadassElite2 : BadassElite
+  {
+  seesound "badass/alt"
+  Translation "112:127=174:191"
+ states
+  {
+   Missile:
+    EB1A WW 5 A_FaceTarget
+	EB1A X 0 A_PlayWeaponSound("en/m4car")
+    EB1A X 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-4,4))
+    EB1A W 4 A_SentinelRefire
+    goto Missile+2
+ }
+}
+
+actor BadassPara
+{
+  scale 1.0
+  obituary "%o was shredded by a Elite Commando"
+  health 300
+  radius 20
+  height 56
+  mass 200
+  speed 10
+  painchance 110
+  seesound "pommy/see"
+  painsound "pommy2/hurt"
+  deathsound "pommy2/hurt"
+  activesound " "
+  dropitem "PlasmaRifle"
+  Tag "Elite Commando"
+  Translation "192:207=174:191"
+  DamageFactor "Enemy", 0.0
+  DamageFactor "Fire", 0.2
+  DamageFactor "Weak", 0.5
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  +BOSS
+  states
+  {
+  Spawn:
+    EB3A T 10 A_Look
+    loop
+  See:
+    EB3A AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    EB3A EE 5 A_FaceTarget
+	EB3A F 0 A_PlayWeaponSound("en/m4car")
+    EB3A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",34,0,random(-4,4))
+    EB3A E 4 A_SentinelRefire
+    goto Missile+2
+  Pain:
+    EB3A H 3
+    EB3A H 3 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(80,"ADeath1")
+    EB3A I 5
+    EB3A J 5 A_Scream
+    EB3A K 5 A_BossDeath
+    EB3A L 5 A_NoBlocking
+	EB3A M -1
+    stop
+  ADeath1:
+    EB3A N 5
+    EB3A O 5 A_Scream
+    EB3A P 5 A_BossDeath
+    EB3A Q 5 A_NoBlocking
+	EB3A R -1
+    stop
+  Death.Weak:
+    EB3B I 6
+    EB3B J 6 A_PlaySound("pommy2/hurt")
+    EB3B K 6 A_BossDeath
+    EB3B L 6 A_NoBlocking
+	EB3B M -1
+    stop
+  Death.Fire:
+		EF1b A 5 BRIGHT
+		EF1b B 5 BRIGHT A_PlaySound("death/burning")
+		EF1b CDCB 5 BRIGHT 
+		EF1b ABCD 5 BRIGHT
+		EF1b E 5 BRIGHT A_NoBlocking
+		EF1b EFG 5 bright
+		EF1B H 5 BRIGHT A_BossDeath
+		EF1b I -1
+		Stop
+  Idle:
+    EB3A AA 4 A_Wander
+    EB3A A 0 A_Look
+    EB3A BB 4 A_Wander
+    EB3A A 0 A_Look
+    EB3A CC 4 A_Wander
+    EB3A A 0 A_Look
+    EB3A DD 4 A_Wander
+    EB3A A 0 A_Look
+    loop
+  }
+}
+
+actor BigElite
+{
+  scale 1.0
+  obituary "%o was crushed by a Big Elite"
+  health 300
+  radius 20
+  height 56
+  mass 200
+  speed 10
+  painchance 100
+  seesound "bigELT/see"
+  painsound "brute/pain"
+  deathsound "bigELT/die"
+  activesound " "
+  dropitem "PlasmaRifle"
+  Tag "Big Elite"
+  Translation "112:127=174:191"
+  DamageFactor "Enemy", 0.0
+  DamageFactor "Fire", 0.2
+  DamageFactor "Weak", 0.5
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  +BOSS
+  states
+  {
+  Spawn:
+    EB2A E 10 A_Look
+    loop
+  See:
+    EB2A AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    EB2A EE 5 A_FaceTarget
+	EB2A F 0 A_PlayWeaponSound("en/m60")
+    EB2A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-4,4))
+    EB2A E 4 A_SentinelRefire
+    goto Missile+2
+  Pain:
+    EB2A H 3
+    EB2A H 3 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(60,"Headshot")
+    EB2A I 5
+    EB2A J 5 A_Scream
+    EB2A K 5 A_BossDeath
+    EB2A L 5 A_NoBlocking
+	EB2A M -1
+    stop
+  Headshot:
+    EB2A N 2 A_PlaySound("head/shot")
+    EB2A N 5 A_BossDeath
+    EB2A O 5 A_NoBlocking
+    EB2A P 5
+	EB2A Q 5
+    EB2A R -1
+    stop
+  Death.Weak:
+    EB2B I 5
+    EB2B J 5 A_PlaySound("brute/pain")
+    EB2B K 5 A_BossDeath
+    EB2B L 5 A_NoBlocking
+	EB2B M -1
+    stop
+	  Death.Fire:
+		EF1d A 5 BRIGHT
+		EF1d B 5 BRIGHT A_PlaySound("death/burning")
+		EF1d CDCB 5 BRIGHT 
+		EF1d ABCD 5 BRIGHT
+		EF1d E 5 BRIGHT A_NoBlocking
+		EF1d EFG 5 bright
+		EF1d H 5 BRIGHT A_BossDeath
+		EF1d I -1
+		Stop
+  Idle:
+    EB2A AA 4 A_Wander
+    EB2A A 0 A_Look
+    EB2A BB 4 A_Wander
+    EB2A A 0 A_Look
+    EB2A CC 4 A_Wander
+    EB2A A 0 A_Look
+    EB2A DD 4 A_Wander
+    EB2A A 0 A_Look
+    loop
+  }
+}

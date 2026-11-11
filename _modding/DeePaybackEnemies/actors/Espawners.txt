@@ -1,0 +1,794 @@
+//zombie man spawner
+actor eZOMBSpawner : RandomSpawner replaces Zombieman
+{
+dropitem eGOONchoice
+dropitem eGOONchoice
+dropitem eREDNECKchoice
+dropitem eREDNECKchoice
+dropitem ePUNKMchoice
+dropitem ePUNKMchoice
+dropitem eSCUMFchoice
+dropitem eSCUMFchoice
+dropitem eGOONGIRLchoice
+dropitem eGOONGIRLchoice
+dropitem eTRAMPchoice
+dropitem eSCUMMANchoice
+dropitem eSCUMMANchoice
+dropitem eSCUMMANchoice
+dropitem eCROOKchoice
+dropitem eCROOKchoice
+dropitem eCROOKchoice
+dropitem eHOODYchoice
+dropitem eHOODYchoice
+dropitem eHOODYchoice
+}
+
+actor eCROOKchoice : RandomSpawner
+{
+dropitem Crook
+dropitem CrookA
+dropitem Crookbrown
+dropitem Crookbrownnavy
+dropitem Crookred
+dropitem Crookredtan
+dropitem CrookredA
+dropitem Crookgrey
+dropitem Crookgreyred
+dropitem Crookgreynavy
+dropitem Crookgreytan
+dropitem CrookgreyA
+dropitem CrookgreyredA
+dropitem Crookblue
+dropitem Crookbluetan
+dropitem CrookblueA
+dropitem Crooknavy
+dropitem Crookkak
+dropitem Crookkakred
+dropitem Crookblack
+dropitem Crookblacknavy
+dropitem Crookblacktan
+dropitem CrookblackA
+dropitem CrookblackredA
+}
+
+actor eSCUMFchoice : RandomSpawner
+{
+dropitem scumF
+dropitem scumFA
+dropitem scumFred
+dropitem scumFredkak
+dropitem scumFredA
+dropitem scumFtan
+dropitem scumFtankak
+dropitem scumFblack
+dropitem scumFblackkak
+dropitem scumFblackA
+dropitem scumFblackblueA
+dropitem scumFwhite
+dropitem scumFwhiteA
+dropitem scumFwhiteredA
+dropitem scumFwhiteblueA
+}
+
+actor ePUNKMchoice : RandomSpawner
+{
+dropitem PunkM
+dropitem PunkMred
+dropitem PunkMpink
+dropitem PunkMgreen
+dropitem PunkMblackblue
+dropitem PunkMblackred
+dropitem PunkMblackpink
+dropitem PunkMblackgreen
+dropitem PunkMblackyellow
+dropitem PunkMsilvergreenA
+dropitem PunkMsilverblueA
+dropitem PunkMsilverredA
+dropitem PunkMsilverpinkA
+}
+
+actor eTRAMPchoice : RandomSpawner
+{
+dropitem Tramp
+dropitem TrampRed
+dropitem TrampBlue
+dropitem TrampRedbrown
+dropitem TrampgreyBrown
+dropitem TrampBlondeRed
+dropitem TrampBlondeBlack
+}
+
+actor eSCUMMANchoice : RandomSpawner
+{
+dropitem ScumM
+dropitem ScumMA
+dropitem ScumMred
+dropitem ScumMredA
+dropitem ScumMredtan
+dropitem ScumMblue
+dropitem ScumMblueA
+dropitem ScumMbluetan
+dropitem ScumMblack
+dropitem ScumMblackA
+dropitem ScumMwhite
+dropitem ScumMwhiteA
+dropitem ScumMwhitetan
+dropitem Skingrey
+dropitem Skinbrown
+dropitem Skinkak
+}
+
+actor eGOONGIRLchoice : RandomSpawner
+{
+dropitem GoonF
+dropitem GoonFblack
+dropitem GoonFblacktan
+dropitem GoonFbrown
+dropitem GoonFred
+dropitem GoonFredtan
+dropitem GoonFblue
+dropitem GoonFbluetan
+dropitem GoonFwhite
+}
+
+actor eREDNECKchoice : RandomSpawner
+{
+dropitem Redneck
+dropitem Redneck2
+dropitem Redneckwhite
+dropitem RedneckwhiteA
+dropitem Redneckgreen
+dropitem RedneckgreenA
+dropitem Redneckred
+dropitem Redneckblue
+dropitem RedneckblueA
+dropitem RedneckblackA
+}
+
+actor eGOONchoice : RandomSpawner
+{
+dropitem GoonM
+dropitem GoonMblue
+dropitem GoonMblueA
+dropitem GoonMred
+dropitem GoonMredA
+dropitem GoonMbrown
+dropitem GoonMtan
+dropitem GoonMwhite
+dropitem GoonMblack
+dropitem GoonMpink
+dropitem GoonMlime
+}
+
+actor eHOODYchoice : RandomSpawner
+{
+dropitem Hoody
+dropitem HoodyGreen
+dropitem HoodyGreenA2
+dropitem HoodyBlue
+dropitem HoodyBlueA
+dropitem HoodyBluetan
+dropitem Hoodytan
+dropitem HoodyRed
+dropitem HoodyRedtan
+dropitem HoodyRedA
+}
+
+//imp spawner
+actor eIMPSpawner : RandomSpawner replaces DoomImp
+{
+dropitem eSTREETMchoice
+dropitem eSTREETMchoice
+dropitem eSTREETFchoice
+dropitem eSTREETFchoice
+dropitem eROBMANchoice 
+dropitem eROBMANchoice 
+dropitem eROBMANchoice 
+dropitem eKILLERchoice
+dropitem eKILLERchoice
+dropitem eBANGERchoice
+dropitem ePIMPchoice
+dropitem ePUNKFchoice
+dropitem ePUNKFchoice
+dropitem eROBBERFchoice
+}
+
+actor eBANGERchoice : RandomSpawner
+{
+dropitem Banger
+dropitem Bangergrey
+dropitem Bangerred
+dropitem Bangernavy
+dropitem Bangertan
+}
+
+actor eROBMANchoice : RandomSpawner
+{
+dropitem robberM
+dropitem robberMgreenred
+dropitem robberMbrown
+dropitem robberMbrownpink
+dropitem robberMbrowngreen
+dropitem robberMbrownblue
+dropitem robberMbrownred
+dropitem robberMred
+dropitem robberMredgreen
+dropitem robberMsilver
+dropitem robberMsilvergreen
+dropitem robberMsilverblue
+dropitem robberMnavy
+dropitem robberMnavypink
+dropitem robberMnavygreen
+dropitem robberMnavyred
+}
+
+actor eKILLERchoice : RandomSpawner
+{
+dropitem killerM
+dropitem killerMbrown
+dropitem killerMwhite
+dropitem killerMblack
+dropitem killerMblackbrown
+dropitem killerMblacknavy
+}
+
+actor eSTREETMchoice : RandomSpawner
+{
+dropitem StreetThugM
+dropitem StreetThugMtan
+dropitem StreetThugMred
+dropitem StreetThugMredtan
+dropitem StreetThugMblue
+dropitem StreetThugMbluetan
+dropitem StreetThugMblack
+dropitem StreetThugMblacktan
+dropitem StreetThugMredA
+dropitem StreetThugMblueA
+dropitem StreetThugMblackA
+}
+
+actor eSTREETFchoice : RandomSpawner
+{
+dropitem StreetThugF
+dropitem StreetThugFtan
+dropitem StreetThugFblue
+dropitem StreetThugFbluetan
+dropitem StreetThugFred
+dropitem StreetThugFredtan
+dropitem StreetThugFredgrey
+}
+
+actor ePIMPchoice : RandomSpawner
+{
+dropitem Pimp
+dropitem Pimpred
+dropitem Pimpgreen
+dropitem Pimpyellow
+dropitem Pimppink
+}
+
+actor ePUNKFchoice : RandomSpawner
+{
+dropitem PunkF
+dropitem PunkFblue
+dropitem PunkFred
+dropitem PunkFpink
+dropitem PunkFblondeW
+dropitem PunkFredW
+dropitem PunkFpinkW
+dropitem PunkFgreenW
+}
+
+actor eROBBERFchoice : RandomSpawner
+{
+dropitem robberF
+dropitem robberFred
+dropitem robberFgreen
+}
+
+//wolfenstein SS spawner
+actor eWOLFSpawner : RandomSpawner replaces WolfensteinSS
+{
+dropitem eSPECFEMchoice
+dropitem eSPECMANchoice
+dropitem eTERRORchoice
+dropitem eTERRORchoice
+}
+
+actor eSPECMANchoice : RandomSpawner
+{
+dropitem specopMgrey
+dropitem specopMbrown
+dropitem specopMsilver
+dropitem specopM
+dropitem specopMkak
+dropitem specopMbrowngrey
+dropitem specopMbrownsilver
+dropitem specopMbrownkak
+}
+
+actor eSPECFEMchoice : RandomSpawner
+{
+dropitem specopF
+dropitem specopFbrowngrey
+dropitem specopFbrownkak
+dropitem specopFgrey
+dropitem specopFbrown
+dropitem specopFkak
+}
+
+actor eTERRORchoice : RandomSpawner
+{
+dropitem terrorist
+dropitem terroristbrowngrey
+dropitem terroristbrownkak
+dropitem terroristbrownred
+dropitem terroristbrown
+dropitem terroristgreenbrown
+dropitem terroristgreensilver
+dropitem terroristgreysilver
+dropitem terroristgreyred
+dropitem terroristgreybrown
+dropitem terroristgreygreen
+}
+
+actor eSARGESpawner : RandomSpawner replaces ShotgunGuy
+{
+dropitem eYAKUZAchoice
+dropitem eYAKUZAchoice
+dropitem eYAKUZAchoice
+dropitem eMOBSchoice
+dropitem eMOBSchoice
+dropitem eSUITMANchoice
+dropitem eSUITMANchoice
+dropitem eSUITMANchoice
+dropitem eSUITGIRLchoice
+dropitem eSUITAKchoice
+dropitem eSUITAKchoice
+dropitem eMOOKSHOTchoice
+dropitem eMOOKSHOTchoice
+dropitem eMOOKSHOT2choice
+dropitem eMOOKSHOT2choice
+}
+
+actor eYAKUZAchoice : RandomSpawner
+{
+dropitem YakuzaUzi
+dropitem YakuzaUzi2
+dropitem YakuzaUziNavy
+dropitem YakuzaUziNavy2
+dropitem YardieUzi
+dropitem YardieUzi
+dropitem MobUziBlack
+dropitem MobUziBlackbrown
+dropitem MobUziBlackblonde
+dropitem MobUziBlackgrey
+dropitem MobUzitan
+dropitem MobUzitangrey
+dropitem MobUzigrey
+dropitem MobUzigreybrown
+dropitem MobUzisilverbrown
+dropitem MobUzisilverblonde
+dropitem MobUzibrown
+dropitem MobUzibrowngrey
+}
+
+actor eMOOKSHOTchoice : RandomSpawner
+{
+dropitem Mookshot
+dropitem Mookshotgrey
+dropitem Mookshotbrown
+dropitem Mookshotred
+dropitem Mookshotblue
+dropitem Mookshotblack
+}
+
+actor eMOOKSHOT2choice : RandomSpawner
+{
+dropitem Mookshot2
+dropitem Mookshot2black
+dropitem Mookshot2blackbrown
+dropitem Mookshot2blackkak
+dropitem Mookshot2red
+dropitem Mookshot2redkak
+dropitem Mookshot2navy
+dropitem Mookshot2navybrown
+}
+
+actor eSUITMANchoice : RandomSpawner
+{
+dropitem SuitM
+dropitem SuitM
+dropitem SuitMblackbrown
+dropitem SuitMblackblonde
+dropitem SuitMblackgrey
+dropitem SuitMtanblack
+dropitem SuitMtanblonde
+dropitem SuitMtangrey
+dropitem SuitMgreyblack
+dropitem SuitMgreybrown
+dropitem SuitMgreyblonde
+dropitem SuitMbrownblack
+dropitem SuitMbrownblonde
+dropitem SuitMyak
+dropitem SuitMyak2
+dropitem SuitMyak
+}
+
+actor eSUITGIRLchoice : RandomSpawner
+{
+dropitem SuitF
+dropitem SuitFblack
+dropitem SuitFtan
+dropitem SuitFyak
+}
+
+actor eMOBSchoice : RandomSpawner
+{
+dropitem MobPistol
+dropitem MobPistolA
+dropitem wiseRevolver
+dropitem MobRevolver
+dropitem MobPistol
+dropitem MobPistolA
+}
+
+actor eSUITAKchoice : RandomSpawner
+{
+dropitem suitAK
+dropitem suitAK
+dropitem suitAKyak
+dropitem suitAKyak2
+dropitem suitAKgrey
+dropitem suitAKbrown
+}
+
+actor eCHAINERSpawner : RandomSpawner replaces ChaingunGuy
+{
+dropitem eRUSSFEMchoice
+dropitem eRUSSFEMchoice
+dropitem eRUSSIANchoice
+dropitem eRUSSIANchoice
+dropitem eBANDITchoice
+dropitem eBANDITchoice
+dropitem eRUSGUNchoice
+dropitem eRUSGUNchoice
+dropitem eRUSSBIGchoice
+}
+
+actor eRUSSFEMchoice : RandomSpawner
+{
+dropitem RussianF
+dropitem RussianFbrownBlack
+dropitem RussianFbrownRed
+dropitem RussianFtanBlack
+dropitem RussianFtanblonde
+dropitem RussianFtanbrown
+dropitem RussianFkakblack
+dropitem RussianFkakbrown
+dropitem RussianFkakblonde
+}
+
+actor eRUSSIANchoice : RandomSpawner
+{
+dropitem RussianMblackgrey
+dropitem RussianM
+dropitem RussianMblacktan
+dropitem RussianMblackkak
+dropitem RussianMbrown
+dropitem RussianMbrowngrey
+dropitem RussianMbrownkak
+dropitem RussianMnavygrey
+dropitem RussianMnavytan
+dropitem RussianMjadetan
+dropitem RussianMjadekak
+}
+
+actor eRUSGUNchoice : RandomSpawner
+{
+dropitem GunmanR
+dropitem GunmanRgreyblonde
+dropitem GunmanRkakblonde
+dropitem GunmanRtanblonde
+dropitem GunmanRgreybrown
+dropitem GunmanRkakbrown
+dropitem GunmanRtanbrown
+dropitem GunmanRbrowngrey
+}
+
+actor eBANDITchoice : RandomSpawner
+{
+dropitem Banditbrown
+dropitem BanditGrey
+dropitem Bandit
+dropitem BanditBrownNavy
+dropitem BanditGreyNAvy
+}
+
+actor eRUSSBIGchoice : RandomSpawner
+{
+dropitem BigRussianBrownBrown
+dropitem BigRussianBrownGrey
+dropitem BigRussian
+dropitem BigRussiankakbrown
+dropitem BigRussiankakblonde
+dropitem BigRussiankakgrey
+dropitem BigRussiangreyblonde
+dropitem BigRussiangreybrown
+}
+
+actor eDEMONSpawner : RandomSpawner replaces Demon
+{
+dropitem eMUSCLEchoice
+dropitem eBUFFchoice
+dropitem eBUFFchoice
+dropitem eBUFFchoice
+dropitem eROIDchoice
+dropitem eTOUGHchoice
+dropitem eTOUGHchoice
+}
+
+actor eTOUGHchoice : RandomSpawner
+{
+dropitem Tough
+dropitem ToughA
+dropitem ToughGrey
+dropitem ToughGreyA
+dropitem ToughREd
+dropitem ToughREdA
+dropitem Toughkak
+dropitem ToughkakA
+dropitem ToughBrown
+dropitem ToughGreen
+dropitem ToughGreenA
+}
+
+actor eBUFFchoice : RandomSpawner
+{
+dropitem Roider2
+dropitem Roider2whiteA
+dropitem Roider2whitetan
+dropitem Roider2whitegrey
+dropitem Roider2whitegreyA
+dropitem Roider2whitegreen
+dropitem Roider2whitegreenA
+dropitem Roider2whitered
+dropitem Roider2whiteredA
+dropitem Roider2grey
+dropitem Roider2greyA
+dropitem Roider2greytan
+dropitem Roider2greygrey
+dropitem Roider2greygreyA
+dropitem Roider2greygreen
+dropitem Roider2greygreenA
+dropitem Roider2greyred
+dropitem Roider2greyred
+dropitem Roider2redgrey
+dropitem Roider2redgreyA
+dropitem Roider2bluegrey
+dropitem Roider2bluegreyA
+dropitem Roider2browngrey
+}
+
+actor eROIDchoice : RandomSpawner
+{
+dropitem Roider3
+dropitem Roider3grey
+dropitem Roider3kak
+dropitem Roider3red
+dropitem Roider3green
+dropitem Roider3black
+}
+
+actor eMUSCLEchoice : RandomSpawner
+{
+dropitem Roider1
+dropitem Roider1grey
+dropitem Roider1red
+dropitem Roider1black
+dropitem Roider1blue
+dropitem Roider1brown
+}
+
+actor eSPECTRESpawner : RandomSpawner replaces Spectre
+{
+dropitem Ninja1
+dropitem Ninja1
+dropitem Ninja2
+dropitem Ninja3
+dropitem Ninja2
+dropitem Ninja3
+dropitem Ninja4
+}
+
+actor eSOULSpawner : RandomSpawner replaces LostSoul
+{
+dropitem Gnome1
+dropitem Gnome1red
+dropitem Gnome1brown
+dropitem Gnome1navy
+dropitem Gnome1grey
+dropitem Gnome1black
+}
+
+actor eCACOSpawner : RandomSpawner replaces Cacodemon
+{
+dropitem HitmanTommy
+dropitem HitmanTommyGrey
+dropitem HitmanTommyBlack
+dropitem HitmanTommyTan
+dropitem HitmanShotgun
+dropitem HitmanShotgunGrey
+dropitem HitmanShotgunBlack
+dropitem HitmanShotgunTan
+}
+
+actor eREVENSpawner : RandomSpawner replaces Revenant
+{
+dropitem ePMCchoice
+dropitem ePMCchoice
+dropitem ePMCBIGchoice
+dropitem eMILSHOTchoice
+dropitem eMILSHOTchoice
+dropitem eMILSMGchoice
+dropitem eMILSMGchoice
+dropitem eMILFEMchoice
+dropitem eMILFEMchoice
+}
+
+actor ePMCchoice : RandomSpawner
+{
+dropitem PMCdudeA
+dropitem PMCdudeRed
+dropitem PMCdudeRedA
+dropitem PMCdude
+dropitem PMCdudeGreen
+}
+
+actor ePMCBIGchoice : RandomSpawner
+{
+dropitem PMCBig
+dropitem PMCBig2
+dropitem Sniper
+dropitem Sniper2
+}
+
+actor eMILFEMchoice : RandomSpawner
+{
+dropitem MiltiaSMGf
+dropitem MiltiaSMGftan
+dropitem MiltiaSMGfkak
+dropitem MiltiaSMGfgrey
+dropitem MiltiaSMGfnavy
+}
+
+actor eMILSHOTchoice : RandomSpawner
+{
+dropitem MiltiaShotgun
+dropitem MiltiaShotgunTan
+dropitem MiltiaShotgunBrown
+dropitem MiltiaShotgunGrey
+dropitem MiltiaShotgunRed
+}
+
+actor eMILSMGchoice : RandomSpawner
+{
+dropitem MiltiaSMGm
+dropitem MiltiaSMGmTan
+dropitem MiltiaSMGmBrown
+dropitem MiltiaSMGmGrey
+dropitem MiltiaSMGmGreyA
+}
+
+actor eATRONSpawner : RandomSpawner replaces Arachnotron
+{
+dropitem eBIKEChoice
+}
+
+actor eBIKEChoice : RandomSpawner
+{
+dropitem GangBike1
+dropitem GangBike1Red
+dropitem GangBike1Pink
+dropitem GangBike1Green
+dropitem GangBike1Yellow
+dropitem GangBike1RedBrown
+dropitem GangBike1BlueBrown
+dropitem GangBike1PinkBrown
+dropitem GangBike1YellowBrown
+dropitem GangBike1GreenBrown
+dropitem GangBike1PinkRed
+dropitem GangBike1GreenRed
+dropitem GangBike1YellowRed
+dropitem GangBike1BlueREd
+}
+
+actor eFATSOSpawner : RandomSpawner replaces Fatso
+{
+dropitem eFATSOchoice
+}
+
+actor eFATSOchoice : RandomSpawner
+{
+dropitem Rocketeer
+dropitem RocketeerBrownRed
+dropitem RocketeerBrownSilver
+dropitem RocketeerGreyRed
+dropitem RocketeerGreySilver
+dropitem RocketeerGreyBrown
+}
+
+actor eKNIGHTSpawner : RandomSpawner replaces HellKnight
+{
+dropitem Elite1
+dropitem EliteF1
+dropitem EliteShotgun
+dropitem Elite1w
+dropitem EliteF1w
+dropitem EliteShotgunW
+dropitem Elite1w2
+dropitem EliteF1w2
+}
+
+actor eBARONSpawner : RandomSpawner replaces BaronOfHell
+{
+dropitem BadassElite
+dropitem BadassElite2
+dropitem BigElite
+dropitem BadassPara
+}
+
+actor ePAINSpawner : RandomSpawner replaces PainElemental
+{
+dropitem eDOORMANchoice
+dropitem eDOORMANchoice
+dropitem eCHUBBchoice
+dropitem eCHUBBchoice
+dropitem eDOORMANchoice
+dropitem eCHUBBchoice
+dropitem ePYROchoice
+}
+
+actor ePYROchoice : RandomSpawner
+{
+dropitem Pyro
+dropitem PyroBrown
+dropitem PyroGrey
+}
+
+actor eDOORMANchoice : RandomSpawner
+{
+dropitem Enforcer
+dropitem EnforcerA
+dropitem EnforcerGrey
+dropitem EnforcerGreyA
+dropitem EnforcerBrown
+dropitem EnforcerBlue
+dropitem EnforcerBlueA
+dropitem EnforcerRed
+dropitem EnforcerREdA
+}
+
+actor eCHUBBchoice : RandomSpawner
+{
+dropitem ChunkySSG
+dropitem ChunkySSGgreen
+dropitem ChunkySSGred
+dropitem ChunkySSGblue
+}
+
+actor eVILESpawner : RandomSpawner replaces Archvile
+{
+dropitem KappaBorgM
+dropitem KappaBorgF
+}
+
+actor eCyberSpawner : RandomSpawner replaces CyberDemon
+{
+dropitem "BruteGL"
+}
+
+actor eSpiderSpawner : RandomSpawner replaces SpiderMastermind
+{
+dropitem "BruteMiniGUN"
+}

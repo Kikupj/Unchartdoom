@@ -1,0 +1,36 @@
+// ---- Ancient Bounties original (synthesised) effects
+ab/coin      abcoin
+ab/gem       abgem
+ab/relic     abrelic
+ab/great     abgreat
+ab/intel     abintel
+ab/crate     abcrate
+ab/urn       aburn
+ab/lever     ablever
+ab/plate     abplate
+ab/stone     abstone
+ab/flame     abflame
+ab/totem     abtotem
+ab/wrong     abwrong
+ab/solve     absolve
+ab/clue      abclue
+ab/dart      abdart
+ab/spike     abspike
+ab/spikewarn abspikew
+ab/alarm     abalarm
+ab/fail      abfail
+ab/extract   abextract
+ab/dodge     abdodge
+ab/medkit    abmedkit
+ab/revive    abrevive
+ab/build     abbuild
+ab/buy       abbuy
+ab/radio     abradio
+ab/fire      abfire
+ab/move      abmove
+ab/ok        abok
+ab/no        abno
+ab/travel    abtravel
+$limit ab/coin 4
+$limit ab/dart 4
+$rolloff ab/fire 200 800

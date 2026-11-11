@@ -1,0 +1,1282 @@
+
+//MELEE WEAPONS
+//Knives
+en/stab eDSKNIF
+en/slash eKSWING
+//Fists
+en/punch eFISTSWN
+en/smack eFISTHIT
+
+//Guns
+//medium pistol
+en/glock eG17fire
+//light pistol
+en/beretta eM9fire
+//Desert Eagle
+en/eagle eDEAGLE
+//silenced pistol
+en/pistSL eSILpist
+//revolver
+en/revol eREV
+//machine pistol
+en/mac10 eMACFIRE
+
+//Shotgun
+en/shotgun eSHOTFIR
+en/shotpump eSHOTPUM
+//sawn off
+en/sawnoff eSawnFir
+
+//smg
+en/smg eSMGfire
+//silenced smg
+en/silsmg eSILsmg
+
+//rifle
+en/rifle eM1FIRE
+//sniper rifle
+en/sniper eSKSFIR
+
+//ak47
+en/ak47 eAK74F
+//m4a1
+en/m4car eM4fire
+//fnfal
+en/fnfal eFALfire
+//rpd mg
+en/rpd eRPDfire
+//m60 mg
+en/m60 eM60fire
+//30 mg
+en/hmg e30CALF
+en/mgCOCK e30COCK
+
+//m79
+en/glaunch eM79fire
+
+//Explosions/Flamer from WW_Nazis
+weapons/nebelwerfer dsnebsht
+weapons/nebxpl		dsnebxpl
+$random weapons/rocklx {grnx1 grnx2 grnx3 grnx4}
+grnx1 dsbarex1
+grnx2 dsbarex2
+grnx3 dsbarex3
+grnx4 dsbarex4
+weapons/flamer dsfthrow
+weapons/napalm THERMFIR
+//Chaingun from WW_Nazis
+weapons/chaingun dscgun
+weapons/chaingunstart chaingo
+weapons/chaingunloop chainlp
+weapons/chaingunstop chainstp
+
+// Machines
+metal/pain		dsping
+$random death/burning { burndth1 }
+burndth1 burndth1
+world/barrelx			dsbarexp
+
+//Handcuffs (from True Crimes Newyork
+cuffs/on HCUFF
+
+//gore deaths
+$random death/pop { POP1 POP2 POP3 POP4 POP5 }
+POP1 POP1
+POP2 POP2
+POP3 POP3
+POP4 POP4
+POP5 POP5
+head/shot Hpop1
+
+//NECK MALE
+$random man/neckcut { mneck1 mneck2 }
+mneck1 mneck1
+mneck2 mneck2
+//NECK FEMALE
+$random girl/neckcut { Fneck1 Fneck2 }
+Fneck1 Fneck1
+Fneck2 Fneck2
+
+//burn deaths
+$random death/burning { burndth1 burndth2 burndth3 burndth4 burndth5 burndth6 burndth7 burndth8 burndth9 burndtha burndthb burndthc }
+burndth1 burndth1
+burndth2 burndth2
+burndth3 burndth3
+burndth4 burndth4
+burndth5 burndth5
+burndth6 burndth6
+burndth7 burndth7
+burndth8 burndth8
+burndth9 burndth9
+burndtha burndtha
+burndthb burndthb
+burndthc burndthc
+
+$random girl/burn { Fburn1 Fburn2 Fburn3 }
+Fburn1 Fburn1
+Fburn2 Fburn2
+Fburn3 Fburn3
+
+// Bullet Whizzes and Suchwise (from WW_Nazis)
+$random ricochet { rico1 rico2 rico3 rico4 rico5 rico6 rico7 rico8 rico9 }
+$random whiz { whiz1 whiz2 whiz3 }
+$random hitflesh { hitflesh1 hitflesh2 hitflesh3 hitflesh4 hitflesh5 hitflesh6 hitflesh7 hitflesh8 hitflesh9 }
+rico1 trceric1
+rico2 trceric2
+rico3 trceric3
+rico4 trceric4
+rico5 trceric5
+rico6 trceric6
+rico7 trceric7
+rico8 trceric8
+rico9 trceric9
+whiz1 trcefly1
+whiz2 trcefly2
+whiz3 trcefly3
+hitflesh1 trcehit1
+hitflesh2 trcehit2
+hitflesh3 trcehit3
+hitflesh4 trcehit4
+hitflesh5 trcehit5
+hitflesh6 trcehit6
+hitflesh7 trcehit7
+hitflesh8 trcehit8
+hitflesh9 trcehit9
+
+//ENEMIES AND GUYS
+
+//shared sounds (all from Just cause 1)
+$random milGirl/pain {SFD1p1 SFD1p2 SFD1p3 SFD1p4 SFD1p5 SFD1p6 }
+SFD1p1 SFD1p1
+SFD1p2 SFD1p2
+SFD1p3 SFD1p3
+SFD1p4 SFD1p4
+SFD1p5 SFD1p5
+SFD1p6 SFD1p6
+$random milGuy/pain {SLD1p1 SLD1p2 SLD1p3 SLD1p4 SLD1p5 SLD1p6 SLD1p7 SLD1p8 SLD1p9 SLD1p10 }
+SLD1p1 SLD1p1
+SLD1p2 SLD1p2
+SLD1p3 SLD1p3
+SLD1p4 SLD1p4
+SLD1p5 SLD1p5
+SLD1p6 SLD1p6
+SLD1p7 SLD1p7
+SLD1p8 SLD1p8
+SLD1p9 SLD1p9
+SLD1p10 SLD1p10
+
+// muscle (milita bruiser) (from just cause 1)
+$random musleMIL/see {SLM1s1 SLM1s2 SLM1s3 SLM1s4 SLM1s5 SLM1s6 SLM1s7 SLM1s8 SLM1s9 SLM1s10 SLM1s11 }
+SLM1s1 SLM1s1
+SLM1s2 SLM1s2
+SLM1s3 SLM1s3
+SLM1s4 SLM1s4
+SLM1s5 SLM1s5
+SLM1s6 SLM1s6
+SLM1s7 SLM1s7
+SLM1s8 SLM1s8
+SLM1s9 SLM1s9
+SLM1s10 SLM1s10
+SLM1s11 SLM1s11
+
+// Big soldier (from from just cause 1)
+$random bigSOL/see { ELT1s1 ELT1s2 ELT1s3 ELT1s4 ELT1s5 ELT1s6 ELT1s7 ELT1s8 }
+ELT1s1 ELT1s1
+ELT1s2 ELT1s2
+ELT1s3 ELT1s3
+ELT1s4 ELT1s4
+ELT1s5 ELT1s5
+ELT1s6 ELT1s6
+ELT1s7 ELT1s7
+ELT1s8 ELT1s8
+
+// miltia Full Mexican (from 25 to life)
+$random milMex/see {MexS1 MexS2 MexS3 MexS4 MexS5 MexS6 MexS7 MexS8 MexS9 MexS10 MexS11 MexS12 MexS13 MexS14 MexS15 MexS16 MexS17 MexS18 MexS19 MexS20 MexS21 MexS22 }
+MexS1 MexS1
+MexS2 MexS2
+MexS3 MexS3
+MexS4 MexS4
+MexS5 MexS5
+MexS6 MexS6
+MexS7 MexS7
+MexS8 MexS8
+MexS9 MexS9
+MexS10 MexS10
+MexS11 MexS11
+MexS12 MexS12
+MexS13 MexS13
+MexS14 MexS14
+MexS15 MexS15
+MexS16 MexS16
+MexS17 MexS17
+MexS18 MexS18
+MexS19 MexS19
+MexS20 MexS20
+MexS21 MexS21
+MexS22 MexS22
+$random milMex/pain {MexH1 MexH2 MexH3 MexH4 MexH5 MexH6 MexH7 }
+MexH1 MexH1
+MexH2 MexH2
+MexH3 MexH3
+MexH4 MexH4
+MexH5 MexH5
+MexH6 MexH6
+MexH7 MexH7
+$random milMex/die {MexD1 MexD2 MexD3 MexD4 MexD5 MexD6 MexD7 MexD8 }
+MexD1 MexD1
+MexD2 MexD2
+MexD3 MexD3
+MexD4 MexD4
+MexD5 MexD5
+MexD6 MexD6
+MexD7 MexD7
+MexD8 MexD8
+
+// Miltia chica Girl (from 25 to life/ and Postal 2)
+$random milChic/see {Chicas1 Chicas2 Chicas3 Chicas4 Chicas5 Chicas6 Chicas7 Chicas8 Chicas9 Chicas10 Chicas11 Chicas12 Chicas13 Chicas14 }
+Chicas1 Chicas1
+Chicas2 Chicas2
+Chicas3 Chicas3
+Chicas4 Chicas4
+Chicas5 Chicas5
+Chicas6 Chicas6
+Chicas7 Chicas7
+Chicas8 Chicas8
+Chicas9 Chicas9
+Chicas10 Chicas10
+Chicas11 Chicas11
+Chicas12 Chicas12
+Chicas13 Chicas13
+Chicas14 Chicas14
+$random milChic/pan {Chicap1 Chicap2 Chicap3 Chicap4 Chicap2 Chicap4 }
+Chicap1 Chicap1
+Chicap2 Chicap2
+Chicap3 Chicap3
+Chicap4 Chicap4
+$random milChic/sur {Chicar1 Chicar2 Chicar3 Chicar4 Chicar5 Chicar6 Chicar7 Chicar8 Chicar9 Chicar10 }
+Chicar1 Chicar1
+Chicar2 Chicar2
+Chicar3 Chicar3
+Chicar4 Chicar4
+Chicar5 Chicar5
+Chicar6 Chicar6
+Chicar7 Chicar7
+Chicar8 Chicar8
+Chicar9 Chicar9
+Chicar10 Chicar10
+
+// Prisoner Voice (GANG members)
+$random prison/See { PRsee1 PRsee2 PRsee3 PRsee4 PRsee5 PRsee6 PRsee7 PRsee8 PRsee9 PRsee10 PRsee11 PRsee12 PRsee13 }
+PRsee1 PRsee1
+PRsee2 PRsee2
+PRsee3 PRsee3
+PRsee4 PRsee4
+PRsee5 PRsee5
+PRsee6 PRsee6
+PRsee7 PRsee7
+PRsee8 PRsee8
+PRsee9 PRsee9
+PRsee10 PRsee10
+PRsee11 PRsee11
+PRsee12 PRsee12
+PRsee13 PRsee13
+$random prison/Pain { PRpain1 PRpain2 PRpain3 PRpain4 PRpain5 PRpain6 PRpain7 }
+PRpain1 PRpain1
+PRpain2 PRpain2
+PRpain3 PRpain3
+PRpain4 PRpain4
+PRpain5 PRpain5
+PRpain6 PRpain6
+PRpain7 PRpain7
+$random prison/Death { PRdie2 PRdie2 PRdie3 PRdie4 }
+PRdie1 PRdie1
+PRdie2 PRdie2
+PRdie3 PRdie3
+PRdie4 PRdie4
+
+// Druggie Voice (Street thugs)
+$random drugy/See { DRsee1 DRsee2 DRsee3 DRsee4 DRsee5 DRsee6 DRsee7 DRsee8 DRsee9 DRsee10 DRsee11 DRsee12 DRsee13 }
+DRsee1 DRsee1
+DRsee2 DRsee2
+DRsee3 DRsee3
+DRsee4 DRsee4
+DRsee5 DRsee5
+DRsee6 DRsee6
+DRsee7 DRsee7
+DRsee8 DRsee8
+DRsee9 DRsee9
+DRsee10 DRsee10
+DRsee11 DRsee11
+DRsee12 DRsee12
+DRsee13 DRsee13
+$random drugy/Pain { DRpain1 DRpain2 DRpain3 DRpain4 DRpain5 DRpain6 DRpain7 }
+DRpain1 DRpain1
+DRpain2 DRpain2
+DRpain3 DRpain3
+DRpain4 DRpain4
+DRpain5 DRpain5
+DRpain6 DRpain6
+DRpain7 DRpain7
+$random drugy/Death { DRdie2 DRdie2 DRdie3 DRdie4 DRdie5 }
+DRdie1 DRdie1
+DRdie2 DRdie2
+DRdie3 DRdie3
+DRdie4 DRdie4
+DRdie5 DRdie5
+
+// Grove Voice (alternative Gang voice)
+$random grove/See { groves1 groves2 groves3 groves4 groves5 groves6 groves7 groves8 groves9 groves10 }
+groves1 groves1
+groves2 groves2
+groves3 groves3
+groves4 groves4
+groves5 groves5
+groves6 groves6
+groves7 groves7
+groves8 groves8
+groves9 groves9
+groves10 groves10
+
+// Bruiser Voice (Bikers)
+$random bruiser/see {Tsee1 Tsee2 Tsee3 Tsee4 Tsee5 Tsee6 Tsee7 Tsee8 Tsee9 }
+Tsee1 Tsee1
+Tsee2 Tsee2
+Tsee3 Tsee3
+Tsee4 Tsee4
+Tsee5 Tsee5
+Tsee6 Tsee6
+Tsee7 Tsee7
+Tsee8 Tsee8
+Tsee9 Tsee9
+$random bruiser/pain { Tpain1 Tpain2 Tpain3 Tpain4 Tpain5 Tpain6 Tpain7 Tpain8 Tpain9 }
+Tpain1 Tpain1
+Tpain2 Tpain2
+Tpain3 Tpain3
+Tpain4 Tpain4
+Tpain5 Tpain5
+Tpain6 Tpain6
+Tpain7 Tpain7
+Tpain8 Tpain8
+Tpain9 Tpain9
+
+// Diablo Vargos
+$random InnDib/see {LexS1 LexS2 LexS3 LexS4 LexS5 LexS6 LexS7 LexS8 LexS9 LexS10 LexS11 LexS12 LexS13 LexS14 LexS15 LexS16 }
+LexS1 LexS1
+LexS2 LexS2
+LexS3 LexS3
+LexS4 LexS4
+LexS5 LexS5
+LexS6 LexS6
+LexS7 LexS7
+LexS8 LexS8
+LexS9 LexS9
+LexS10 LexS10
+LexS11 LexS11
+LexS12 LexS12
+LexS13 LexS13
+LexS14 LexS14
+LexS15 LexS15
+LexS16 LexS16
+
+// Creepy Latino guy (Gansta's vegas, mexiican thugs)
+$random bast/See { BSTsee1 BSTsee2 BSTsee3 BSTsee4 BSTsee5 BSTsee6 BSTsee7 BSTsee8 }
+BSTsee1 BSTsee1
+BSTsee2 BSTsee2
+BSTsee3 BSTsee3
+BSTsee4 BSTsee4
+BSTsee5 BSTsee5
+BSTsee7 BSTsee7
+BSTsee8 BSTsee8
+$random bast/pain { BSTpain1 BSTpain2 BSTpain3 BSTpain4 }
+BSTpain1 BSTpain1
+BSTpain2 BSTpain2
+BSTpain3 BSTpain3
+BSTpain4 BSTpain4
+
+
+// Perv Straps
+$random perv1/se { Gims1 Gims2 Gims3 Gims4 Gims5 Gims6 Gims7 }
+Gims1 Gims1
+Gims2 Gims2
+Gims3 Gims3
+Gims4 Gims4
+Gims5 Gims5
+Gims6 Gims6
+Gims7 Gims7
+$random perv2/se { Gims8 Gims9 Gims10 Gims11 Gims12 Gims13 Gims14 Gims15 }
+Gims8 Gims8
+Gims9 Gims9
+Gims10 Gims10
+Gims11 Gims11
+Gims12 Gims12
+Gims13 Gims13
+Gims14 Gims14
+Gims15 Gims15
+$random perv1/pa { Gimp1 Gimp2 Gimp3 Gimp4 }
+Gimp1 Gimp1
+Gimp2 Gimp2
+Gimp3 Gimp3
+Gimp4 Gimp4
+
+// Perv Canibal
+$random canib/se { Cans1 Cans2 Cans3 Cans4 Cans5 Cans6 Cans7 Cans8 Cans9 Cans10 Cans11 Cans12 Cans13 Cans14 Cans15 Cans16 }
+Cans1 Cans1
+Cans2 Cans2
+Cans3 Cans3
+Cans4 Cans4
+Cans5 Cans5
+Cans6 Cans6
+Cans7 Cans7
+Cans8 Cans8
+Cans9 Cans9
+Cans10 Cans10
+Cans11 Cans11
+Cans12 Cans12
+Cans13 Cans13
+Cans14 Cans14
+Cans15 Cans15
+Cans16 Cans16
+$random canib/pa { Canp1 Canp2 Canp3 Canp4 Canp5 }
+Canp1 Canp1
+Canp2 Canp2
+Canp3 Canp3
+Canp4 Canp4
+Canp5 Canp5
+
+// Perv Fist
+$random bfist/se { bfist1 bfist2 bfist3 bfist4 bfist5 bfist6 bfist7 }
+bfist1 bfist1
+bfist2 bfist2
+bfist3 bfist3
+bfist4 bfist4
+bfist5 bfist5
+bfist6 bfist6
+bfist7 bfist7
+
+// Jamacian Rasta
+$random rasta/see { RastaS1 RastaS2 RastaS3 RastaS4 RastaS5 RastaS6 RastaS7 RastaS8 RastaS9 RastaS10 Rast2S1 Rast2S2 Rast2S3 Rast2S4 Rast2S5 }
+RastaS1 RastaS1
+RastaS2 RastaS2
+RastaS3 RastaS3
+RastaS4 RastaS4
+RastaS5 RastaS5
+RastaS6 RastaS6
+RastaS7 RastaS7
+RastaS8 RastaS8
+RastaS9 RastaS9
+RastaS10 RastaS10
+Rast2S1 Rast2S1
+Rast2S2 Rast2S2
+Rast2S3 Rast2S3
+Rast2S4 Rast2S4
+Rast2S5 Rast2S5
+$random rasta/pain { RastaP1 RastaP2 RastaP3 }
+RastaP1 RastaP1
+RastaP2 RastaP2
+RastaP3 RastaP3
+
+// Jamacian Girl
+$random rastf/see { RasfS1 RasfS2 RasfS3 RasfS4 RasfS5 RasfS6 RasfS7 RasfS8 RasfS9 }
+RasfS1 RasfS1
+RasfS2 RasfS2
+RasfS3 RasfS3
+RasfS4 RasfS4
+RasfS5 RasfS5
+RasfS6 RasfS6
+RasfS7 RasfS7
+RasfS8 RasfS8
+RasfS9 RasfS9
+$random rastf/pan { RasfP1 RasfP2 RasfP3 RasfP4 }
+RasfP1 RasfP1
+RasfP2 RasfP2
+RasfP3 RasfP3
+RasfP4 RasfP4
+
+// Mobster Voice (mobsters)
+$random mobs/See { Msee1 Msee2 Msee3 Msee4 Msee5 Msee6 Msee7 Msee8 Msee9 Msee10 Msee11 Msee12 Msee13 Msee14 Msee15
+Msee16 Msee17 Msee18 Msee19 Msee20 }
+Msee1 Msee1
+Msee2 Msee2
+Msee3 Msee3
+Msee4 Msee4
+Msee5 Msee5
+Msee6 Msee6
+Msee7 Msee7
+Msee8 Msee8
+Msee9 Msee9
+Msee10 Msee10
+Msee11 Msee11
+Msee12 Msee12
+Msee13 Msee13
+Msee14 Msee14
+Msee15 Msee15
+Msee16 Msee16
+Msee17 Msee17
+Msee18 Msee18
+Msee19 Msee19
+Msee20 Msee20
+$random mobs/pain { Mpain1 Mpain2 Mpain3 Mpain4 Mpain5 Mpain6 Mpain7 }
+Mpain1 Mpain1
+Mpain2 Mpain2
+Mpain3 Mpain3
+Mpain4 Mpain4
+Mpain5 Mpain5
+Mpain6 Mpain6
+Mpain7 Mpain7
+$random mobs/die { Mdie1 Mdie2 Mdie3 Mdie4 Mdie5 Mdie6 }
+Mdie1 Mdie1
+Mdie2 Mdie2
+Mdie3 Mdie3
+Mdie4 Mdie4
+Mdie5 Mdie5
+Mdie6 Mdie6
+
+// Wardogs
+$random Wdog/see { wardS1 wardS2 wardS3 wardS4 wardS5 wardS6 wardS7 wardS8 wardS9 wardS10 wardS11 wardS12 }
+wardS1 wardS1
+wardS2 wardS2
+wardS3 wardS3
+wardS4 wardS4
+wardS5 wardS5
+wardS6 wardS6
+wardS7 wardS7
+wardS8 wardS8
+wardS9 wardS9
+wardS10 wardS10
+wardS11 wardS11
+wardS12 wardS12
+$random wdog/pain { Tpain1 Tpain2 Tpain3 Tpain4 Tpain5 Tpain6 Tpain7 Tpain8 Tpain9 }
+Tpain1 Tpain1
+Tpain2 Tpain2
+Tpain3 Tpain3
+Tpain4 Tpain4
+Tpain5 Tpain5
+Tpain6 Tpain6
+Tpain7 Tpain7
+Tpain8 Tpain8
+Tpain9 Tpain9
+
+// Hood Fooder
+$random Hood1/see {HoodS1 HoodS2 HoodS3 HoodS4 HoodS5 HoodS6 HoodS7 HoodS8 HoodS9 HoodS10 HoodS11 HoodS12 HoodS13 HoodS14 HoodS15 HoodS16 }
+HoodS1 HoodS1
+HoodS2 HoodS2
+HoodS3 HoodS3
+HoodS4 HoodS4
+HoodS5 HoodS5
+HoodS6 HoodS6
+HoodS7 HoodS7
+HoodS8 HoodS8
+HoodS9 HoodS9
+HoodS10 HoodS10
+HoodS11 HoodS11
+HoodS12 HoodS12
+HoodS13 HoodS13
+HoodS14 HoodS14
+HoodS15 HoodS15
+HoodS16 HoodS16
+$random Hood1/die {HoodD1 HoodD2 HoodD3 HoodD4 HoodD5 }
+HoodD1 HoodD1
+HoodD2 HoodD2
+HoodD3 HoodD3
+HoodD4 HoodD4
+HoodD5 HoodD5
+$random Hood1/pain {HoodP1 HoodP2 HoodP3 HoodP4 HoodP5 HoodP6 HoodP7 HoodP8 HoodP9 }
+HoodP1 HoodP1
+HoodP2 HoodP2
+HoodP3 HoodP3
+HoodP4 HoodP4
+HoodP5 HoodP5
+HoodP6 HoodP6
+HoodP7 HoodP7
+HoodP8 HoodP8
+HoodP9 HoodP9
+
+// Hood Goon
+$random Hood2/see {Hod2S1 Hod2S2 Hod2S3 Hod2S4 Hod2S5 Hod2S6 Hod2S7 Hod2S8 Hod2S9 Hod2S10 Hod2S11 Hod2S12 Hod2S13 Hod2S14 Hod2S15 Hod2S16 Hod2S17 }
+Hod2S1 Hod2S1
+Hod2S2 Hod2S2
+Hod2S3 Hod2S3
+Hod2S4 Hod2S4
+Hod2S5 Hod2S5
+Hod2S6 Hod2S6
+Hod2S7 Hod2S7
+Hod2S8 Hod2S8
+Hod2S9 Hod2S9
+Hod2S10 Hod2S10
+Hod2S11 Hod2S11
+Hod2S12 Hod2S12
+Hod2S13 Hod2S13
+Hod2S14 Hod2S14
+Hod2S15 Hod2S15
+Hod2S16 Hod2S16
+Hod2S17 Hod2S17
+
+// Skin Regular
+$random skin1/see { ski1s1 ski1s2 ski1s3 ski1s4 ski1s5 ski1s6 ski1s7 ski1s8 ski1s9 ski1s10 ski1s11 ski1s12 ski1s13 ski1s14 ski1s15 ski1s16 }
+ski1s1 ski1s1
+ski1s2 ski1s2
+ski1s3 ski1s3
+ski1s4 ski1s4
+ski1s5 ski1s5
+ski1s6 ski1s6
+ski1s7 ski1s7
+ski1s8 ski1s8
+ski1s9 ski1s9
+ski1s10 ski1s10
+ski1s11 ski1s11
+ski1s12 ski1s12
+ski1s13 ski1s13
+ski1s14 ski1s14
+ski1s15 ski1s15
+ski1s16 ski1s16
+
+// Skin tough
+$random skin2/see { sk2s1 sk2s2 sk2s3 sk2s4 sk2s5 sk2s6 sk2s7 sk2s8 sk2s9 sk2s10 sk2s11 sk2s12 sk2s13 }
+sk2s1 sk2s1
+sk2s2 sk2s2
+sk2s3 sk2s3
+sk2s4 sk2s4
+sk2s5 sk2s5
+sk2s6 sk2s6
+sk2s7 sk2s7
+sk2s8 sk2s8
+sk2s9 sk2s9
+sk2s10 sk2s10
+sk2s11 sk2s11
+sk2s12 sk2s12
+sk2s13 sk2s13
+
+// Skin redneck
+$random skin3/see { sk3s1 sk3s2 sk3s3 sk3s4 sk3s5 sk3s6 sk3s7 sk3s8 sk3s9 sk3s10 sk3s11 sk3s12 sk3s13 sk3s14 sk3s15 sk3s16 sk3s17 sk3s18 sk3s19 sk3s20}
+sk3s1 sk3s1
+sk3s2 sk3s2
+sk3s3 sk3s3
+sk3s4 sk3s4
+sk3s5 sk3s5
+sk3s6 sk3s6
+sk3s7 sk3s7
+sk3s8 sk3s8
+sk3s9 sk3s9
+sk3s10 sk3s10
+sk3s11 sk3s11
+sk3s12 sk3s12
+sk3s13 sk3s13
+sk3s14 sk3s14
+sk3s15 sk3s15
+sk3s16 sk3s16
+sk3s17 sk3s17
+sk3s18 sk3s18
+sk3s19 sk3s19
+sk3s20 sk3s20
+
+// Rus male english
+$random russ1/See { Rus1s1 Rus1s2 Rus1s3 Rus1s4 Rus1s5 Rus1s6 Rus1s7 Rus1s8 Rus1s9 Rus1s10 Rus1s11 Rus1s12 Rus1s13 }
+Rus1s1 Rus1s1
+Rus1s2 Rus1s2
+Rus1s3 Rus1s3
+Rus1s4 Rus1s4
+Rus1s5 Rus1s5
+Rus1s6 Rus1s6
+Rus1s7 Rus1s7
+Rus1s8 Rus1s8
+Rus1s9 Rus1s9
+Rus1s10 Rus1s10
+Rus1s11 Rus1s11
+Rus1s12 Rus1s12
+Rus1s13 Rus1s13
+$random russ1/pain { Rus1p1 Rus1p2 Rus1p3 Rus1p4 Rus1p5 Rus1p6 }
+Rus1p1 Rus1p1
+Rus1p2 Rus1p2
+Rus1p3 Rus1p3
+Rus1p4 Rus1p4
+Rus1p5 Rus1p5
+Rus1p6 Rus1p6
+$random russ1/die { Rus1p1 Rus1p2 Rus1p3 Rus1p4 Rus1p5 }
+Rus1d1 Rus1d1
+Rus1d2 Rus1d2
+Rus1d3 Rus1d3
+Rus1d4 Rus1d4
+Rus1d5 Rus1d5
+
+//Russian 2 full russian
+$random russ2/See { Rus2s1 Rus2s2 Rus2s3 Rus2s4 Rus2s5 Rus2s6 Rus2s7 Rus2s8 Rus2s9 Rus2s10 Rus2s11 Rus2s12 Rus2s13 Rus2s14 Rus2s15 Rus2s16 Rus2s17 Rus2s18 Rus2s19 }
+Rus2s1 Rus2s1
+Rus2s2 Rus2s2
+Rus2s3 Rus2s3
+Rus2s4 Rus2s4
+Rus2s5 Rus2s5
+Rus2s6 Rus2s6
+Rus2s7 Rus2s7
+Rus2s8 Rus2s8
+Rus2s9 Rus2s9
+Rus2s10 Rus2s10
+Rus2s11 Rus2s11
+Rus2s12 Rus2s12
+Rus2s13 Rus2s13
+Rus2s14 Rus2s14
+Rus2s15 Rus2s15
+Rus2s16 Rus2s16
+Rus2s17 Rus2s17
+Rus2s18 Rus2s18
+Rus2s19 Rus2s19
+$random russ2/pain { Rus2p1 Rus2p2 Rus2p3 Rus2p4 }
+Rus2p1 Rus2p1
+Rus2p2 Rus2p2
+Rus2p3 Rus2p3
+Rus2p4 Rus2p4
+
+// Russ Girl Voice (mercs)
+$random sab/See { SABsee1 SABsee2 SABsee3 SABsee4 SABsee5 SABsee6 SABsee7 }
+SABsee1 SABsee1
+SABsee2 SABsee2
+SABsee3 SABsee3
+SABsee4 SABsee4
+SABsee5 SABsee5
+SABsee6 SABsee6
+SABsee7 SABsee7
+$random sab/die { SABdie1 SABdie2 }
+SABdie1 SABdie1
+SABdie2 SABdie2
+$random sab/pain { SABpain1 SABpain2 SABpain3 SABpain4 SABpain5 SABpain6 }
+SABpain1 SABpain1
+SABpain2 SABpain2
+SABpain3 SABpain3
+SABpain4 SABpain4
+SABpain5 SABpain5
+SABpain6 SABpain6
+
+// Urban Gnomes
+$random Gnome/see { gnomeS1 gnomeS2 gnomeS3 }
+gnomeS1 gnomeS1
+gnomeS2 gnomeS2
+gnomeS3 gnomeS3
+$random Gnome/die { gnomeD1 gnomeD2 gnomeD3 }
+gnomeD1 gnomeD1
+gnomeD2 gnomeD2
+gnomeD3 gnomeD3
+gnomeP gnomeP
+
+//PMC bud female
+$random buddyF/see {bufs1 bufs2 bufs3 bufs4 bufs5 bufs6 bufs7 bufs8 bufs9 bufs10 bufs11 bufs12 }
+bufs1 bufs1
+bufs2 bufs2
+bufs3 bufs3
+bufs4 bufs4
+bufs5 bufs5
+bufs6 bufs6
+bufs7 bufs7
+bufs8 bufs8
+bufs9 bufs9
+bufs10 bufs10
+bufs11 bufs11
+bufs12 bufs12
+$random buddyF/die {bufd1 bufd2 bufd3 bufd4 bufd5 bufd6 }
+bufd1 bufd1
+bufd2 bufd2
+bufd3 bufd3
+bufd4 bufd4
+bufd5 bufd5
+bufd6 bufd6
+$random buddyF/hit {bufh1 bufh2 bufh3 bufh4 bufh5 bufh4 bufh5 bufh6 bufh7 }
+bufh1 bufh1
+bufh2 bufh2
+bufh3 bufh3
+bufh4 bufh4
+bufh5 bufh5
+bufh6 bufh6
+bufh7 bufh7
+
+//PMC bud male
+$random buddyM/see {buds1 buds2 buds3 buds4 buds5 buds6 buds7 buds8 buds9 buds10 buds11 buds12 buds13 buds14 }
+buds1 buds1
+buds2 buds2
+buds3 buds3
+buds4 buds4
+buds5 buds5
+buds6 buds6
+buds7 buds7
+buds8 buds8
+buds9 buds9
+buds10 buds10
+buds11 buds11
+buds12 buds12
+buds13 buds13
+buds14 buds14
+$random buddyM/hit {budh1 budh2 budh3 budh4 budh2 budh3 budh4 budh5 budh6 budh7 }
+budh1 budh1
+budh2 budh2
+budh3 budh3
+budh4 budh4
+budh5 budh5
+budh6 budh6
+$random buddyM/die {budd1 budd2 budd2 budh3 budh3 budh5 budh5 }
+budd1 budd1
+budd2 budd2
+
+//PMC soldier male
+$random soldiM/see {MILms1 MILms2 MILms3 MILms4 MILms5 MILms6 MILms7 }
+MILms1 MILms1
+MILms2 MILms2
+MILms3 MILms3
+MILms4 MILms4
+MILms5 MILms5
+MILms6 MILms6
+MILms7 MILms7
+$random soldiM/hurt {MILmh1 MILmh2 MILmh3 MILmh4 }
+MILmh1 MILmh1
+MILmh2 MILmh2
+MILmh3 MILmh3
+MILmh4 MILmh4
+$random soldiM/die {MILmd1 MILmd2 MILmd3 MILmd4 MILmd5 MILmd6 }
+MILmd1 MILmd1
+MILmd2 MILmd2
+MILmd3 MILmd3
+MILmd4 MILmd4
+MILmd5 MILmd5
+MILmd6 MILmd6
+
+//PMC soldier female
+$random soldiF/see {MILfs1 MILfs2 MILfs3 MILfs4 MIlfms5 MILfs6 MILfs7 MILfs8 MILfs9 MILfs10 MILfs11 MIlfms12 MILfs13 MILfs14 }
+MILfs1 MILfs1
+MILfs2 MILfs2
+MILfs3 MILfs3
+MILfs4 MILfs4
+MILfs5 MILfs5
+MILfs6 MILfs6
+MILfs7 MILfs7
+MILfs8 MILfs8
+MILfs9 MILfs9
+MILfs10 MILfs10
+MILfs11 MILfs11
+MILfs12 MILfs12
+MILfs13 MILfs13
+MILfs14 MILfs14
+$random soldiF/hurt {MILfh1 MILfh2 MILfh3 MILfh4 MILfh5 MILfh6 }
+MILfh1 MILfh1
+MILfh2 MILfh2
+MILfh3 MILfh3
+MILfh4 MILfh4
+MILfh5 MILfh5
+MILfh6 MILfh6
+$random soldiF/die {MILfd1 MILfd2 MILfd3 MILfd4 MILfd5 }
+MILfd1 MILfd1
+MILfd2 MILfd2
+MILfd3 MILfd3
+MILfd4 MILfd4
+MILfd5 MILfd5
+
+//Soutern Gal
+$random daisy/see {Dass1 Dass2 Dass3 Dass4 Dass5 Dass6 Dass7 Dass8 Dass9 }
+Dass1 Dass1
+Dass2 Dass2
+Dass3 Dass3
+Dass4 Dass4
+Dass5 Dass5
+Dass6 Dass6
+Dass7 Dass7
+Dass8 Dass8
+Dass9 Dass9
+$random daisy/hit {Dasp1 Dasp2 Dasp3 Dasp4 }
+Dasp1 Dasp1
+Dasp2 Dasp2
+Dasp3 Dasp3
+Dasp4 Dasp4
+
+//Southern Guy
+$random danny/see {Dans1 Dans2 Dans3 Dans4 Dans5 Dans6 Dans7 Dans8 Dans9 Dans10 }
+Dans1 Dans1
+Dans2 Dans2
+Dans3 Dans3
+Dans4 Dans4
+Dans5 Dans5
+Dans6 Dans6
+Dans7 Dans7
+Dans8 Dans8
+Dans9 Dans9
+Dans10 Dans10
+$random danny/hit {Danp1 Danp2 Danp3 Danp4 Danp5 }
+Danp1 Danp1
+Danp2 Danp2
+Danp3 Danp3
+Danp4 Danp4
+Danp5 Danp5
+
+// Thug Girl Voice (gangers and racers)
+$random fthug/die { FTdie1 FTdie2 FTdie3 }
+FTdie1 FTdie1
+FTdie2 FTdie2
+FTdie3 FTdie3
+$random fthug/See { FTsee1 FTsee2 FTsee3 FTsee4 FTsee5 }
+FTsee1 FTsee1
+FTsee2 FTsee2
+FTsee3 FTsee3
+FTsee4 FTsee4
+FTsee5 FTsee5
+$random fthug/pain { FTpain1 FTpain2 FTpain3 FTpain4}
+FTpain1 FTpain1
+FTpain2 FTpain2
+FTpain3 FTpain3
+FTpain4 FTpain4
+
+// Asia Girl Voice (Hookers voice)
+$random asia/see { asiasee1 asiasee2 asiasee3 asiasee4 }
+asiasee1 ASsee1
+asiasee2 ASsee2
+asiasee3 ASsee3
+asiasee4 ASsee4
+$random asia/suren { asurr1 asurr2 asurr3 asurr4 }
+asurr1 ASsurr1
+asurr2 ASsurr2
+asurr3 ASsurr3
+asurr4 ASsurr4
+
+// Yakuza Voice (Yakuza)
+$random Yaka/See { Ysee1 Ysee2 Ysee3 Ysee4 Ysee5 Ysee6 Ysee7 Ysee8 Ysee9 Ysee10 Ysee11 Ysee12 Ysee13 Ysee14 Ysee15
+Ysee16 Ysee17 Ysee18 Ysee19 Ysee20 }
+Ysee1 Ysee1
+Ysee2 Ysee2
+Ysee3 Ysee3
+Ysee4 Ysee4
+Ysee5 Ysee5
+Ysee6 Ysee6
+Ysee7 Ysee7
+Ysee8 Ysee8
+Ysee9 Ysee9
+Ysee10 Ysee10
+Ysee11 Ysee11
+Ysee12 Ysee12
+Ysee13 Ysee13
+Ysee14 Ysee14
+Ysee15 Ysee15
+Ysee16 Ysee16
+Ysee17 Ysee17
+Ysee18 Ysee18
+Ysee19 Ysee19
+Ysee20 Ysee20
+$random Yaka/pain { Ypain1 Ypain2 Ypain3 Ypain4 Ypain5 Ypain6 Ypain7 Ypain8 Ypain9 Ypain10 }
+Ypain1 Ypain1
+Ypain2 Ypain2
+Ypain3 Ypain3
+Ypain4 Ypain4
+Ypain5 Ypain5
+Ypain6 Ypain6
+Ypain7 Ypain7
+Ypain8 Ypain8
+Ypain9 Ypain9
+Ypain10 Ypain10
+$random Yaka/die { Ydie1 Ydie2 Ydie3 Ydie4 Ydie5 Ydie6 }
+Ydie1 Ydie1
+Ydie2 Ydie2
+Ydie3 Ydie3
+Ydie4 Ydie4
+Ydie5 Ydie5
+Ydie6 Ydie6
+
+// Elite Japanese Girl Voice
+$random kari/see { KARIS1 KARIS2 KARIS3 KARIS4 KARIS5 }
+KARIS1 KARIS1
+KARIS2 KARIS2
+KARIS3 KARIS3
+KARIS4 KARIS4
+KARIS5 KARIS5
+$random kari/pain { KARIP1 KARIP2 KARIP3 KARIP4 KARIP5 }
+KARIP1 KARIP1
+KARIP2 KARIP2
+KARIP3 KARIP3
+KARIP4 KARIP4
+KARIP5 KARIP5
+$random kari/die { KARID1 KARID2 KARID3 }
+KARID1 KARID1
+KARID2 KARID2
+KARID3 KARID3
+
+// Elite nohelmet (from Fallout 3, encalve male)
+$random EliteN/see { Ls1 Ls2 Ls3 Ls4 Ls5 Ls6 Ls7 Ls8 Ls9 Ls10 Ls11 Ls12 Ls13 }
+Ls1 Ls1
+Ls2 Ls2
+Ls3 Ls3
+Ls4 Ls4
+Ls5 Ls5
+Ls6 Ls6
+Ls7 Ls7
+Ls8 Ls8
+Ls9 Ls9
+Ls10 Ls10
+Ls11 Ls11
+Ls12 Ls12
+Ls13 Ls13
+$random EliteN/pain { Lp3 Lp4 Lp5 Lp1 Lp2 Lp3 Lp4 Lp5 }
+Lp1 Lp1
+Lp2 Lp2
+Lp3 Lp3
+Lp4 Lp4
+Lp5 Lp5
+$random EliteN/die { Ld3 Ld4 Ld5 Ld1 Ld2 Ld3 Ld4 Ld5 }
+Ld1 Ld1
+Ld2 Ld2
+Ld3 Ld3
+Ld4 Ld4
+Ld5 Ld5
+
+//japanese female -battlefied 5 multiplayer
+$random femajap/sight { jems1 jems2 jems3 jems4 jems5 jems6 jems7 jems8 jems9 jems10 jems11 }
+jems1 jems1
+jems2 jems2
+jems3 jems3
+jems4 jems4
+jems5 jems5
+jems6 jems6
+jems7 jems7
+jems8 jems8
+jems9 jems9
+jems10 jems10
+jems11 jems11
+$random femajap/hurt { jemh1 jemh2 jemh3 jemh4 jemh5 jemh6 jemh7 jemh8 jemh9 }
+jemh1 jemh1
+jemh2 jemh2
+jemh3 jemh3
+jemh4 jemh4
+jemh5 jemh5
+jemh6 jemh6
+jemh7 jemh7
+jemh8 jemh8
+jemh9 jemh9
+
+//japanese full man
+$random jap2/sight { JAPse1 JAPse2 JAPse3 JAPse4 JAPse6 JAPse5 JAPse7 JAPse9 JAPse8 JAPse10 JAPse11 JAPse12 JAPse13 JAPse14 JAPse16 JAPse15 JAPse17 JAPse19 JAPse 18 JAPse20 JAPse21 }
+JAPse1 JAPse1
+JAPse2 JAPse2
+JAPse3 JAPse3
+JAPse4 JAPse4
+JAPse5 JAPse5
+JAPse6 JAPse6
+JAPse7 JAPse7
+JAPse8 JAPse8
+JAPse9 JAPse9
+JAPse10 JAPse10
+JAPse11 JAPse11
+JAPse12 JAPse12
+JAPse13 JAPse13
+JAPse14 JAPse14
+JAPse15 JAPse15
+JAPse16 JAPse16
+JAPse17 JAPse17
+JAPse18 JAPse18
+JAPse19 JAPse19
+JAPse20 JAPse20
+JAPse21 JAPse21
+$random jap2/pain { JAPpan1 JAPpan2 JAPpan3 JAPpan4 JAPpan6 JAPpan5 JAPpan7 JAPpan9 JAPpan8 }
+JAPpan1 JAPpan1
+JAPpan2 JAPpan2
+JAPpan3 JAPpan3
+JAPpan4 JAPpan4
+JAPpan5 JAPpan5
+JAPpan6 JAPpan6
+JAPpan7 JAPpan7
+JAPpan8 JAPpan8
+$random jap2/die { JAPdie1 JAPdie2 JAPdie3 JAPpan3 JAPpan4 }
+JAPdie1 JAPdie1
+JAPdie2 JAPdie2
+JAPdie3 JAPdie3
+
+//japan sumo -battlefied 5 multiplayer
+$random japa3/sight { JAP3s1 JAP3s2 JAP3s3 JAP3s4 JAP3s5 JAP3s6 JAP3s7 }
+JAP3s1 JAP3s1
+JAP3s2 JAP3s2
+JAP3s3 JAP3s3
+JAP3s4 JAP3s4
+JAP3s5 JAP3s5
+JAP3s6 JAP3s6
+JAP3s7 JAP3s7
+JAP3pan JAP3pan
+
+// Elite badass (from Mirrors Edge, police/swat)
+$random badass/see { MM1S1 MM1S2 MM1S3 MM1S4 MM1S5 MM1S6 MM1S7 MM1S8 }
+MM1S1 MM1S1
+MM1S2 MM1S2
+MM1S3 MM1S3
+MM1S4 MM1S4
+MM1S5 MM1S5
+MM1S6 MM1S6
+MM1S7 MM1S7
+MM1S8 MM1S8
+$random badass/pain { MM1P1 MM1P2 MM1P3 MM1P4 }
+MM1P1 MM1P1
+MM1P2 MM1P2
+MM1P3 MM1P3
+MM1P4 MM1P4
+$random badass/DIE { MM1D1 MM1D2 MM1D3 MM1D4 MM1D5 MM1D6 }
+MM1D1 MM1D1
+MM1D2 MM1D2
+MM1D3 MM1D3
+MM1D4 MM1D4
+MM1D5 MM1D5
+MM1D6 MM1D6
+//alt badass voices (from SOF1/2 multiplayer radio commands)
+$random badass/alt { PM1S1 PM1S2 PM1S3 PM1S4 PM1S5 PM1S6 PM1S7 PM1S8 PM1S9 PM1S10 PM1S11 PM1S12 }
+PM1S1 PM1S1
+PM1S2 PM1S2
+PM1S3 PM1S3
+PM1S4 PM1S4
+PM1S5 PM1S5
+PM1S6 PM1S6
+PM1S7 PM1S7
+PM1S8 PM1S8
+PM1S9 PM1S9
+PM1S10 PM1S10
+PM1S11 PM1S11
+PM1S12 PM1S12
+
+// Merc female (from fallout 3, enclave female)
+$random eliteF/see { Fsee1 Fsee2 Fsee3 Fsee4 Fsee5 Fsee6 Fsee7 Fsee8 Fsee9 Fsee10 Fsee11 Fsee12 Fsee13 Fsee14 Fsee15 }
+Fsee1 Fsee1
+Fsee2 Fsee2
+Fsee3 Fsee3
+Fsee4 Fsee4
+Fsee5 Fsee5
+Fsee6 Fsee6
+Fsee7 Fsee7
+Fsee8 Fsee8
+Fsee9 Fsee9
+Fsee10 Fsee10
+Fsee11 Fsee11
+Fsee12 Fsee12
+Fsee13 Fsee13
+Fsee14 Fsee14
+Fsee15 Fsee15
+$random eliteF/die { Fdie1 Fdie2 Fdie3 Fdie4 Fdie5 }
+Fdie1 Fdie1
+Fdie2 Fdie2
+Fdie3 Fdie3
+Fdie4 Fdie4
+Fdie5 Fdie5
+$random eliteF/pain { Fhit1 Fhit2 Fhit3 Fhit4 Fhit5 Fhit6 Fhit7 Fhit8 }
+Fhit1 Fhit1
+Fhit2 Fhit2
+Fhit3 Fhit3
+Fhit4 Fhit4
+Fhit5 Fhit5
+Fhit6 Fhit6
+Fhit7 Fhit7
+Fhit8 Fhit8
+
+// infantry British older -battlefield 2 british commander
+$random pommy/see { POMs1 POMs2 POMS3 POMs4 POMs5 POMs6 POMs7 POMs8 POMs9 POMs10 }
+POMs1 POMs1
+POMs2 POMs2
+POMs3 POMs3
+POMs4 POMs4
+POMs5 POMs5
+POMs6 POMs6
+POMs7 POMs7
+POMs8 POMs8
+POMs9 POMs9
+POMs10 POMs10
+$random pommy2/hurt { POM2h1 POM2h2 POM2h3 POM2h4 POM2h5 POM2h6 }
+POM2h1 POM2h1
+POM2h2 POM2h2
+POM2h3 POM2h3
+POM2h4 POM2h4
+POM2h5 POM2h5
+POM2h6 POM2h6
+
+// Big elite (from Take no prisoners)
+$random bigELT/see { ELITES1 ELITES2 ELITES3 ELITES4 ELITES5 }
+ELITES1 ELITES1
+ELITES2 ELITES2
+ELITES3 ELITES3
+ELITES4 ELITES4
+ELITES5 ELITES5
+$random bigELT/die { ELITED1 ELITED2 ELITED3 }
+ELITED1 ELITED1
+ELITED2 ELITED2
+ELITED3 ELITED3
+
+//BRUTES (from unreal tournament
+$random brute/pain { BRTEp1 BRTEp2 BRTEp3 }
+$random bruteGL/pain { BRTEp1 BRTEp2 BRTEp3 BRGLp1 BRGLp2 }
+$random bruteCG/pain { BRTEp1 BRTEp2 BRTEp3 BRGUNp1 BRGUNp2 }
+BRTEp1 BRTEp1
+BRTEp2 BRTEp2
+BRTEp3 BRTEp3
+BRGUNp1 BRGUNp1
+BRGUNp2 BRGUNp2
+BRGLp1 BRGLp1
+BRGLp2 BRGLp2
+$random bruteGL/die { BRTEd1 BRTEd2 BRTEd3 BRGLd1 BRGLd2 BRGLd3 }
+$random bruteCG/die { BRTEd1 BRTEd2 BRTEd3 BRGUNd1 BRGUNd1 }
+BRTEd1 BRTEd1
+BRTEd2 BRTEd2
+BRTEd3 BRTEd3
+BRGLd1 BRGLd1
+BRGLd2 BRGLd2
+BRGLd3 BRGLd3
+BRGUNd1 BRGUNd1
+$random bruteGL/see { BRGLs1 BRGLs2 BRGLs3 }
+$random bruteCG/see { BRGUNs1 BRGUNs2 BRGUNs3 BRGUNs4 }
+BRGLs1 BRGLs1
+BRGLs2 BRGLs2
+BRGLs3 BRGLs3
+BRGUNs1 BRGUNs1
+BRGUNs2 BRGUNs2
+BRGUNs3 BRGUNs3
+BRGUNs4 BRGUNs4
+
+//Kappa assault cyborgs
+cyborg/see CYBSEE
+cyborg/pain CYBPAIN
+cyborg/die CYBDIE
+cyborg/neck CYBNEC
+
+cygirl/see CYGs
+cygirl/pain CYGp
+cygirl/die CYGd
+cygirl/neck CYGn
+
+//Giant Rednecks/Gimp
+Giant/see BIKsee2
+Giant/die BIKdie
+Giant/hey BR2see
+Giant/yell BR2fir
+Giant/pain BR2pain
+
+// Gang Biker
+$random Carm/see {bikeO CarmS1 CarmS2 CarmS3 CarmS4 CarmS5 CarmS6 bikeO }
+CarmS1 CarmS1
+CarmS2 CarmS2
+CarmS3 CarmS3
+CarmS4 CarmS4
+CarmS5 CarmS5
+CarmS6 CarmS6
+
+//Jetpacker
+$random jetpack/see {JETPs1 JETPs2 JETPs3 JETPs4 }
+JETPs1 JETPs1
+JETPs2 JETPs2
+JETPs3 JETPs3
+JETPs4 JETPs4
+jet/fly JETPf
+jet/pain JETPp
+jet/die JETPd
+
+//vechiles
+//jeep
+jeep/start JEPgo
+jeep/idle JEPidl
+//tank
+tank/start TNKgo
+tank/idle TNKidl
+tank/aim TANKAIM1
+tank/load TANKAIM2
+tank/fire TANKFIRE
+//damage vechile
+$random vech/pain {ARMp1 ARMp2 ARMp3 }
+ARMp1 ARMp1
+ARMp2 ARMp2
+ARMp3 ARMp3
+//drone fly
+drone/fly DRONso
+//bike
+bikeO BIKEO
+bike/idle BIKEG
+bike/die BIKED

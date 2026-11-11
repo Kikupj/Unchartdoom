@@ -1,0 +1,215 @@
+actor KappaBorgM
+{
+  scale 1.1
+  obituary "%o was shredded by a Kappa assault Cyborg"
+  health 450
+  radius 20
+  height 56
+  mass 200
+  speed 10
+  painchance 110
+  seesound "cyborg/see"
+  painsound "cyborg/pain"
+  deathsound "cyborg/die"
+  activesound " "
+  dropitem "Pistol"
+  dropitem "Pistol"
+  Tag "Assault Cyborg"
+    Translation "112:118=108:111","119:127=5:8"
+  DamageFactor "Enemy", 0.0
+  DamageFactor "Fire", 0.0
+  DamageFactor "Weak", 1.5
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  +MISSILEMORE
+  +BOSS
+  states
+  {
+  Spawn:
+    KAP3 T 10 A_Look
+    loop
+  See:
+    KAP3 AABBCCDD 2 A_Chase
+    loop
+  Missile:
+    KAP3 EF 5 A_FaceTarget
+	KAP3 G 0 A_PlayWeaponSound("en/mac10")
+    KAP3 G 2 BRIGHT A_CustomMissile("EnemySMGTracer",41,0,random(-8,8))
+	KAP3 F 2 A_FaceTarget
+	KAP3 G 0 A_PlayWeaponSound("en/mac10")
+    KAP3 G 2 BRIGHT A_CustomMissile("EnemySMGTracer",41,0,random(-8,8))
+	KAP3 F 2 A_FaceTarget
+	KAP3 G 0 A_PlayWeaponSound("en/mac10")
+    KAP3 G 2 BRIGHT A_CustomMissile("EnemySMGTracer",41,0,random(-8,8))
+	KAP3 F 2 A_FaceTarget
+	KAP3 G 0 A_PlayWeaponSound("en/mac10")
+    KAP3 G 2 BRIGHT A_CustomMissile("EnemySMGTracer",41,0,random(-8,8))
+	KAP3 F 2 A_FaceTarget
+	KAP3 G 0 A_PlayWeaponSound("en/mac10")
+    KAP3 G 2 BRIGHT A_CustomMissile("EnemySMGTracer",41,0,random(-8,8))
+	KAP3 F 2
+    KAP3 HI 5 A_FaceTarget
+	KAP3 J 0 A_PlayWeaponSound("en/mac10")
+    KAP3 J 2 BRIGHT A_CustomMissile("EnemySMGTracer",41,0,random(-8,8))
+	KAP3 I 2 A_FaceTarget
+	KAP3 J 0 A_PlayWeaponSound("en/mac10")
+    KAP3 J 2 BRIGHT A_CustomMissile("EnemySMGTracer",41,0,random(-8,8))
+	KAP3 I 2 A_FaceTarget
+	KAP3 J 0 A_PlayWeaponSound("en/mac10")
+    KAP3 J 2 BRIGHT A_CustomMissile("EnemySMGTracer",41,0,random(-8,8))
+	KAP3 I 2 A_FaceTarget
+	KAP3 J 0 A_PlayWeaponSound("en/mac10")
+    KAP3 J 2 BRIGHT A_CustomMissile("EnemySMGTracer",41,0,random(-8,8))
+	KAP3 I 2 A_FaceTarget
+	KAP3 J 0 A_PlayWeaponSound("en/mac10")
+    KAP3 J 2 BRIGHT A_CustomMissile("EnemySMGTracer",41,0,random(-8,8))
+	KAP3 I 2
+    goto See
+  Pain:
+    KAP3 K 3
+    KAP3 K 3 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(100, "ADeath1")
+    KAP3 L 5
+    KAP3 M 5 A_Scream
+    KAP3 N 5 A_BossDeath
+    KAP3 O 5 A_NoBlocking
+	KAP3 P -1
+    stop
+  ADeath1:
+    KAP3 Q 5
+    KAP3 R 5 A_Scream
+    KAP3 S 5 A_BossDeath
+    KAP3 U 5 A_NoBlocking
+	KAP3 V -1
+    stop
+  Death.Weak:
+    KAP4 A 6
+    KAP4 B 6 A_PlaySound("cyborg/pain")
+    KAP4 C 6 A_BossDeath
+    KAP4 D 6 A_NoBlocking
+	KAP4 E -1
+    stop
+  Idle:
+    KAP3 AA 4 A_Wander
+    KAP3 A 0 A_Look
+    KAP3 BB 4 A_Wander
+    KAP3 A 0 A_Look
+    KAP3 CC 4 A_Wander
+    KAP3 A 0 A_Look
+    KAP3 DD 4 A_Wander
+    KAP3 A 0 A_Look
+    loop
+  }
+}
+
+actor KappaBorgF
+{
+  scale 1.1
+  obituary "%o was shredded by a Kappa assault Cyborg"
+  health 450
+  radius 20
+  height 56
+  mass 200
+  speed 10
+  painchance 110
+  seesound "cygirl/see"
+  painsound "cygirl/pain"
+  deathsound "cygirl/die"
+  activesound " "
+  dropitem "Pistol"
+  dropitem "Pistol"
+  Tag "Assault Cyborg"
+    Translation "112:118=108:111","119:127=5:8"
+  DamageFactor "Enemy", 0.0
+  DamageFactor "Fire", 0.0
+  DamageFactor "Weak", 1.5
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  +MISSILEMORE
+  +BOSS
+  states
+  {
+  Spawn:
+    KAP1 T 10 A_Look
+    loop
+  See:
+    KAP1 AABBCCDD 2 A_Chase
+    loop
+  Missile:
+    KAP1 EF 5 A_FaceTarget
+	KAP1 G 0 A_PlayWeaponSound("en/mac10")
+    KAP1 G 2 BRIGHT A_CustomMissile("EnemySMGTracer",41,0,random(-8,8))
+	KAP1 F 2 A_FaceTarget
+	KAP1 G 0 A_PlayWeaponSound("en/mac10")
+    KAP1 G 2 BRIGHT A_CustomMissile("EnemySMGTracer",41,0,random(-8,8))
+	KAP1 F 2 A_FaceTarget
+	KAP1 G 0 A_PlayWeaponSound("en/mac10")
+    KAP1 G 2 BRIGHT A_CustomMissile("EnemySMGTracer",41,0,random(-8,8))
+	KAP1 F 2 A_FaceTarget
+	KAP1 G 0 A_PlayWeaponSound("en/mac10")
+    KAP1 G 2 BRIGHT A_CustomMissile("EnemySMGTracer",41,0,random(-8,8))
+	KAP1 F 2 A_FaceTarget
+	KAP1 G 0 A_PlayWeaponSound("en/mac10")
+    KAP1 G 2 BRIGHT A_CustomMissile("EnemySMGTracer",41,0,random(-8,8))
+	KAP1 F 2
+    KAP1 HI 5 A_FaceTarget
+	KAP1 J 0 A_PlayWeaponSound("en/mac10")
+    KAP1 J 2 BRIGHT A_CustomMissile("EnemySMGTracer",41,0,random(-8,8))
+	KAP1 I 2 A_FaceTarget
+	KAP1 J 0 A_PlayWeaponSound("en/mac10")
+    KAP1 J 2 BRIGHT A_CustomMissile("EnemySMGTracer",41,0,random(-8,8))
+	KAP1 I 2 A_FaceTarget
+	KAP1 J 0 A_PlayWeaponSound("en/mac10")
+    KAP1 J 2 BRIGHT A_CustomMissile("EnemySMGTracer",41,0,random(-8,8))
+	KAP1 I 2 A_FaceTarget
+	KAP1 J 0 A_PlayWeaponSound("en/mac10")
+    KAP1 J 2 BRIGHT A_CustomMissile("EnemySMGTracer",41,0,random(-8,8))
+	KAP1 I 2 A_FaceTarget
+	KAP1 J 0 A_PlayWeaponSound("en/mac10")
+    KAP1 J 2 BRIGHT A_CustomMissile("EnemySMGTracer",41,0,random(-8,8))
+	KAP1 I 2
+    goto See
+  Pain:
+    KAP1 K 3
+    KAP1 K 3 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(100, "ADeath1")
+    KAP1 L 5
+    KAP1 M 5 A_Scream
+    KAP1 N 5 A_BossDeath
+    KAP1 O 5 A_NoBlocking
+	KAP1 P -1
+    stop
+  ADeath1:
+    KAP1 Q 5
+    KAP1 R 5 A_Scream
+    KAP1 S 5 A_BossDeath
+    KAP1 U 5 A_NoBlocking
+	KAP1 V -1
+    stop
+  Death.Weak:
+    KAP2 F 6
+    KAP2 G 6 A_PlaySound("cygirl/pain")
+    KAP2 H 6 A_BossDeath
+    KAP2 I 6 A_NoBlocking
+	KAP2 J -1
+    stop
+  Idle:
+    KAP1 AA 4 A_Wander
+    KAP1 A 0 A_Look
+    KAP1 BB 4 A_Wander
+    KAP1 A 0 A_Look
+    KAP1 CC 4 A_Wander
+    KAP1 A 0 A_Look
+    KAP1 DD 4 A_Wander
+    KAP1 A 0 A_Look
+    loop
+  }
+}

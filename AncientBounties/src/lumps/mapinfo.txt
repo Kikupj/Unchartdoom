@@ -1,0 +1,78 @@
+// ============================================================================
+// ANCIENT BOUNTIES
+// ============================================================================
+GameInfo
+{
+	AddEventHandlers = "AB_Game", "AB_Level", "TacticalAIEventHandler"
+	PlayerClasses = "AB_Player"
+	StartupTitle = "Ancient Bounties"
+	StartupColors = "E8B42C", "20140A"
+	QuitMessages = "The treasure will still be there.\nSo will Thorne. Quit anyway?", "Abandon the hunt?", "Thorne thanks you for the head start."
+	NoRandomPlayerClass = true
+}
+
+DoomEdNums
+{
+	20000 = AB_EnemySpot
+	20001 = AB_LootSpot
+	20002 = AB_SupplySpot
+	20003 = AB_ExitPad
+	20004 = AB_ArenaTrigger
+	20005 = AB_GreatTreasure
+	20010 = AB_PuzzleCore
+	20011 = AB_Lever
+	20012 = AB_Brazier
+	20013 = AB_Plate
+	20014 = AB_Block
+	20015 = AB_Totem
+	20016 = AB_Stele
+	20017 = AB_Altar
+	20018 = AB_FragmentSpot
+	20019 = AB_SpikeTrap
+	20020 = AB_DartTrap
+	20021 = AB_Urn
+	20030 = AB_Fern
+	20031 = AB_Palm
+	20032 = AB_DryShrub
+	20033 = AB_Pine
+	20034 = AB_Column
+	20035 = AB_PrayerFlags
+	20036 = AB_Bones
+	20037 = AB_Lantern
+	20038 = AB_Antenna
+	20039 = AB_Campfire
+	20040 = AB_Torch
+	20050 = AB_Station
+	20051 = AB_CrewNPC
+}
+
+ClearSkills
+Skill tourist
+{
+	Name = "Tourist"
+	DamageFactor = 0.6
+	AmmoFactor = 1.5
+	SpawnFilter = Easy
+	EasyBossBrain
+}
+Skill adventurer
+{
+	Name = "Adventurer"
+	DamageFactor = 0.85
+	SpawnFilter = Normal
+	DefaultSkill
+}
+Skill legend
+{
+	Name = "Legend"
+	DamageFactor = 1.15
+	Aggressiveness = 0.3
+	SpawnFilter = Hard
+	MustConfirm = "Thorne's contractors shoot straighter and hit harder.\nReally play as a Legend?"
+}
+
+ClearEpisodes
+Episode ABCAMP
+{
+	Name = "Ancient Bounties"
+}

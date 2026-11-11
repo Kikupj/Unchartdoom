@@ -1,0 +1,533 @@
+actor Roider1 : HumanMb
+{
+  hitobituary "%o was smashed by a Brusier."
+  health 100
+  painchance 180
+  speed 8
+  radius 20
+  height 56
+  mass 100
+  Meleedamage 4
+  seesound "musleMIL/see"
+  attacksound "en/punch"
+  painsound "milGuy/pain"
+  deathsound "milGuy/pain"
+  dropitem "HealthBonus" 210
+  dropitem "HealthBonus" 100
+   DamageFactor "Enemy", 0.0
+   Tag "Bruiser"
+  MONSTER
+  +FLOORCLIP
+  +FASTMELEE
+  -CANUSEWALLS
+  +JUMPDOWN
+   +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    ED4A T 10 A_Look
+    Loop
+  See:
+	ED4A AABBCCDD 2 A_Chase
+	loop
+  Melee:
+    ED4A E 4 A_FaceTarget
+    ED4A E 4 A_MeleeAttack
+	ED4A F 8 A_PlayWeaponSound("en/smack")
+	ED4A E 4
+    goto See
+  Pain:
+    ED4A H 2
+    ED4A H 2 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(60,"Headshot")
+    ED4A I 5
+    ED4A J 5 A_Scream
+    ED4A K 5
+	ED4A L 5
+    ED4A M -1 A_NoBlocking
+    stop
+  Headshot:
+    ED4A N 2 A_PlaySound("head/shot")
+    ED4A N 5 
+    ED4A O 5 A_NoBlocking
+    ED4A P 5
+    ED4A Q -1
+    stop
+  Death.Weak:
+    ED4B I 6
+    ED4B J 6 A_PlaySound("milGuy/pain")
+    ED4B K 6
+	ED4B L 6
+    ED4B M -1 A_NoBlocking
+    stop
+  Idle:
+    ED4A AA 4 A_Wander
+    ED4A A 0 A_Look
+    ED4A BB 4 A_Wander
+    ED4A A 0 A_Look
+    ED4A CC 4 A_Wander
+    ED4A A 0 A_Look
+    ED4A DD 4 A_Wander
+    ED4A A 0 A_Look
+    loop
+  }
+}
+
+actor Roider1grey : Roider1
+{
+  Translation "112:127=96:111"
+}
+
+actor Roider1red : Roider1
+{
+  Translation "112:127=16:47"
+}
+
+actor Roider1brown : Roider1
+{
+  Translation "112:127=64:79"
+}
+
+actor Roider1blue : Roider1
+{
+  Translation "112:127=192:207"
+}
+
+actor Roider1black : Roider1
+{
+  Translation "120:127=5:8"
+}
+
+actor Roider2 : HumanMb
+{
+  hitobituary "%o was smashed by a Brawler."
+  health 100
+  painchance 180
+  speed 8
+  radius 20
+  height 56
+  mass 100
+  Meleedamage 3
+  seesound "skin1/see"
+  attacksound "en/punch"
+  painsound "Hood1/pain"
+  deathsound "Hood1/die"
+  dropitem "HealthBonus" 210
+  dropitem "HealthBonus" 100
+   DamageFactor "Enemy", 0.0
+   Tag "Brawler"
+   Translation "120:127=80:95"
+  MONSTER
+  +FLOORCLIP
+  +FASTMELEE
+  -CANUSEWALLS
+  +JUMPDOWN
+   +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    ED2A T 10 A_Look
+    Loop
+  See:
+	ED2A AABBCCDD 2 A_Chase
+	loop
+  Melee:
+    ED2A E 4 A_FaceTarget
+    ED2A E 4 A_MeleeAttack
+	ED2A F 8 A_PlayWeaponSound("en/smack")
+	ED2A E 4
+    goto See
+  Pain:
+    ED2A H 2
+    ED2A H 2 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(60,"Headshott")
+    ED2A I 5
+    ED2A J 5 A_Scream
+    ED2A K 5
+	ED2A L 5
+    ED2A M -1 A_NoBlocking
+    stop
+  Headshott:
+    ED2A N 5 A_PlaySound("man/neckcut")
+    ED2A O 5 
+    ED2A P 5 A_NoBlocking
+    ED2A Q 5
+	ED2A R 5
+    ED2A S -1
+    stop
+  Death.Weak:
+    ED2B I 6
+    ED2B J 6 A_PlaySound("Hood1/pain")
+    ED2B K 6
+	ED2B L 6
+    ED2B M -1 A_NoBlocking
+    stop
+  Idle:
+    ED2A AA 4 A_Wander
+    ED2A A 0 A_Look
+    ED2A BB 4 A_Wander
+    ED2A A 0 A_Look
+    ED2A CC 4 A_Wander
+    ED2A A 0 A_Look
+    ED2A DD 4 A_Wander
+    ED2A A 0 A_Look
+    loop
+  }
+}
+
+actor Roider2whiteA : Roider2
+{
+  Translation "120:127=80:95","48:79=69:79"
+}
+
+actor Roider2whiteTan : Roider2
+{
+  Translation "120:127=80:95","192:207=144:151"
+}
+
+actor Roider2whitegrey : Roider2
+{
+  Translation "120:127=80:95","192:207=80:109"
+}
+
+actor Roider2whitegreyA : Roider2
+{
+  Translation "120:127=80:95","192:207=80:109","48:79=69:79"
+}
+
+actor Roider2whitegreen : Roider2
+{
+  Translation "120:127=80:95","192:207=112:125"
+}
+
+actor Roider2whitegreenA : Roider2
+{
+  Translation "120:127=80:95","192:207=112:125","48:79=69:79"
+}
+
+actor Roider2whitered : Roider2
+{
+  Translation "120:127=80:95","192:207=176:191"
+}
+
+actor Roider2whiteredA : Roider2
+{
+  Translation "120:127=80:95","192:207=176:191","48:79=69:79"
+}
+
+actor Roider2grey : Roider2
+{
+  Translation "112:127=96:111"
+}
+
+actor Roider2greyA : Roider2
+{
+  Translation "112:127=96:111","48:79=69:79"
+}
+
+actor Roider2greyTan : Roider2
+{
+  Translation "112:127=96:111","192:207=144:151"
+}
+
+actor Roider2greygrey : Roider2
+{
+  Translation "112:127=96:111","192:207=80:109"
+}
+
+actor Roider2greygreyA : Roider2
+{
+  Translation "112:127=96:111","192:207=80:109","48:79=69:79"
+}
+
+actor Roider2greygreen : Roider2
+{
+  Translation "112:127=96:111","192:207=112:125"
+}
+
+actor Roider2greygreenA : Roider2
+{
+  Translation "112:127=96:111","192:207=112:125","48:79=69:79"
+}
+
+actor Roider2greyred : Roider2
+{
+  Translation "112:127=96:111","192:207=176:191"
+}
+
+actor Roider2greyredA : Roider2
+{
+  Translation "112:127=96:111","192:207=176:191","48:79=69:79"
+}
+
+actor Roider2redgrey : Roider2
+{
+  Translation "112:127=16:47","192:207=80:109"
+}
+
+actor Roider2redgreyA : Roider2
+{
+  Translation "112:127=16:47","192:207=80:109","48:79=69:79"
+}
+
+actor Roider2bluegrey : Roider2
+{
+  Translation "112:127=192:207","192:207=80:109"
+}
+
+actor Roider2bluegreyA : Roider2
+{
+  Translation "112:127=192:207","192:207=80:109","48:79=69:79"
+}
+
+actor Roider2browngrey : Roider2
+{
+  Translation "112:127=64:79","192:207=80:109"
+}
+
+actor Roider3 : HumanMb
+{
+  hitobituary "%o was crushed by a Roider."
+  health 120
+  painchance 180
+  speed 8
+  radius 20
+  height 56
+  mass 100
+  Meleedamage 4
+  seesound "canib/se"
+  attacksound "en/punch"
+  painsound "canib/pa"
+  deathsound "canib/pa"
+  dropitem "HealthBonus" 210
+  dropitem "HealthBonus" 100
+   DamageFactor "Enemy", 0.0
+   Tag "Roider"
+  MONSTER
+  +FLOORCLIP
+  +FASTMELEE
+  -CANUSEWALLS
+  +JUMPDOWN
+   +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    ED3A T 10 A_Look
+    Loop
+  See:
+	ED3A AABBCCDD 2 A_Chase
+	loop
+  Melee:
+    ED3A E 4 A_FaceTarget
+    ED3A E 4 A_MeleeAttack
+	ED3A G 8 A_PlayWeaponSound("en/smack")
+	ED3A E 4
+    goto See
+  Pain:
+    ED3A H 2
+    ED3A H 2 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(60,"Headshot")
+    ED3A I 5
+    ED3A J 5 A_Scream
+    ED3A K 5
+	ED3A L 5
+    ED3A M -1 A_NoBlocking
+    stop
+  Headshot:
+    ED3A N 2 A_PlaySound("head/shot")
+    ED3A N 5 
+    ED3A O 5 A_NoBlocking
+    ED3A P 5
+    ED3A Q -1
+    stop
+  Death.Weak:
+    ED3B I 6
+    ED3B J 6 A_PlaySound("canib/pa")
+    ED3B K 6
+	ED3B L 6
+    ED3B M -1 A_NoBlocking
+    stop
+  Idle:
+    ED3A AA 4 A_Wander
+    ED3A A 0 A_Look
+    ED3A BB 4 A_Wander
+    ED3A A 0 A_Look
+    ED3A CC 4 A_Wander
+    ED3A A 0 A_Look
+    ED3A DD 4 A_Wander
+    ED3A A 0 A_Look
+    loop
+  }
+}
+
+actor Roider3Grey : Roider3
+{
+  Translation "192:207=80:109"
+}
+
+actor Roider3kak : Roider3
+{
+  Translation "194:207=152:159"
+      seesound "perv2/se"
+	  painsound "perv1/pa"
+     deathsound "perv1/pa"
+}
+
+actor Roider3Red : Roider3
+{
+  Translation "192:207=16:47"
+  seesound "perv1/se"
+  painsound "perv1/pa"
+  deathsound "perv1/pa"
+}
+
+actor Roider3Green : Roider3
+{
+  Translation "192:207=112:125"
+}
+
+actor Roider3black : Roider3
+{
+  Translation "192:204=108:111","205:207=5:8"
+  seesound "bfist/se"
+  painsound "perv1/pa"
+  deathsound "perv1/pa"
+}
+
+actor Tough : HumanMb
+{
+  scale 1.0
+  obituary "%o was popped by a shirtless Toughguy."
+  health 70
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 180
+  seesound "bruiser/see"
+  painsound "bruiser/pain"
+  deathsound "bruiser/pain"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Tag "Toughguy"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    ED1A T 10 A_Look
+    loop
+  See:
+    ED1A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    ED1A EF 5 A_FaceTarget
+	ED1A G 0 A_PlayWeaponSound("en/beretta")
+    ED1A G 8 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    ED1A F 8
+    goto See
+  Pain:
+    ED1A H 3
+    ED1A H 3 A_Pain
+    goto See
+  Death:
+    ED1A I 5
+    ED1A J 5 A_Scream
+    ED1A K 5 A_NoBlocking
+    ED1A L 5
+    ED1A M -1
+    stop
+  Death.Weak:
+    ED1B I 6
+    ED1B J 6 A_PlaySound("bruiser/pain")
+    ED1B K 6
+	ED1B L 6
+    ED1B M -1 A_NoBlocking
+    stop
+  Idle:
+    ED1A AA 4 A_Wander
+    ED1A A 0 A_Look
+    ED1A BB 4 A_Wander
+	ED1A A 0 A_Look
+    ED1A CC 4 A_Wander
+    ED1A A 0 A_Look
+    ED1A DD 4 A_Wander
+    ED1A A 0 A_Look
+    loop
+  }
+}
+
+actor ToughA: Tough
+{
+  Translation "48:79=66:79"
+}
+
+actor ToughGrey : Tough
+{
+  Translation "192:207=80:109"
+}
+
+actor Toughkak : Tough
+{
+  Translation "194:207=152:159"
+}
+
+actor ToughRed : Tough
+{
+  Translation "192:207=16:47"
+}
+
+actor ToughBrown : Tough
+{
+  Translation "192:207=64:78"
+    seesound "perv2/se"
+  painsound "perv1/pa"
+  deathsound "perv1/pa"
+  states
+  {
+    Death.Weak:
+    ED1B I 6
+    ED1B J 6 A_PlaySound("perv1/pa")
+    ED1B K 6
+	ED1B L 6
+    ED1B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor ToughGreen : Tough
+{
+  Translation "192:207=112:125"
+}
+
+actor ToughGreyA : Tough
+{
+  Translation "192:207=80:109","48:79=66:79"
+}
+
+actor ToughkakA : Tough
+{
+  Translation "194:207=152:159","48:79=66:79"
+}
+
+actor ToughRedA : Tough
+{
+  Translation "192:207=16:47","48:79=66:79"
+}
+
+actor ToughGreenA : Tough
+{
+  Translation "192:207=112:125","48:79=66:79"
+}

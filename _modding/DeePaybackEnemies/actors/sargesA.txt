@@ -1,0 +1,1183 @@
+actor YakuzaUzi : HumanMb
+{
+  scale 1.0
+  obituary "%o was riddled by a Yakuza suit."
+  health 40
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "Yaka/See"
+  painsound "Yaka/pain"
+  deathsound "Yaka/die"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Tag "Yakuza Suit"
+ Translation "192:207=5:8","120:127=201:207"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    ES2A T 10 A_Look
+    loop
+  See:
+    ES2A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    ES2A EE 5 A_FaceTarget
+	ES2A F 0 A_PlayWeaponSound("en/mac10")
+    ES2A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	ES2A E 2 A_FaceTarget
+	ES2A F 0 A_PlayWeaponSound("en/mac10")
+    ES2A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	ES2A E 2 A_FaceTarget
+	ES2A F 0 A_PlayWeaponSound("en/mac10")
+    ES2A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	ES2A E 2 A_FaceTarget
+	ES2A F 0 A_PlayWeaponSound("en/mac10")
+    ES2A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	ES2A E 2 A_FaceTarget
+	ES2A F 0 A_PlayWeaponSound("en/mac10")
+    ES2A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+    ES2A E 2
+    goto See
+  Pain:
+    ES2A H 3
+    ES2A H 3 A_Pain
+    goto See
+  Death:
+    ES2A I 5
+    ES2A J 5 A_Scream
+    ES2A K 5 A_NoBlocking
+    ES2A L 5
+    ES2A M -1
+    stop
+  Death.Weak:
+    ES2B I 6
+    ES2B J 6 A_PlaySound("Yaka/pain")
+    ES2B K 6
+	ES2B L 6
+    ES2B M -1 A_NoBlocking
+    stop
+  Idle:
+    ES2A AA 4 A_Wander
+    ES2A A 0 A_Look
+    ES2A BB 4 A_Wander
+	ES2A A 0 A_Look
+    ES2A CC 4 A_Wander
+    ES2A A 0 A_Look
+    ES2A DD 4 A_Wander
+    ES2A A 0 A_Look
+    loop
+  }
+}
+
+actor YakuzaUzi2 : YakuzaUzi
+{
+ Translation "192:207=32:47","120:127=201:207"
+}
+
+actor YakuzaUziNavy : YakuzaUzi
+{
+ Translation "192:207=5:8","120:127=240:247"
+}
+
+actor YakuzaUziNavy2 : YakuzaUzi
+{
+ Translation "192:207=80:111","120:127=240:247"
+}
+
+actor YardieUzi : YakuzaUzi
+{
+ Translation "192:207=5:8","48:79=64:79"
+  seesound "rasta/see"
+  painsound "rasta/pain"
+  deathsound "rasta/pain"
+  obituary "%o was riddled by a well dressed Yardie."
+  Tag "Yardie"
+    states
+  {
+    Death.Weak:
+    ES2B I 6
+    ES2B J 6 A_PlaySound("rasta/pain")
+    ES2B K 6
+	ES2B L 6
+    ES2B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor MobUziBlack : YakuzaUzi
+{
+ Translation "192:207=5:8","120:127=5:8"
+  seesound "mobs/See"
+  painsound "mobs/pain"
+  deathsound "mobs/die"
+  obituary "%o was riddled by a Mob Soldier."
+  Tag "Mob Soldier"
+    states
+  {
+    Death.Weak:
+    ES2B I 6
+    ES2B J 6 A_PlaySound("mobs/pain")
+    ES2B K 6
+	ES2B L 6
+    ES2B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor MobUziBlackBrown : YakuzaUzi
+{
+ Translation "192:207=236:239","120:127=5:8"
+  seesound "mobs/See"
+  painsound "mobs/pain"
+  deathsound "mobs/die"
+  obituary "%o was riddled by a Mob Soldier."
+  Tag "Mob Soldier"
+    states
+  {
+    Death.Weak:
+    ES2B I 6
+    ES2B J 6 A_PlaySound("mobs/pain")
+    ES2B K 6
+	ES2B L 6
+    ES2B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor MobUziBlackBlonde : YakuzaUzi
+{
+ Translation "192:207=160:167","120:127=5:8"
+  seesound "mobs/See"
+  painsound "mobs/pain"
+  deathsound "mobs/die"
+  obituary "%o was riddled by a Mob Soldier."
+  Tag "Mob Soldier"
+    states
+  {
+    Death.Weak:
+    ES2B I 6
+    ES2B J 6 A_PlaySound("mobs/pain")
+    ES2B K 6
+	ES2B L 6
+    ES2B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor MobUzitan : YakuzaUzi
+{
+ Translation "192:207=5:8","120:127=144:151"
+  seesound "mobs/See"
+  painsound "mobs/pain"
+  deathsound "mobs/die"
+  obituary "%o was riddled by a Mob Soldier."
+  Tag "Mob Soldier"
+    states
+  {
+    Death.Weak:
+    ES2B I 6
+    ES2B J 6 A_PlaySound("mobs/pain")
+    ES2B K 6
+	ES2B L 6
+    ES2B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor MobUziBlackgrey : YakuzaUzi
+{
+ Translation "192:207=96:111","120:127=5:8"
+  seesound "mobs/See"
+  painsound "mobs/pain"
+  deathsound "mobs/die"
+  obituary "%o was riddled by a Mob Soldier."
+  Tag "Mob Soldier"
+    states
+  {
+    Death.Weak:
+    ES2B I 6
+    ES2B J 6 A_PlaySound("mobs/pain")
+    ES2B K 6
+	ES2B L 6
+    ES2B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor MobUzitangrey : YakuzaUzi
+{
+ Translation "192:207=96:111","120:127=144:151"
+  seesound "mobs/See"
+  painsound "mobs/pain"
+  deathsound "mobs/die"
+  obituary "%o was riddled by a Mob Soldier."
+  Tag "Mob Soldier"
+    states
+  {
+    Death.Weak:
+    ES2B I 6
+    ES2B J 6 A_PlaySound("mobs/pain")
+    ES2B K 6
+	ES2B L 6
+    ES2B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor MobUzigrey : YakuzaUzi
+{
+ Translation "192:207=5:8","112:127=96:111"
+  seesound "mobs/See"
+  painsound "mobs/pain"
+  deathsound "mobs/die"
+  obituary "%o was riddled by a Mob Soldier."
+  Tag "Mob Soldier"
+    states
+  {
+    Death.Weak:
+    ES2B I 6
+    ES2B J 6 A_PlaySound("mobs/pain")
+    ES2B K 6
+	ES2B L 6
+    ES2B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor MobUzigreybrown : YakuzaUzi
+{
+ Translation "192:207=236:239","112:127=96:111"
+  seesound "mobs/See"
+  painsound "mobs/pain"
+  deathsound "mobs/die"
+  obituary "%o was riddled by a Mob Soldier."
+  Tag "Mob Soldier"
+    states
+  {
+    Death.Weak:
+    ES2B I 6
+    ES2B J 6 A_PlaySound("mobs/pain")
+    ES2B K 6
+	ES2B L 6
+    ES2B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor MobUzisilverBrown : YakuzaUzi
+{
+ Translation "192:207=236:239","112:127=80:111"
+  seesound "mobs/See"
+  painsound "mobs/pain"
+  deathsound "mobs/die"
+  obituary "%o was riddled by a Mob Soldier."
+  Tag "Mob Soldier"
+    states
+  {
+    Death.Weak:
+    ES2B I 6
+    ES2B J 6 A_PlaySound("mobs/pain")
+    ES2B K 6
+	ES2B L 6
+    ES2B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor MobUzisilverBlonde : YakuzaUzi
+{
+ Translation "192:207=160:167","112:127=80:111"
+  seesound "mobs/See"
+  painsound "mobs/pain"
+  deathsound "mobs/die"
+  obituary "%o was riddled by a Mob Soldier."
+  Tag "Mob Soldier"
+    states
+  {
+    Death.Weak:
+    ES2B I 6
+    ES2B J 6 A_PlaySound("mobs/pain")
+    ES2B K 6
+	ES2B L 6
+    ES2B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor MobUziBrown : YakuzaUzi
+{
+ Translation "192:207=5:8","112:127=64:79"
+ seesound "russ2/See"
+  painsound "russ2/pain"
+  deathsound "russ1/die"
+  obituary "%o was riddled by a Mob Soldier."
+  Tag "Russian Mobster"
+    states
+  {
+    Death.Weak:
+    ES2B I 6
+    ES2B J 6 A_PlaySound("russ2/pain")
+    ES2B K 6
+	ES2B L 6
+    ES2B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor MobUziBrowngrey : YakuzaUzi
+{
+ Translation "192:207=96:111","112:127=64:79"
+ seesound "russ2/See"
+  painsound "russ2/pain"
+  deathsound "russ1/die"
+  obituary "%o was riddled by a Mob Soldier."
+  Tag "Russian Mobster"
+    states
+  {
+    Death.Weak:
+    ES2B I 6
+    ES2B J 6 A_PlaySound("russ2/pain")
+    ES2B K 6
+	ES2B L 6
+    ES2B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor MobRevolver : HumanMb
+{
+  scale 1.0
+  obituary "%o was popped by a Mob mademan."
+  health 40
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "mobs/See"
+  painsound "mobs/pain"
+  deathsound "mobs/die"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Tag "Mademan"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    ES4A T 10 A_Look
+    loop
+  See:
+    ES4A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    ES4A FF 5 A_FaceTarget
+	ES4A G 0 A_PlayWeaponSound("en/revol")
+    ES4A G 8 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    ES4A F 8
+    goto See
+  Pain:
+    ES4A H 3
+    ES4A H 3 A_Pain
+    goto See
+  Death:
+    ES4A I 5
+    ES4A J 5 A_Scream
+    ES4A K 5 A_NoBlocking
+    ES4A L 5
+    ES4A M -1
+    stop
+  Death.Weak:
+    ES4B I 6
+    ES4B J 6 A_PlaySound("mobs/pain")
+    ES4B K 6
+	ES4B L 6
+    ES4B M -1 A_NoBlocking
+    stop
+  Idle:
+    ES4A AA 4 A_Wander
+    ES4A A 0 A_Look
+    ES4A BB 4 A_Wander
+	ES4A A 0 A_Look
+    ES4A CC 4 A_Wander
+    ES4A A 0 A_Look
+    ES4A DD 4 A_Wander
+    ES4A A 0 A_Look
+    loop
+  }
+}
+
+actor MobPistol : HumanMb
+{
+  scale 1.0
+  obituary "%o was popped by a Mobster."
+  health 40
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "mobs/See"
+  painsound "mobs/pain"
+  deathsound "mobs/die"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Tag "Mobster"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    ES3A T 10 A_Look
+    loop
+  See:
+    ES3A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    ES3A FF 5 A_FaceTarget
+	ES3A G 0 A_PlayWeaponSound("en/beretta")
+    ES3A G 8 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    ES3A F 8
+    goto See
+  Pain:
+    ES3A H 3
+    ES3A H 3 A_Pain
+    goto See
+  Death:
+    ES3A I 5
+    ES3A J 5 A_Scream
+    ES3A K 5 A_NoBlocking
+    ES3A L 5
+    ES3A M -1
+    stop
+  Death.Weak:
+    ES3B I 6
+    ES3B J 6 A_PlaySound("mobs/pain")
+    ES3B K 6
+	ES3B L 6
+    ES3B M -1 A_NoBlocking
+    stop
+  Idle:
+    ES3A AA 4 A_Wander
+    ES3A A 0 A_Look
+    ES3A BB 4 A_Wander
+	ES3A A 0 A_Look
+    ES3A CC 4 A_Wander
+    ES3A A 0 A_Look
+    ES3A DD 4 A_Wander
+    ES3A A 0 A_Look
+    loop
+  }
+}
+
+actor MobPistolA : MobPistol
+{
+  Translation "48:79=64:79"
+}
+
+actor wiseRevolver : HumanMb
+{
+  scale 1.0
+  obituary "%o was popped by a Mob wiseguy."
+  health 40
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "mobs/See"
+  painsound "mobs/pain"
+  deathsound "mobs/die"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Tag "Wiseguy"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    ES6A T 10 A_Look
+    loop
+  See:
+    ES6A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    ES6A EF 5 A_FaceTarget
+	ES6A G 0 A_PlayWeaponSound("en/revol")
+    ES6A G 8 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    ES6A F 8
+    goto See
+  Pain:
+    ES6A H 3
+    ES6A H 3 A_Pain
+    goto See
+  Death:
+    ES6A I 5
+    ES6A J 5 A_Scream
+    ES6A K 5 A_NoBlocking
+    ES6A L 5
+    ES6A M -1
+    stop
+  Death.Weak:
+    ES6B I 6
+    ES6B J 6 A_PlaySound("mobs/pain")
+    ES6B K 6
+	ES6B L 6
+    ES6B M -1 A_NoBlocking
+    stop
+  Idle:
+    ES6A AA 4 A_Wander
+    ES6A A 0 A_Look
+    ES6A BB 4 A_Wander
+	ES6A A 0 A_Look
+    ES6A CC 4 A_Wander
+    ES6A A 0 A_Look
+    ES6A DD 4 A_Wander
+    ES6A A 0 A_Look
+    loop
+  }
+}
+
+actor SuitM : HumanMb
+{
+  scale 1.0
+  obituary "%o was popped by a Suit."
+  health 40
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "mobs/See"
+  painsound "mobs/pain"
+  deathsound "mobs/die"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Translation "192:207=5:8","120:127=5:8"
+  Tag "Suit"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    ES1A T 10 A_Look
+    loop
+  See:
+    ES1A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    ES1A EE 5 A_FaceTarget
+	ES1A F 0 A_PlayWeaponSound("en/beretta")
+    ES1A F 8 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    ES1A E 8
+    goto See
+  Pain:
+    ES1A H 3
+    ES1A H 3 A_Pain
+    goto See
+  Death:
+    ES1A I 5
+    ES1A J 5 A_Scream
+    ES1A K 5 A_NoBlocking
+    ES1A L 5
+    ES1A M -1
+    stop
+  Death.Weak:
+    ES1B I 6
+    ES1B J 6 A_PlaySound("mobs/pain")
+    ES1B K 6
+	ES1B L 6
+    ES1B M -1 A_NoBlocking
+    stop
+  Idle:
+    ES1A AA 4 A_Wander
+    ES1A A 0 A_Look
+    ES1A BB 4 A_Wander
+	ES1A A 0 A_Look
+    ES1A CC 4 A_Wander
+    ES1A A 0 A_Look
+    ES1A DD 4 A_Wander
+    ES1A A 0 A_Look
+    loop
+  }
+}
+
+actor SuitMblackbrown : SuitM
+{
+  Translation "192:207=236:239","120:127=5:8"
+}
+
+actor SuitMblackblonde : SuitM
+{
+  Translation "192:207=160:167","120:127=5:8"
+}
+
+actor SuitMblackgrey : SuitM
+{
+  Translation "192:207=96:111","120:127=5:8"
+}
+
+actor SuitMtanBlack : SuitM
+{
+  Translation "192:207=5:8","120:127=144:151"
+}
+
+actor SuitMtanBlonde : SuitM
+{
+  Translation "192:207=160:167","120:127=144:151"
+}
+
+actor SuitMtangrey : SuitM
+{
+  Translation "192:207=96:111","120:127=144:151"
+}
+
+actor SuitMgreyblack : SuitM
+{
+  Translation "192:207=5:8","112:127=96:111"
+}
+
+actor SuitMgreybrown: SuitM
+{
+  Translation "192:207=236:239","112:127=96:111"
+}
+
+actor SuitMgreyblonde: SuitM
+{
+  Translation "192:207=160:167","112:127=96:111"
+}
+
+actor SuitMbrownblack : SuitM
+{
+  Translation "192:207=5:8","112:127=64:79"
+}
+
+actor SuitMbrownblonde : SuitM
+{
+  Translation "192:207=160:167","112:127=64:79"
+}
+
+actor SuitMyak : SuitM
+{
+  Translation "192:207=5:8","120:127=200:207"
+  seesound "Yaka/See"
+  painsound "Yaka/pain"
+  deathsound "Yaka/die"
+  obituary "%o was shot by a Yakuza suit."
+  Tag "Yakuza suit"
+    states
+  {
+    Death.Weak:
+    ES1B I 6
+    ES1B J 6 A_PlaySound("Yaka/pain")
+    ES1B K 6
+	ES1B L 6
+    ES1B M -1 A_NoBlocking
+    stop
+	}
+}
+
+actor SuitMyak2 : SuitM
+{
+  Translation "192:207=5:8","120:127=240:246"
+  seesound "Yaka/See"
+  painsound "Yaka/pain"
+  deathsound "Yaka/die"
+  obituary "%o was shot by a Yakuza suit."
+  Tag "Yakuza suit"
+    states
+  {
+    Death.Weak:
+    ES1B I 6
+    ES1B J 6 A_PlaySound("Yaka/pain")
+    ES1B K 6
+	ES1B L 6
+    ES1B M -1 A_NoBlocking
+    stop
+	}
+}
+
+actor SuitF : HumanFb
+{
+  scale 1.0
+  obituary "%o was popped by a Suit."
+  health 40
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "fthug/See"
+  painsound "fthug/pain"
+  deathsound "fthug/die"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Tag "Suit"
+  Translation "112:127=96:111"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    ES5A T 10 A_Look
+    loop
+  See:
+    ES5A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    ES5A EF 5 A_FaceTarget
+	ES5A G 0 A_PlayWeaponSound("en/beretta")
+    ES5A G 8 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    ES5A F 8
+    goto See
+  Pain:
+    ES5A H 3
+    ES5A H 3 A_Pain
+    goto See
+  Death:
+    ES5A I 5
+    ES5A J 5 A_Scream
+    ES5A K 5 A_NoBlocking
+    ES5A L 5
+    ES5A M -1
+    stop
+  Death.Weak:
+    ES5B I 6
+    ES5B J 6 A_PlaySound("fthug/pain")
+    ES5B K 6
+	ES5B L 6
+    ES5B M -1 A_NoBlocking
+    stop
+  Idle:
+    ES5A AA 4 A_Wander
+    ES5A A 0 A_Look
+    ES5A BB 4 A_Wander
+	ES5A A 0 A_Look
+    ES5A CC 4 A_Wander
+    ES5A A 0 A_Look
+    ES5A DD 4 A_Wander
+    ES5A A 0 A_Look
+    loop
+  }
+}
+
+actor SuitFblack : SuitF
+{
+  Translation "120:127=5:8"
+}
+
+actor SuitFtan : SuitF
+{
+  Translation "120:127=144:151"
+}
+
+actor SuitFyak : SuitF
+{
+  Translation "112:127=192:207"
+    seesound "asia/see"
+  painsound "fthug/pain"
+  deathsound "fthug/die"
+      states
+  {
+    Death.Weak:
+    ES5B I 6
+    ES5B J 6 A_PlaySound("fthug/pain")
+    ES5B K 6
+	ES5B L 6
+    ES5B M -1 A_NoBlocking
+    stop
+	}
+}
+
+actor suitAK : HumanMb
+{
+  scale 1.0
+  obituary "%o was riddled by a smart dressed Yardie."
+  health 40
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "rasta/see"
+  painsound "rasta/pain"
+  deathsound "rasta/pain"
+  activesound ""
+  dropitem "Chaingun" 256
+  Translation "48:79=64:79"
+  Tag "Yardie"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    ES9A T 10 A_Look
+    loop
+  See:
+    ES9A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    ES9A EE 5 A_FaceTarget
+	ES9A F 0 A_PlayWeaponSound("en/ak47")
+    ES9A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-8,8))
+	ES9A E 2 A_FaceTarget
+	ES9A F 0 A_PlayWeaponSound("en/ak47")
+    ES9A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-8,8))
+	ES9A E 2 A_FaceTarget
+	ES9A F 0 A_PlayWeaponSound("en/ak47")
+    ES9A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-8,8))
+	ES9A E 2 A_FaceTarget
+	ES9A F 0 A_PlayWeaponSound("en/ak47")
+    ES9A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-8,8))
+	ES9A E 2 A_FaceTarget
+	ES9A F 0 A_PlayWeaponSound("en/ak47")
+    ES9A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-8,8))
+    ES9A E 2
+    goto See
+  Pain:
+    ES9A H 3
+    ES9A H 3 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(80,"ADeath1")
+    ES9A I 5
+    ES9A J 5 A_Scream
+    ES9A K 5 A_NoBlocking
+    ES9A L 5
+    ES9A M -1
+    stop
+  ADeath1:
+    ES9A N 5
+    ES9A O 5 A_Scream
+    ES9A P 5 A_NoBlocking
+    ES9A Q 5
+    ES9A R -1
+    stop
+  Death.Weak:
+    ES9B I 6
+    ES9B J 6 A_PlaySound("rasta/pain")
+    ES9B K 6
+	ES9B L 6
+    ES9B M -1 A_NoBlocking
+    stop
+  Idle:
+    ES9A AA 4 A_Wander
+    ES9A A 0 A_Look
+    ES9A BB 4 A_Wander
+	ES9A A 0 A_Look
+    ES9A CC 4 A_Wander
+    ES9A A 0 A_Look
+    ES9A DD 4 A_Wander
+    ES9A A 0 A_Look
+    loop
+  }
+}
+
+actor suitAKyak : suitAK
+{
+  Translation "120:127=201:207"
+  seesound "Yaka/See"
+  painsound "Yaka/pain"
+  deathsound "Yaka/die"
+  obituary "%o was riddled by a Yakuza assassin."
+  Tag "Yakuza assassin"
+    states
+  {
+    Death.Weak:
+    ES9B I 6
+    ES9B J 6 A_PlaySound("Yaka/pain")
+    ES9B K 6
+	ES9B L 6
+    ES9B M -1 A_NoBlocking
+    stop
+ }
+}
+
+actor suitAKyak2 : suitAK
+{
+  Translation "120:127=240:244"
+  seesound "Yaka/See"
+  painsound "Yaka/pain"
+  deathsound "Yaka/die"
+  obituary "%o was riddled by a Yakuza assassin."
+  Tag "Yakuza assassin"
+    states
+  {
+    Death.Weak:
+    ES9B I 6
+    ES9B J 6 A_PlaySound("Yaka/pain")
+    ES9B K 6
+	ES9B L 6
+    ES9B M -1 A_NoBlocking
+    stop
+ }
+}
+
+actor suitAKbrown : suitAK
+{
+  Translation "112:127=64:79"
+  seesound "russ1/See"
+  painsound "russ1/pain"
+  deathsound "russ1/die"
+    obituary "%o was riddled by a Russian Mobster."
+  Tag "Russian Mobster"
+    states
+  {
+    Death.Weak:
+    ES9B I 6
+    ES9B J 6 A_PlaySound("russ1/pain")
+    ES9B K 6
+	ES9B L 6
+    ES9B M -1 A_NoBlocking
+    stop
+ }
+}
+
+actor suitAKgrey : suitAK
+{
+  Translation "112:127=96:111"
+ seesound "russ1/See"
+  painsound "russ1/pain"
+  deathsound "russ1/die"
+    obituary "%o was riddled by a Russian Mobster."
+  Tag "Russian Mobster"
+    states
+  {
+    Death.Weak:
+    ES9B I 6
+    ES9B J 6 A_PlaySound("russ1/pain")
+    ES9B K 6
+	ES9B L 6
+    ES9B M -1 A_NoBlocking
+    stop
+ }
+}
+
+actor Mookshot : HumanMb
+{
+  scale 1.0
+  obituary "%o was blasted by a Shotgun Mook."
+  health 40
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "prison/See"
+  painsound "prison/Pain"
+  deathsound "prison/Death"
+  activesound ""
+  dropitem "Shotgun" 256
+  Tag "Mook"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    ES7A T 10 A_Look
+    loop
+  See:
+    ES7A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    ES7A EF 10 A_FaceTarget
+	ES7A G 0 A_PlayWeaponSound("en/shotgun")
+    ES7A G 8 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-5,5))
+    ES7A F 4
+	ES7A E 4 A_PlaySound("en/shotpump")
+    goto See
+  Pain:
+    ES7A H 3
+    ES7A H 3 A_Pain
+    goto See
+  Death:
+    ES7A I 5
+    ES7A J 5 A_Scream
+    ES7A K 5 A_NoBlocking
+    ES7A L 5
+    ES7A M -1
+    stop
+  Death.Weak:
+    ES7B I 6
+    ES7B J 6 A_PlaySound("prison/Pain")
+    ES7B K 6
+	ES7B L 6
+    ES7B M -1 A_NoBlocking
+    stop
+  Idle:
+    ES7A AA 4 A_Wander
+    ES7A A 0 A_Look
+    ES7A BB 4 A_Wander
+	ES7A A 0 A_Look
+    ES7A CC 4 A_Wander
+    ES7A A 0 A_Look
+    ES7A DD 4 A_Wander
+    ES7A A 0 A_Look
+    loop
+  }
+}
+
+actor MookshotBlack : Mookshot
+{
+  Translation "120:127=5:8"
+}
+
+actor MookshotGrey : Mookshot
+{
+  Translation "112:127=96:111"
+}
+
+actor MookshotBrown : Mookshot
+{
+  Translation "112:127=64:79"
+}
+
+actor MookshotRed : Mookshot
+{
+  Translation "112:127=16:47"
+}
+
+actor Mookshotblue : Mookshot
+{
+  Translation "120:127=240:246"
+}
+
+actor Mookshot2 : HumanMb
+{
+  scale 1.0
+  obituary "%o was blasted by a Shotgun Dealer."
+  health 40
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "InnDib/see"
+  painsound "milGuy/pain"
+  deathsound "milGuy/pain"
+  activesound ""
+  dropitem "Shotgun" 256
+  Tag "Dealer"
+  Translation "112:122=32:47","192:207=96:111"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    ES8A T 10 A_Look
+    loop
+  See:
+    ES8A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    ES8A EF 10 A_FaceTarget
+	ES8A G 0 A_PlayWeaponSound("en/shotgun")
+    ES8A G 8 BRIGHT A_CustomMissile("EnemySMGTracer",32,0,random(-5,5))
+    ES8A F 4
+	ES8A E 4 A_PlaySound("en/shotpump")
+    goto See
+  Pain:
+    ES8A H 3
+    ES8A H 3 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(80, "ADeath1")
+    ES8A I 5
+    ES8A J 5 A_Scream
+    ES8A K 5 A_NoBlocking
+    ES8A L 5
+    ES8A M -1
+    stop
+  ADeath1:
+    ES8A N 5
+    ES8A O 5 A_Scream
+    ES8A P 5 A_NoBlocking
+    ES8A Q 5
+    ES8A R -1
+    stop
+  Death.Weak:
+    ES8B I 6
+    ES8B J 6 A_PlaySound("milGuy/pain")
+    ES8B K 6
+	ES8B L 6
+    ES8B M -1 A_NoBlocking
+    stop
+  Idle:
+    ES8A AA 4 A_Wander
+    ES8A A 0 A_Look
+    ES8A BB 4 A_Wander
+	ES8A A 0 A_Look
+    ES8A CC 4 A_Wander
+    ES8A A 0 A_Look
+    ES8A DD 4 A_Wander
+    ES8A A 0 A_Look
+    loop
+  }
+}
+
+actor Mookshot2black : Mookshot2
+{
+  Translation "112:122=32:47","192:207=96:111","123:127=5:8"
+}
+
+actor Mookshot2blackbrown : Mookshot2
+{
+  Translation "112:122=32:47","192:207=64:79","123:127=5:8"
+}
+
+actor Mookshot2blackkak : Mookshot2
+{
+  Translation "112:122=32:47","192:207=152:159","123:127=5:8"
+}
+
+actor Mookshot2red : Mookshot2
+{
+  Translation "112:122=32:47","192:207=96:111","123:127=32:47"
+}
+
+actor Mookshot2redkak : Mookshot2
+{
+  Translation "112:122=32:47","192:207=152:159","123:127=32:47"
+}
+
+actor Mookshot2navy : Mookshot2
+{
+  Translation "112:122=32:47","192:207=96:111","123:127=240:245"
+}
+
+actor Mookshot2navybrown : Mookshot2
+{
+  Translation "112:122=32:47","192:207=64:79","123:127=240:245"
+}

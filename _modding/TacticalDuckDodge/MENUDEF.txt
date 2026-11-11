@@ -1,0 +1,62 @@
+AddOptionMenu "OptionsMenu"
+{
+	StaticText ""
+	Submenu "Tactical Duck & Dodge AI (Experiment)", "NBCTacticalAIMenu"
+}
+
+OptionMenu "NBCTacticalAIMenu"
+{
+	Title "WinBack / Time Crisis Enemy AI"
+	StaticText "Behavior Toggles & Probabilities", "Cyan"
+	Option "Enable Tactical Duck & Dodge", "nbc_tactical_enable", "YesNo"
+	Slider "Duck / Cover Chance (%)", "nbc_duck_chance", 0, 100, 5, 0
+	Slider "Side-Dodge / Roll Chance (%)", "nbc_dodge_chance", 0, 100, 5, 0
+	Option "Allow Combat Dive-Rolls", "nbc_roll_enable", "YesNo"
+	Option "Allow Crouched Firing", "nbc_crouch_fire", "YesNo"
+	Option "Pop-Out Telegraph Glint", "nbc_telegraph_flash", "YesNo"
+	StaticText ""
+	StaticText "KAI / Smart Marines Ported Mechanics", "Cyan"
+	Option "3D Trajectory Projectile Dodging", "nbc_proj_dodge_enable", "YesNo"
+	Slider "Projectile Dodge Range (units)", "nbc_proj_dodge_range", 128, 768, 32, 0
+	Option "Mid-Dodge Snap-Shot Attack", "nbc_dodge_attack", "YesNo"
+	Option "Sprint to Distant Cover (Up to 256u)", "nbc_active_cover_run", "YesNo"
+	Option "Use Solid Props as Waist-High Cover", "nbc_prop_cover_enable", "YesNo"
+	StaticText ""
+	StaticText "Enemy Magazine & Reload System", "Cyan"
+	Option "Enable Enemy Reloading", "nbc_reload_enable", "YesNo"
+	Slider "Reload Duration (tics)", "nbc_reload_tics", 15, 140, 5, 0
+	Slider "Mag Capacity Override (0 = Auto)", "nbc_reload_shots", 0, 40, 1, 0
+	StaticText ""
+	StaticText "Cooking Barrels & Explosion Fleeing", "Cyan"
+	Option "Barrels Cook Before Exploding", "nbc_barrel_cook_enable", "YesNo"
+	Slider "Barrel Cook Duration (tics)", "nbc_barrel_cook_tics", 15, 140, 5, 0
+	Slider "Enemy Flee Barrel Chance (%)", "nbc_barrel_flee_chance", 0, 100, 5, 0
+	Slider "Barrel Panic Radius (units)", "nbc_barrel_panic_radius", 96, 512, 16, 0
+	Slider "Barrel Flee Speed Multiplier", "nbc_barrel_flee_speed", 1.0, 2.5, 0.05, 2
+	StaticText ""
+	StaticText "Geometry & Cover Edge Detection", "Cyan"
+	Option "Seek Wall Corners & Low Cover", "nbc_cover_seek", "YesNo"
+	Option "WinBack Corner Hide & Peek-Out", "nbc_corner_peek", "YesNo"
+	Option "Allow Ducking in Open Ground", "nbc_open_duck", "YesNo"
+	Slider "Cover Search Range (units)", "nbc_cover_search_dist", 64, 256, 16, 0
+	StaticText ""
+	StaticText "Retreat (Under Gunfire) & Push (Out of View)", "Cyan"
+	Option "Retreat Under Player Gunfire", "nbc_retreat_enable", "YesNo"
+	Slider "Retreat Chance (%)", "nbc_retreat_chance", 0, 100, 5, 0
+	Slider "Retreat Speed Multiplier", "nbc_retreat_speed", 1.0, 2.5, 0.05, 2
+	Slider "Retreat Duration (tics)", "nbc_retreat_tics", 15, 105, 5, 0
+	Option "Push When Player Hidden & Silent", "nbc_push_enable", "YesNo"
+	Slider "Push Trigger Delay (tics)", "nbc_push_delay_tics", 10, 105, 5, 0
+	Slider "Push Speed Multiplier", "nbc_push_speed", 1.0, 2.5, 0.05, 2
+	Slider "Max Push Duration (tics)", "nbc_push_tics", 35, 175, 10, 0
+	StaticText ""
+	StaticText "Speed & Timing Measurements (35 tics = 1s)", "Cyan"
+	Slider "Roll Lateral Speed (units/tic)", "nbc_roll_speed", 1.0, 18.0, 0.5, 1
+	Slider "Roll Spin Duration (tics)", "nbc_roll_tics", 8, 60, 2, 0
+	Slider "Strafe Dash Speed (units/tic)", "nbc_strafe_speed", 1.0, 18.0, 0.5, 1
+	Slider "Strafe Dash Duration (tics)", "nbc_strafe_tics", 6, 50, 2, 0
+	Slider "Base Duck / Cover Duration (tics)", "nbc_duck_tics", 10, 105, 5, 0
+	StaticText ""
+	Option "Debug Console Measurements", "nbc_debug_tactical", "YesNo"
+	Command "Reset All Tactical AI Settings to Default", "netevent nbc_reset_defaults"
+}

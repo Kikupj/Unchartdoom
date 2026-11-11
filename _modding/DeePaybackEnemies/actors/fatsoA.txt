@@ -1,0 +1,110 @@
+actor Rocketeer
+{
+  scale 1.1
+  obituary "%o was mistaken for a tank."
+  health 140
+  radius 20
+  height 56
+  mass 200
+  speed 8
+  painchance 60
+  seesound "buddyM/see"
+  attacksound "weapons/nebelwerfer"
+  painsound "buddyM/hit"
+  deathsound "buddyM/die"
+  activesound ""
+  DropItem "RocketLauncher" 255
+  DamageFactor "Enemy", 0.0
+  Translation "192:207=64:79"
+  Tag "Rocketeer"
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EU1A T 10 A_Look
+    loop
+  See:
+    EU1A AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    EU1A EE 4 A_FaceTarget
+	EU1A E 0 BRIGHT A_PlayWeaponSound("weapons/nebelwerfer")
+    EU1A F 4 BRIGHT A_CustomMissile("MiniRocket",40,12,0)
+    EU1A E 8
+    goto See
+  Pain:
+    EU1A H 3
+    EU1A H 3 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(60, "ADeath1")
+    EU1A I 5
+    EU1A J 5 A_Scream
+    EU1A K 5 A_NoBlocking
+    EU1A L 5 A_BossDeath
+    EU1A M -1
+    stop
+  ADeath1:
+    EU1A N 5
+    EU1A O 5 A_Scream
+    EU1A P 5 A_NoBlocking
+    EU1A Q 5 A_BossDeath
+    EU1A R -1
+    stop
+  Death.Weak:
+    EU1B I 5
+    EU1B J 5 A_PlaySound("buddyM/hit")
+    EU1B K 5 A_NoBlocking
+    EU1B L 5 A_BossDeath
+    EU1B M -1
+    stop
+  Death.Fire:
+		EF1b A 5 BRIGHT
+		EF1b B 5 BRIGHT A_PlaySound("death/burning")
+		EF1b CDCB 5 BRIGHT 
+		EF1b ABC 5 BRIGHT
+		EF1b D 5 BRIGHT A_BossDeath
+		EF1b E 5 BRIGHT A_NoBlocking
+		EF1b EFGH 5 BRIGHT
+		EF1b I -1
+		Stop
+  Idle:
+    EU1A AA 4 A_Wander
+    EU1A A 0 A_Look
+    EU1A BB 4 A_Wander
+    EU1A A 0 A_Look
+    EU1A CC 4 A_Wander
+    EU1A A 0 A_Look
+    EU1A DD 4 A_Wander
+    EU1A A 0 A_Look
+    loop
+  }
+}
+
+actor RocketeerBrownRed : Rocketeer
+{
+  Translation "192:207=64:79","112:127=16:47"
+}
+
+actor RocketeerBrownSilver : Rocketeer
+{
+  Translation "192:207=64:79","112:127=80:111"
+}
+
+actor RocketeerGreyRed : Rocketeer
+{
+  Translation "192:207=96:111","112:127=16:47"
+}
+
+actor RocketeerGreySilver : Rocketeer
+{
+  Translation "192:207=96:111","112:127=80:111"
+}
+
+actor RocketeerGreyBrown : Rocketeer
+{
+  Translation "192:207=96:111","112:127=64:79"
+}

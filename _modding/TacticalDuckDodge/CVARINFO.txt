@@ -1,0 +1,56 @@
+// ============================================================================
+// Tactical Duck & Dodge AI (WinBack / Time Crisis + KAI/Smart Marines Port)
+// Tuning & Measurement CVars
+// ============================================================================
+
+server bool  nbc_tactical_enable     = true;
+server int   nbc_duck_chance         = 75;   // % chance to duck after firing / when aimed at
+server int   nbc_dodge_chance        = 65;   // % chance to side-dodge / roll when aimed at or hurt
+server bool  nbc_roll_enable         = true; // Enable 360 combat dive-rolls in addition to strafe-dashes
+server bool  nbc_crouch_fire         = true; // Allow enemies to occasionally fire from a crouched stance
+server bool  nbc_telegraph_flash     = true; // Subtle visual glint when popping out of cover to shoot
+
+// Ported KAI / Smart Marines Mechanics
+server bool  nbc_proj_dodge_enable   = true; // Dodge incoming projectiles using 3D trajectory math
+server int   nbc_proj_dodge_range    = 384;  // Detection range (map units) for incoming projectiles
+server bool  nbc_dodge_attack        = true; // Allow enemies to fire a snap-shot mid-dodge (Smart Marines style)
+server bool  nbc_active_cover_run    = true; // Actively sprint to distant cover (up to 256u) when in the open
+server bool  nbc_prop_cover_enable   = true; // Treat solid non-monster props/obstacles as valid cover
+
+// Enemy Reload Parameters
+server bool  nbc_reload_enable       = true; // Enable enemy ammo tracking & tactical reloading
+server int   nbc_reload_tics         = 52;   // Reload duration in tics (52 tics = ~1.5 sec)
+server int   nbc_reload_shots        = 0;    // 0 = Auto mag size by weapon type; >0 = override
+
+// Cooking Barrel & Enemy Panic-Flee Parameters
+server bool  nbc_barrel_cook_enable  = true; // Barrels cook/sizzle before exploding
+server int   nbc_barrel_cook_tics    = 52;   // How long a barrel cooks before exploding (52 tics = ~1.5s)
+server int   nbc_barrel_flee_chance  = 65;   // % chance an enemy notices a cooking barrel and runs away
+server int   nbc_barrel_panic_radius = 240;  // Radius (map units) within which enemies react to a cooking barrel
+server float nbc_barrel_flee_speed   = 1.55; // Speed multiplier when running away from a cooking barrel
+
+// Geometry & Cover Detection Parameters
+server bool  nbc_cover_seek          = true; // Detect wall edges & low geometry to roll/duck behind
+server bool  nbc_corner_peek         = true; // WinBack-style: hide behind wall corners and peek back out
+server bool  nbc_open_duck           = true; // Allow ducking in open ground when no low cover is present
+server int   nbc_cover_search_dist   = 128;  // Max distance (map units) to probe for immediate dodge cover
+
+// Retreat (Under Gunfire) & Push (Player Out of View + Not Firing)
+server bool  nbc_retreat_enable      = true; // Retreat when suppressed by player gunfire
+server int   nbc_retreat_chance      = 55;   // % chance to retreat when suppressed by gunfire
+server float nbc_retreat_speed       = 1.35; // Speed multiplier when retreating from gunfire
+server int   nbc_retreat_tics        = 45;   // Retreat duration in tics (35 tics = 1 sec)
+
+server bool  nbc_push_enable         = true; // Push/advance when player is out of view and NOT firing
+server int   nbc_push_delay_tics     = 35;   // Tics player must be out of sight & silent before push (35 = 1s)
+server float nbc_push_speed          = 1.45; // Speed multiplier when pushing an out-of-view silent player
+server int   nbc_push_tics           = 85;   // Max duration of a push in tics before re-evaluating
+
+// Measurable Speed & Timing Parameters
+server float nbc_roll_speed          = 6.0;  // Roll lateral speed (map units/tic)
+server int   nbc_roll_tics           = 24;   // Roll duration in tics (35 tics = 1 sec)
+server float nbc_strafe_speed        = 6.5;  // Side-step dash speed (map units/tic)
+server int   nbc_strafe_tics         = 18;   // Side-step dash duration in tics
+server int   nbc_duck_tics           = 40;   // Base duck / cover wait duration in tics (randomized +/- 25%)
+
+server bool  nbc_debug_tactical      = false; // Log tactical state transitions & cover hits to console

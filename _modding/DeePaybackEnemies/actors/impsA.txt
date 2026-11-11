@@ -1,0 +1,883 @@
+actor StreetThugM : HumanMb
+{
+  scale 1.0
+  obituary "%o was shot by a street thug."
+  health 20
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "milMex/see"
+  painsound "milMex/pain"
+  deathsound "milMex/die"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Tag "Street Thug"
+  Translation "192:207=80:109"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EI1A T 10 A_Look
+    loop
+  See:
+    EI1A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    EI1A EF 5 A_FaceTarget
+	EI1A G 0 A_PlayWeaponSound("en/beretta")
+    EI1A G 8 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    EI1A F 8
+    goto See
+  Pain:
+    EI1A H 3
+    EI1A H 3 A_Pain
+    goto See
+  Death:
+    EI1A I 6
+    EI1A J 6 A_Scream
+    EI1A K 6 A_NoBlocking
+    EI1A L 6
+    EI1A M -1
+    stop
+   Death.Weak:
+    EI1B I 5
+    EI1B J 5 A_PlaySound("milMex/pain")
+    EI1B K 5
+	EI1B L 5
+    EI1B M -1 A_NoBlocking
+    stop
+  Idle:
+    EI1A AA 4 A_Wander
+    EI1A A 0 A_Look
+    EI1A BB 4 A_Wander
+    EI1A A 0 A_Look
+    EI1A CC 4 A_Wander
+    EI1A A 0 A_Look
+    EI1A DD 4 A_Wander
+    EI1A A 0 A_Look
+    loop
+  }
+}
+
+actor StreetThugMtan : StreetThugM
+{
+  Translation "192:207=80:109","112:127=128:143"
+}
+
+actor StreetThugMred : StreetThugM
+{
+  Translation "192:207=80:109","112:127=16:47"
+}
+
+actor StreetThugMredA : StreetThugM
+{
+  Translation "192:207=80:109","112:127=16:47","48:79=64:79"
+}
+
+actor StreetThugMredtan : StreetThugM
+{
+  Translation "192:207=144:151","112:127=16:47"
+}
+
+actor StreetThugMblue : StreetThugM
+{
+  Translation "192:207=80:109","112:127=193:207"
+}
+
+actor StreetThugMblueA : StreetThugM
+{
+  Translation "192:207=80:109","112:127=193:207","48:79=64:79"
+}
+
+actor StreetThugMbluetan : StreetThugM
+{
+  Translation "192:207=144:151","112:127=193:207"
+}
+
+actor StreetThugMblack : StreetThugM
+{
+  Translation "192:207=80:109","119:127=5:8"
+}
+
+actor StreetThugMblackA : StreetThugM
+{
+  Translation "192:207=80:109","119:127=5:8","48:79=64:79"
+}
+
+actor StreetThugMblacktan : StreetThugM
+{
+  Translation "192:207=144:151","119:127=5:8"
+}
+
+actor robberM : HumanMb
+{
+  scale 1.0
+  obituary "%o was shot by a Robber."
+  health 20
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "Hood1/see"
+  painsound "Hood1/pain"
+  deathsound "Hood1/die"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Tag "Robber"
+  Translation "192:207=96:111","250:254=104:111"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EI2A T 10 A_Look
+    loop
+  See:
+    EI2A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    EI2A EF 5 A_FaceTarget
+	EI2A G 0 A_PlayWeaponSound("en/beretta")
+    EI2A G 8 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    EI2A F 8
+    goto See
+  Pain:
+    EI2A H 3
+    EI2A H 3 A_Pain
+    goto See
+  Death:
+    EI2A I 6
+    EI2A J 6 A_Scream
+    EI2A K 6 A_NoBlocking
+    EI2A L 6
+    EI2A M -1
+    stop
+   Death.Weak:
+    EI2B I 5
+    EI2B J 5 A_PlaySound("Hood1/pain")
+    EI2B K 5
+	EI2B L 5
+    EI2B M -1 A_NoBlocking
+    stop
+  Idle:
+    EI2A AA 4 A_Wander
+    EI2A A 0 A_Look
+    EI2A BB 4 A_Wander
+    EI2A A 0 A_Look
+    EI2A CC 4 A_Wander
+    EI2A A 0 A_Look
+    EI2A DD 4 A_Wander
+    EI2A A 0 A_Look
+    loop
+  }
+}
+
+actor robberMgreenred : robberM
+{
+  Translation "192:207=96:111","250:254=32:47"
+}
+
+actor robberMbrown : robberM
+{
+  Translation "192:207=96:111","250:254=104:111","112:127=64:79"
+}
+
+actor robberMbrownpink : robberM
+{
+  Translation "192:207=96:111","112:127=64:79"
+}
+
+actor robberMbrowngreen : robberM
+{
+  Translation "192:207=96:111","250:254=120:125","112:127=64:79"
+}
+
+actor robberMbrownblue : robberM
+{
+  Translation "192:207=96:111","250:254=199:207","112:127=64:79"
+}
+
+actor robberMbrownred : robberM
+{
+  Translation "192:207=96:111","250:254=32:47","112:127=64:79"
+}
+
+actor robberMred : robberM
+{
+  Translation "192:207=96:111","250:254=104:111","112:127=64:79"
+}
+
+actor robberMredgreen : robberM
+{
+  Translation "192:207=96:111","250:254=120:125","112:127=64:79"
+}
+
+actor robberMsilver : robberM
+{
+  Translation "192:207=96:111","250:254=104:111","118:127=80:108"
+}
+
+actor robberMsilvergreen : robberM
+{
+  Translation "192:207=96:111","250:254=120:125","118:127=80:108"
+}
+
+actor robberMsilverblue : robberM
+{
+  Translation "192:207=96:111","250:254=199:207","118:127=80:108"
+}
+
+actor robberMnavy : robberM
+{
+  Translation "192:207=96:111","250:254=104:111","118:127=240:246"
+}
+
+actor robberMnavypink : robberM
+{
+  Translation "192:207=96:111","118:127=240:246"
+}
+
+actor robberMnavygreen : robberM
+{
+  Translation "192:207=96:111","250:254=120:125","118:127=240:246"
+}
+
+actor robberMnavyred : robberM
+{
+  Translation "192:207=96:111","250:254=32:47","118:127=240:246"
+}
+
+actor StreetThugF : HumanFb
+{
+  scale 1.0
+  obituary "%o was shot by a street thug."
+  health 20
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "milChic/see"
+  painsound "milChic/pan"
+  deathsound "milChic/pan"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Tag "Street Thug"
+  Translation "192:207=80:111"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EI6A T 10 A_Look
+    loop
+  See:
+    EI6A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    EI6A EF 5 A_FaceTarget
+	EI6A G 0 A_PlayWeaponSound("en/beretta")
+    EI6A G 8 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    EI6A F 8
+    goto See
+  Pain:
+    EI6A H 3
+    EI6A H 3 A_Pain
+    goto See
+  Death:
+    EI6A I 6
+    EI6A J 6 A_Scream
+    EI6A K 6 A_NoBlocking
+    EI6A L 6
+    EI6A M -1
+    stop
+   Death.Weak:
+    EI6B I 5
+    EI6B J 5 A_PlaySound("milChic/pan")
+    EI6B K 5
+	EI6B L 5
+    EI6B M -1 A_NoBlocking
+    stop
+  Idle:
+    EI6A AA 4 A_Wander
+    EI6A A 0 A_Look
+    EI6A BB 4 A_Wander
+    EI6A A 0 A_Look
+    EI6A CC 4 A_Wander
+    EI6A A 0 A_Look
+    EI6A DD 4 A_Wander
+    EI6A A 0 A_Look
+    loop
+  }
+}
+
+actor StreetThugFtan : StreetThugF
+{
+  Translation "192:207=80:111","112:127=144:151"
+}
+
+actor StreetThugFblue : StreetThugF
+{
+  Translation "192:207=80:111","112:127=192:207"
+}
+
+actor StreetThugFbluetan : StreetThugF
+{
+  Translation "192:207=144:151","112:127=192:207"
+}
+
+actor StreetThugFred : StreetThugF
+{
+  Translation "192:207=80:111","112:127=176:191"
+}
+
+actor StreetThugFredtan : StreetThugF
+{
+  Translation "192:207=144:151","112:127=176:191"
+}
+
+actor StreetThugFredgrey : StreetThugF
+{
+  Translation "192:207=16:47","112:127=96:111"
+}
+
+actor killerM : HumanMb
+{
+  scale 1.0
+  obituary "%o was shot down by a masked Killer."
+  health 20
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "Hood2/see"
+  painsound "Hood1/pain"
+  deathsound "Hood1/die"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Tag "Killer"
+   Translation "192:207=240:245","112:127=96:111"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EI4A T 10 A_Look
+    loop
+  See:
+    EI4A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    EI4A EF 5 A_FaceTarget
+	EI4A G 0 A_PlayWeaponSound("en/mac10")
+    EI4A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	EI4A F 2 A_FaceTarget
+	EI4A G 0 A_PlayWeaponSound("en/mac10")
+    EI4A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	EI4A F 2 A_FaceTarget
+	EI4A G 0 A_PlayWeaponSound("en/mac10")
+    EI4A G 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+    EI4A F 2
+    goto See
+  Pain:
+    EI4A H 3
+    EI4A H 3 A_Pain
+    goto See
+  Death:
+    EI4A I 6
+    EI4A J 6 A_Scream
+    EI4A K 6 A_NoBlocking
+    EI4A L 6
+    EI4A M -1
+    stop
+   Death.Weak:
+    EI4B I 5
+    EI4B J 5 A_PlaySound("Hood1/pain")
+    EI4B K 5
+	EI4B L 5
+    EI4B M -1 A_NoBlocking
+    stop
+  Idle:
+    EI4A AA 4 A_Wander
+    EI4A A 0 A_Look
+    EI4A BB 4 A_Wander
+    EI4A A 0 A_Look
+    EI4A CC 4 A_Wander
+    EI4A A 0 A_Look
+    EI4A DD 4 A_Wander
+    EI4A A 0 A_Look
+    loop
+  }
+}
+
+actor killerMbrown : killerM
+{
+   Translation "192:207=240:245","112:127=64:79"
+}
+
+actor killerMwhite : killerM
+{
+   Translation "192:207=240:245","120:127=80:102"
+}
+
+actor killerMblack : killerM
+{
+   Translation "192:202=109:111","203:207=5:8","112:127=96:111"
+}
+
+actor killerMblackbrown : killerM
+{
+   Translation "192:202=109:111","203:207=5:8","112:127=64:79"
+}
+
+actor killerMblacknavy : killerM
+{
+   Translation "192:202=109:111","203:207=5:8","120:127=240:245"
+}
+
+actor Banger
+{
+  scale 1.0
+  obituary "%o was shot down by a Gang banger."
+  health 60
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "bruiser/see"
+  painsound "bruiser/pain"
+  deathsound "bruiser/pain"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Tag "Ganger"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EI5A T 10 A_Look
+    loop
+  See:
+    EI5A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    EI5A EE 5 A_FaceTarget
+	EI5A F 0 A_PlayWeaponSound("en/mac10")
+    EI5A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	EI5A E 2 A_FaceTarget
+	EI5A F 0 A_PlayWeaponSound("en/mac10")
+    EI5A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+	EI5A E 2 A_FaceTarget
+	EI5A F 0 A_PlayWeaponSound("en/mac10")
+    EI5A F 2 BRIGHT A_CustomMissile("EnemySMGTracer",38,0,random(-8,8))
+    EI5A E 2
+    goto See
+  Pain:
+    EI5A H 3
+    EI5A H 3 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(80, "ADeath1")
+    EI5A I 6
+    EI5A J 6 A_Scream
+    EI5A K 6 A_NoBlocking
+    EI5A L 6
+    EI5A M -1
+    stop
+  ADeath1:
+    EI5A N 6
+    EI5A O 6 A_Scream
+    EI5A P 6 A_NoBlocking
+    EI5A Q 6
+    EI5A R -1
+    stop
+   Death.Weak:
+    EI5B I 5
+    EI5B J 5 A_PlaySound("bruiser/pain")
+    EI5B K 5
+	EI5B L 5
+    EI5B M -1 A_NoBlocking
+    stop
+Death.Fire:
+		EF1d A 5 BRIGHT
+		EF1d B 5 BRIGHT A_PlaySound("death/burning")
+		EF1d CDCB 5 BRIGHT 
+		EF1d ABCD 5 BRIGHT
+		EF1d E 5 BRIGHT A_NoBlocking
+		EF1d EFG 5 bright
+		EF1d H 5 BRIGHT
+		EF1d I -1
+		Stop
+  Idle:
+    EI5A AA 4 A_Wander
+    EI5A A 0 A_Look
+    EI5A BB 4 A_Wander
+    EI5A A 0 A_Look
+    EI5A CC 4 A_Wander
+    EI5A A 0 A_Look
+    EI5A DD 4 A_Wander
+    EI5A A 0 A_Look
+    loop
+  }
+}
+
+actor Bangergrey : Banger
+{
+  Translation "112:127=96:111"
+}
+
+actor Bangerred : Banger
+{
+  Translation "119:127=32:47"
+}
+
+actor Bangernavy : Banger
+{
+  Translation "119:127=240:246"
+}
+
+actor Bangertan : Banger
+{
+  Translation "119:127=152:159"
+}
+
+actor Pimp : HumanMb
+{
+  scale 1.0
+  obituary "%o was double tapped by a Pimp."
+  health 20
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "grove/See"
+  painsound "drugy/Pain"
+  deathsound "drugy/Death"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  dropitem "Thuggundropper" 256
+  Tag "Pimp"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EI3A T 10 A_Look
+    loop
+  See:
+    EI3A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    EI3A EF 5 A_FaceTarget
+	EI3A G 0 A_PlayWeaponSound("en/beretta")
+    EI3A G 1 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    EI3A G 7 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    EI3A F 8
+    goto See
+  Pain:
+    EI3A H 3
+    EI3A H 3 A_Pain
+    goto See
+  Death:
+    EI3A I 6
+    EI3A J 6 A_Scream
+    EI3A K 6 A_NoBlocking
+    EI3A L 6
+    EI3A M -1
+    stop
+   Death.Weak:
+    EI3B I 5
+    EI3B J 5 A_PlaySound("drugy/Pain")
+    EI3B K 5
+	EI3B L 5
+    EI3B M -1 A_NoBlocking
+    stop
+  Idle:
+    EI3A AA 4 A_Wander
+    EI3A A 0 A_Look
+    EI3A BB 4 A_Wander
+    EI3A A 0 A_Look
+    EI3A CC 4 A_Wander
+    EI3A A 0 A_Look
+    EI3A DD 4 A_Wander
+    EI3A A 0 A_Look
+    loop
+  }
+}
+
+actor Pimpred : Pimp
+{
+  Translation "193:207=16:47"
+}
+
+actor Pimpgreen : Pimp
+{
+  Translation "193:207=112:124"
+}
+
+actor Pimpyellow : Pimp
+{
+  Translation "193:207=160:166"
+}
+
+actor Pimppink : Pimp
+{
+  Translation "193:207=250:254"
+}
+
+actor PunkF : HumanFb
+{
+  scale 1.0
+  obituary "%o was double tapped by a Pimp."
+  health 20
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "rastf/see"
+  painsound "rastf/pan"
+  deathsound "rastf/pan"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  dropitem "Thuggundropper" 256
+  Tag "Punk"
+  Translation "192:207=96:111"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EI7A T 10 A_Look
+    loop
+  See:
+    EI7A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    EI7A EF 5 A_FaceTarget
+	EI7A G 0 A_PlayWeaponSound("en/beretta")
+    EI7A G 1 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    EI7A G 7 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    EI7A F 8
+    goto See
+  Pain:
+    EI7A H 3
+    EI7A H 3 A_Pain
+    goto See
+  Death:
+    EI7A I 6
+    EI7A J 6 A_Scream
+    EI7A K 6 A_NoBlocking
+    EI7A L 6
+    EI7A M -1
+    stop
+   Death.Weak:
+    EI7B I 5
+    EI7B J 5 A_PlaySound("rastf/pan")
+    EI7B K 5
+	EI7B L 5
+    EI7B M -1 A_NoBlocking
+    stop
+  Idle:
+    EI7A AA 4 A_Wander
+    EI7A A 0 A_Look
+    EI7A BB 4 A_Wander
+    EI7A A 0 A_Look
+    EI7A CC 4 A_Wander
+    EI7A A 0 A_Look
+    EI7A DD 4 A_Wander
+    EI7A A 0 A_Look
+    loop
+  }
+}
+
+actor PunkFblue : PunkF
+{
+  Translation "192:207=96:111","112:127=192:207"
+}
+
+actor PunkFred : PunkF
+{
+  Translation "192:207=96:111","112:127=176:191"
+}
+
+actor PunkFpink : PunkF
+{
+  Translation "192:207=96:111","112:127=250:254"
+}
+
+actor PunkFblondeW : PunkF
+{
+  Translation "192:207=96:111","64:79=53:79","112:127=160:166"
+    seesound "fthug/See"
+  painsound "fthug/pain"
+  deathsound "fthug/die"
+  states
+  {
+    Death.Weak:
+    EI7B I 5
+    EI7B J 5 A_PlaySound("fthug/pain")
+    EI7B K 5
+	EI7B L 5
+    EI7B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor PunkFredW : PunkF
+{
+  Translation "64:79=53:79","112:127=176:191"
+  seesound "fthug/See"
+  painsound "fthug/pain"
+  deathsound "fthug/die"
+  states
+  {
+    Death.Weak:
+    EI7B I 5
+    EI7B J 5 A_PlaySound("fthug/pain")
+    EI7B K 5
+	EI7B L 5
+    EI7B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor PunkFpinkW : PunkF
+{
+  Translation "64:79=53:79","112:127=250:254"
+  seesound "fthug/See"
+  painsound "fthug/pain"
+  deathsound "fthug/die"
+  states
+  {
+    Death.Weak:
+    EI7B I 5
+    EI7B J 5 A_PlaySound("fthug/pain")
+    EI7B K 5
+	EI7B L 5
+    EI7B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor PunkFgreenW : PunkF
+{
+  Translation "64:79=53:79"
+  seesound "fthug/See"
+  painsound "fthug/pain"
+  deathsound "fthug/die"
+  states
+  {
+    Death.Weak:
+    EI7B I 5
+    EI7B J 5 A_PlaySound("fthug/pain")
+    EI7B K 5
+	EI7B L 5
+    EI7B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor robberF : HumanFb
+{
+  scale 1.0
+  obituary "%o was popped by a Robber."
+  health 40
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "daisy/see"
+  painsound "daisy/hit"
+  deathsound "daisy/hit"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Tag "Robber"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EI8A T 10 A_Look
+    loop
+  See:
+    EI8A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    EI8A EF 5 A_FaceTarget
+	EI8A G 0 A_PlayWeaponSound("en/revol")
+    EI8A G 8 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    EI8A F 8
+    goto See
+  Pain:
+    EI8A H 3
+    EI8A H 3 A_Pain
+    goto See
+  Death:
+    EI8A I 5
+    EI8A J 5 A_Scream
+    EI8A K 5 A_NoBlocking
+    EI8A L 5
+    EI8A M -1
+    stop
+  Death.Weak:
+    EI8B I 6
+    EI8B J 6 A_PlaySound("daisy/hit")
+    EI8B K 6
+	EI8B L 6
+    EI8B M -1 A_NoBlocking
+    stop
+  Idle:
+    EI8A AA 4 A_Wander
+    EI8A A 0 A_Look
+    EI8A BB 4 A_Wander
+	EI8A A 0 A_Look
+    EI8A CC 4 A_Wander
+    EI8A A 0 A_Look
+    EI8A DD 4 A_Wander
+    EI8A A 0 A_Look
+    loop
+  }
+}
+
+actor robberFred : robberF
+{
+  Translation "192:207=32:47"
+}
+
+actor robberFgreen: robberF
+{
+  Translation "192:207=113:126"
+}

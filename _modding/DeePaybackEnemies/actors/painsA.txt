@@ -1,0 +1,379 @@
+actor Enforcer
+{
+  scale 1.0
+  obituary "%o was outgunned by a Enforcer"
+  health 250
+  radius 15
+  height 54
+  mass 300
+  speed 8
+  painchance 160
+  SeeSound "bigSOL/see"
+  AttackSound "en/eagle"
+  PainSound "milMex/pain"
+  DeathSound "milMex/die"
+  dropitem "Pistol" 256
+  dropitem "Berserk" 220
+  Tag "Enforcer"
+  DamageFactor "Enemy", 0.0
+   DamageFactor "Weak", 0.5
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  +BOSS
+  states
+  {
+  Spawn:
+    EP1A T 10 A_Look
+    loop
+  See:
+    EP1A AABBCCDD 3 A_Chase
+    loop
+  Missile:
+    EP1A EE 5 A_FaceTarget
+	EP1A F 0 A_PlayWeaponSound("en/eagle")
+    EP1A F 6 BRIGHT A_CustomMissile("EnemyLMGTracer",38,0,random(-3,3))
+    EP1A E 5 A_FaceTarget
+	EP1A G 0 A_PlayWeaponSound("en/eagle")
+    EP1A G 6 BRIGHT A_CustomMissile("EnemyLMGTracer",38,0,random(-3,3))
+	EP1A E 5
+    goto See
+  Pain:
+    EP1A H 3
+    EP1A H 3 A_Pain
+    goto See
+  Death:
+    EP1A I 5
+    EP1A J 5 A_Scream
+    EP1A K 5 A_NoBlocking
+    EP1A L 5 A_BossDeath
+    EP1A M -1
+    stop
+  Death.Weak:
+	EP1B I 6
+    EP1B J 6 A_PlaySound("milMex/pain")
+    EP1B K 6 A_NoBlocking
+    EP1B L 6 A_BossDeath
+    EP1B M -1
+    stop
+Death.Fire:
+	EF1d A 5 BRIGHT
+	EF1d B 5 BRIGHT A_PlaySound("death/burning")
+	EF1d CDCB 5 BRIGHT 
+	EF1d ABCD 5 BRIGHT
+	EF1d E 5 BRIGHT A_NoBlocking
+	EF1d EFGH 5 BRIGHT
+	EF1d I 5 A_BossDeath
+	EF1d I -1
+	Stop
+  Idle:
+    EP1A AA 4 A_Wander
+    EP1A A 0 A_Look
+    EP1A BB 4 A_Wander
+    EP1A A 0 A_Look
+    EP1A CC 4 A_Wander
+    EP1A A 0 A_Look
+    EP1A DD 4 A_Wander
+    EP1A A 0 A_Look
+    loop
+  }
+}
+
+actor EnforcerA : Enforcer
+{
+    Translation "48:79=70:79"
+seesound "bruiser/see"
+  painsound "bruiser/pain"
+  deathsound "bruiser/pain"
+  states
+  {
+    Death.Weak:
+	EP1B I 6
+    EP1B J 6 A_PlaySound("bruiser/pain")
+    EP1B K 6 A_NoBlocking
+    EP1B L 6 A_BossDeath
+    EP1B M -1
+    stop
+  }
+}
+
+actor EnforcerGrey : Enforcer
+{
+    Translation "112:127=96:111"
+}
+
+actor EnforcerGreyA : Enforcer
+{
+    Translation "48:79=70:79","112:127=96:111"
+seesound "bruiser/see"
+  painsound "bruiser/pain"
+  deathsound "bruiser/pain"
+  states
+  {
+    Death.Weak:
+	EP1B I 6
+    EP1B J 6 A_PlaySound("bruiser/pain")
+    EP1B K 6 A_NoBlocking
+    EP1B L 6 A_BossDeath
+    EP1B M -1
+    stop
+  }
+}
+
+actor EnforcerBrown : Enforcer
+{
+    Translation "112:127=64:79"
+}
+
+actor EnforcerRed : Enforcer
+{
+    Translation "112:127=16:47"
+}
+
+actor EnforcerRedA : Enforcer
+{
+    Translation "48:79=70:79","112:127=16:47"
+seesound "bruiser/see"
+  painsound "bruiser/pain"
+  deathsound "bruiser/pain"
+  states
+  {
+    Death.Weak:
+	EP1B I 6
+    EP1B J 6 A_PlaySound("bruiser/pain")
+    EP1B K 6 A_NoBlocking
+    EP1B L 6 A_BossDeath
+    EP1B M -1
+    stop
+  }
+}
+
+actor EnforcerBlue : Enforcer
+{
+    Translation "112:127=193:207"
+}
+
+actor EnforcerBlueA : Enforcer
+{
+    Translation "48:79=70:79","112:127=193:207"
+seesound "bruiser/see"
+  painsound "bruiser/pain"
+  deathsound "bruiser/pain"
+  states
+  {
+    Death.Weak:
+	EP1B I 6
+    EP1B J 6 A_PlaySound("bruiser/pain")
+    EP1B K 6 A_NoBlocking
+    EP1B L 6 A_BossDeath
+    EP1B M -1
+    stop
+  }
+}
+
+actor ChunkySSG
+{
+  hitobituary "%o took both barrels to the face."
+  health 250
+  painchance 180
+  speed 8
+  radius 20
+  height 56
+  mass 300
+  seesound "bast/See"
+  attacksound "en/sawnoff"
+  painsound "bast/pain"
+  deathsound "milMex/die"
+  dropitem "HealthBonus" 210
+  dropitem "HealthBonus" 100
+  dropitem "SuperShotgun" 256
+   Tag "Brute"
+    Translation "192:207=96:111"
+   DamageFactor "Enemy", 0.0
+	DamageFactor "Weak", 0.5
+  MONSTER
+  +FLOORCLIP
+   +NOTARGET
+  +NOINFIGHTING
+  +BOSS
+  states
+  {
+  Spawn:
+    EP2A T 10 A_Look
+    Loop
+  See:
+	EP2A AABBCCDD 2 A_Chase
+	loop
+Missile:
+    EP2A EF 10 A_FaceTarget
+	EP2A G 1 A_PlayWeaponSound("en/sawnoff")
+    EP2A G 7 BRIGHT A_CustomMissile("EnemyLMGTracer",32,0,random(-4,4))
+	EP2A G 0 BRIGHT A_CustomMissile("EnemyLMGTracer",32,0,random(-4,4))
+	EP2A G 1 A_PlayWeaponSound("en/sawnoff")
+	EP2A FE 4
+    goto See
+  Pain:
+    EP2A H 2
+    EP2A H 2 A_Pain
+    goto See
+  Death:
+    EP2A I 5
+    EP2A J 5 A_Scream
+    EP2A K 5
+	EP2A L 5
+	EP2A M 5
+    EP2A N -1 A_NoBlocking
+    stop
+  Death.Weak:
+    EP2B I 5
+    EP2B J 5 A_Scream
+    EP2B K 5
+	EP2B L 5
+	EP2B M 5
+	EP2B N 5
+    EP2B O -1 A_NoBlocking
+    stop
+  Death.Fire:
+		EPBR D 5 BRIGHT
+		EPBR E 5 BRIGHT A_PlaySound("death/burning")
+		EPBR FGFE 5 BRIGHT 
+		EPBR DEFG 5 BRIGHT
+		EPBR H 5 BRIGHT A_NoBlocking
+		EPBR IJK 5 bright
+		EPBR L 5 BRIGHT A_BossDeath
+		EPBR M 5 BRIGHT
+		EPBR N -1
+		Stop
+  Idle:
+    EP2A AA 4 A_Wander
+    EP2A A 0 A_Look
+    EP2A BB 4 A_Wander
+    EP2A A 0 A_Look
+    EP2A CC 4 A_Wander
+    EP2A A 0 A_Look
+    EP2A DD 4 A_Wander
+    EP2A A 0 A_Look
+    loop
+  }
+}
+
+actor ChunkySSGgreen : ChunkySSG
+{
+    Translation "192:207=112:126","112:127=96:111"
+}
+
+actor ChunkySSGred : ChunkySSG
+{
+    Translation "192:207=80:111","112:127=16:47"
+}
+
+actor ChunkySSGblue : ChunkySSG
+{
+    Translation "192:207=80:111","112:127=196:207"
+}
+
+actor Pyro
+{
+  hitobituary "%o got cooked by a large pyromaniac."
+  health 250
+  painchance 180
+  speed 8
+  radius 20
+  height 56
+  mass 300
+  seesound "Giant/hey"
+  painsound "Giant/pain"
+  deathsound "head/shot"
+  dropitem "HealthBonus" 210
+  dropitem "HealthBonus" 100
+  dropitem "BFG9000" 20
+   Tag "Pyromaniac"
+   Translation "192:207=16:47"
+   DamageFactor "Enemy", 0.0
+	DamageFactor "Weak", 0.5
+	DamageFactor "Fire", 1.5
+  MONSTER
+  +FLOORCLIP
+   +NOTARGET
+  +NOINFIGHTING
+  +BOSS
+  states
+  {
+  Spawn:
+    EP3A T 10 A_Look
+    Loop
+  See:
+	EP3A AABBCCDD 2 A_Chase
+	loop
+  Missile:
+    EP3A F 10 A_FaceTarget
+	EP3A F 0 A_JumpIfCloser(384,"ProperMissile")
+	EP3A G 4 BRIGHT A_CustomMissile("EnemyFlamebolt",32,12,0)
+	EP3A F 6
+	Goto See
+  ProperMissile:
+    EP3A GGGGGGGG 1 BRIGHT A_CustomMissile("EnemyFlamerShot",32,12,0)
+    EP3A F 6 A_SpidRefire
+    goto Missile
+  Pain:
+    EP3A E 2
+    EP3A E 2 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(80, "ADeath1")
+    EP3A I 5 A_Scream
+    EP3A J 5 
+    EP3A K 5
+	EP3A L 5
+	EP3A M 5
+	EP3A N 5 A_BossDeath
+    EP3A O -1 A_NoBlocking
+    stop
+  Death.Weak:
+    EP3B I 5
+    EP3B J 5 A_PlaySound("Giant/pain")
+    EP3B K 5
+	EP3B L 5
+	EP3B M 5
+	EP3B N 5 A_BossDeath
+    EP3B O -1 A_NoBlocking
+    stop
+  ADeath1:
+	EPBR a 5 BRIGHT
+	EPBR b 5 BRIGHT 
+	EPBR c 5 BRIGHT
+  Death.Fire:
+		EPBR D 1 BRIGHT A_PlaySound("death/burning")
+		EPBR D 5 BRIGHT
+		EPBR E 5 BRIGHT
+		EPBR FGFE 5 BRIGHT 
+		EPBR DEFG 5 BRIGHT
+		EPBR H 5 BRIGHT A_NoBlocking
+		EPBR IJK 5 bright
+		EPBR L 5 BRIGHT A_BossDeath
+		EPBR M 5 BRIGHT
+		EPBR N -1
+		Stop
+  Idle:
+    EP3A AA 4 A_Wander
+    EP3A A 0 A_Look
+    EP3A BB 4 A_Wander
+    EP3A A 0 A_Look
+    EP3A CC 4 A_Wander
+    EP3A A 0 A_Look
+    EP3A DD 4 A_Wander
+    EP3A A 0 A_Look
+    loop
+  }
+}
+
+actor PyroBrown : Pyro
+{
+   Translation "192:207=64:79"
+}
+
+actor Pyrogrey : Pyro
+{
+   Translation "192:207=96:111"
+}

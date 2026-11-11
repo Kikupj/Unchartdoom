@@ -1,0 +1,1367 @@
+actor Thuggundropper : RandomSpawner
+{
+dropitem Clip
+dropitem Pistol
+}
+
+actor Redneck
+{
+  scale 1.0
+  obituary "%o was shot by rifle Redneck."
+  health 20
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "skin3/see"
+  painsound "Hood1/pain"
+  deathsound "Hood1/die"
+  activesound ""
+  dropitem "Clip" 256
+  Tag "Redneck"
+  Translation "118:127=80:95"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EZ6A T 10 A_Look
+    loop
+  See:
+    EZ6A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    EZ6A EF 5 A_FaceTarget
+	EZ6A G 0 A_PlayWeaponSound("en/rifle")
+    EZ6A G 8 BRIGHT A_CustomMissile("EnemyPistolTracer",32,0,random(-8,8))
+    EZ6A F 8
+    goto See
+  Pain:
+    EZ6A H 3
+    EZ6A H 3 A_Pain
+    goto See
+  Death:
+    EZ6A I 5
+    EZ6A J 5 A_Scream
+    EZ6A K 5 A_NoBlocking
+    EZ6A L 5
+	EZ6A M 5
+    EZ6A N -1
+    stop
+  Death.Weak:
+    EZ6B I 6
+    EZ6B J 6 A_PlaySound("Hood1/pain")
+    EZ6B K 6 A_NoBlocking
+    EZ6B L 6
+	EZ6B M 6
+    EZ6B N -1
+    stop
+  Death.Fire:
+		EF1f A 5 BRIGHT
+		EF1f B 5 BRIGHT A_PlaySound("death/burning")
+		EF1f CDCB 5 BRIGHT 
+		EF1f ABCD 5 BRIGHT
+		EF1f E 5 BRIGHT A_NoBlocking
+		EF1f EFGJ 5 BRIGHT
+		EF1f K -1
+		Stop
+  Idle:
+    EZ6A AA 4 A_Wander
+    EZ6A A 0 A_Look
+    EZ6A BB 4 A_Wander
+    EZ6A A 0 A_Look
+    EZ6A CC 4 A_Wander
+    EZ6A A 0 A_Look
+    EZ6A DD 4 A_Wander
+    EZ6A A 0 A_Look
+    loop
+  }
+}
+
+actor Redneck2 : Redneck
+{
+  Translation "192:207=96:111","118:127=80:95"
+}
+
+actor Redneckwhite : Redneck
+{
+  Translation "192:207=64:79","118:127=80:95"
+  seesound "prison/See"
+  painsound "prison/Pain"
+  deathsound "prison/Death"
+}
+
+actor RedneckwhiteA : Redneck
+{
+  Translation "118:127=80:95","48:79=64:79"
+  seesound "grove/See"
+  painsound "drugy/Pain"
+  deathsound "drugy/Death"
+    Tag "Street Rat"
+	obituary "%o was shot by Street rat with a rifle."
+  states
+  {
+  Death.Weak:
+    EZ6B I 6
+    EZ6B J 6 A_PlaySound("drugy/Pain")
+    EZ6B K 6 A_NoBlocking
+    EZ6B L 6
+	EZ6B M 6
+    EZ6B N -1
+    stop
+ }
+}
+
+actor Redneckgreen : Redneck
+{
+  Translation "192:207=96:111"
+}
+
+actor RedneckgreenA : Redneck
+{
+  Translation "192:207=96:111","48:79=64:79"
+  seesound "grove/See"
+  painsound "drugy/Pain"
+  deathsound "drugy/Death"
+   Tag "Street Rat"
+	obituary "%o was shot by Street rat with a rifle."
+  states
+  {
+  Death.Weak:
+    EZ6B I 6
+    EZ6B J 6 A_PlaySound("drugy/Pain")
+    EZ6B K 6 A_NoBlocking
+    EZ6B L 6
+	EZ6B M 6
+    EZ6B N -1
+    stop
+ }
+}
+
+actor Redneckred : Redneck
+{
+  Translation "192:207=96:111","112:127=16:47"
+  seesound "prison/See"
+  painsound "prison/Pain"
+  deathsound "prison/Death"
+}
+
+actor Redneckblue : Redneck
+{
+  Translation "192:207=96:111","112:127=192:207"
+}
+
+actor RedneckblueA : Redneck
+{
+  Translation "192:207=96:111","112:127=192:207","48:79=64:79"
+  seesound "grove/See"
+  painsound "drugy/Pain"
+  deathsound "drugy/Death"
+      Tag "Street Rat"
+	obituary "%o was shot by Street rat with a rifle."
+  states
+  {
+  Death.Weak:
+    EZ6B I 6
+    EZ6B J 6 A_PlaySound("drugy/Pain")
+    EZ6B K 6 A_NoBlocking
+    EZ6B L 6
+	EZ6B M 6
+    EZ6B N -1
+    stop
+ }
+}
+
+actor RedneckblackA : Redneck
+{
+  Translation "48:79=64:79","118:127=5:8"
+  seesound "grove/See"
+  painsound "drugy/Pain"
+  deathsound "drugy/Death"
+      Tag "Street Rat"
+	obituary "%o was shot by Street rat with a rifle."
+  states
+  {
+  Death.Weak:
+    EZ6B I 6
+    EZ6B J 6 A_PlaySound("drugy/Pain")
+    EZ6B K 6 A_NoBlocking
+    EZ6B L 6
+	EZ6B M 6
+    EZ6B N -1
+    stop
+ }
+}
+
+actor GoonM : HumanMb
+{
+  scale 1.0
+  obituary "%o was shot by a Goon."
+  health 20
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "InnDib/see"
+  painsound "milMex/pain"
+  deathsound "milMex/die"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Tag "Goon"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EZ2A B 10 A_Look
+    loop
+  See:
+    EZ2A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    EZ2A EF 5 A_FaceTarget
+	EZ2A G 0 A_PlayWeaponSound("en/beretta")
+    EZ2A G 8 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    EZ2A F 8
+    goto See
+  Pain:
+    EZ2A H 3
+    EZ2A H 3 A_Pain
+    goto See
+  Death:
+    EZ2A I 5
+    EZ2A J 5 A_Scream
+    EZ2A K 5 A_NoBlocking
+    EZ2A L 5
+	EZ2A M 5
+    EZ2A N -1
+    stop
+   Death.Weak:
+    EZ2B I 6
+    EZ2B J 6 A_PlaySound("milMex/pain")
+    EZ2B K 6
+	EZ2B L 6
+    EZ2B M -1 A_NoBlocking
+    stop
+  Idle:
+    EZ2A AA 4 A_Wander
+    EZ2A A 0 A_Look
+    EZ2A BB 4 A_Wander
+    EZ2A A 0 A_Look
+    EZ2A CC 4 A_Wander
+    EZ2A A 0 A_Look
+    EZ2A DD 4 A_Wander
+    EZ2A A 0 A_Look
+    loop
+  }
+}
+
+actor GoonMblue :GoonM
+{
+  Translation "112:127=192:207"
+}
+
+actor GoonMblueA :GoonM
+{
+  Translation "112:127=192:207","48:79=64:79"
+}
+
+actor GoonMred :GoonM
+{
+  Translation "112:127=16:47"
+}
+
+actor GoonMredA :GoonM
+{
+  Translation "112:127=16:47","48:79=64:79"
+}
+
+actor GoonMbrown :GoonM
+{
+  Translation "112:127=64:79"
+}
+
+actor GoonMtan :GoonM
+{
+  Translation "112:127=128:143"
+}
+
+actor GoonMwhite :GoonM
+{
+  Translation "123:127=80:95"
+}
+
+actor GoonMblack :GoonM
+{
+  Translation "123:127=5:8"
+}
+
+actor GoonMpink :GoonM
+{
+  Translation "123:127=5:8","48:79=64:79"
+}
+
+actor GoonMlime :GoonM
+{
+  Translation "123:127=5:8","48:79=64:79"
+}
+
+actor PunkM : HumanMb
+{
+  scale 1.0
+  obituary "%o was shot by a Punk."
+  health 20
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "prison/See"
+  painsound "prison/Pain"
+  deathsound "prison/Death"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Tag "Punk"
+  Translation "112:127=64:78"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EZ1A T 10 A_Look
+    loop
+  See:
+    EZ1A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    EZ1A EF 5 A_FaceTarget
+	EZ1A G 0 A_PlayWeaponSound("en/beretta")
+    EZ1A G 8 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    EZ1A F 8
+    goto See
+  Pain:
+    EZ1A H 3
+    EZ1A H 3 A_Pain
+    goto See
+  Death:
+    EZ1A I 5
+    EZ1A J 5 A_Scream
+    EZ1A K 5 A_NoBlocking
+    EZ1A L 5
+    EZ1A M -1
+    stop
+   Death.Weak:
+    EZ1B I 6
+    EZ1B J 6 A_PlaySound("prison/Pain")
+    EZ1B K 6
+	EZ1B L 6
+    EZ1B M -1 A_NoBlocking
+    stop
+  Idle:
+    EZ1A AA 4 A_Wander
+    EZ1A A 0 A_Look
+    EZ1A BB 4 A_Wander
+    EZ1A A 0 A_Look
+    EZ1A CC 4 A_Wander
+    EZ1A A 0 A_Look
+    EZ1A DD 4 A_Wander
+    EZ1A A 0 A_Look
+    loop
+  }
+}
+
+actor PunkMred : PunkM
+{
+  Translation "112:127=64:78","192:207=176:191"
+}
+
+actor PunkMpink : PunkM
+{
+  Translation "112:127=64:78","192:207=250:254"
+}
+
+actor PunkMgreen : PunkM
+{
+  Translation "112:127=64:78","192:207=112:127"
+}
+
+actor PunkMblackblue : PunkM
+{
+  Translation "112:122=109:111","123:127=5:8"
+}
+
+actor PunkMblackred : PunkM
+{
+  Translation "112:122=109:111","123:127=5:8","192:207=176:191"
+}
+
+actor PunkMblackpink : PunkM
+{
+  Translation "112:122=109:111","123:127=5:8","192:207=250:254"
+}
+
+
+actor PunkMblackgreen : PunkM
+{
+  Translation "112:122=109:111","123:127=5:8","192:207=112:127"
+}
+
+actor PunkMblackyellow : PunkM
+{
+  Translation "112:122=109:111","123:127=5:8","192:207=160:166"
+}
+
+actor PunkMsilvergreenA : PunkM
+{
+  Translation "112:127=80:110","192:207=112:127","48:79=64:79"
+}
+
+actor PunkMsilverblueA : PunkM
+{
+  Translation "112:127=80:110","48:79=64:79"
+}
+
+actor PunkMsilverredA : PunkM
+{
+  Translation "112:127=80:110","192:207=176:191","48:79=64:79"
+}
+
+actor PunkMsilverpinkA : PunkM
+{
+  Translation "112:127=80:110","192:207=250:254","48:79=64:79"
+}
+
+actor scumF : HumanFb
+{
+  scale 1.0
+  obituary "%o was shot by a Scumbag."
+  health 20
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "fthug/See"
+  painsound "fthug/pain"
+  deathsound "fthug/die"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Tag "Scum"
+  Translation "192:207=96:111"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EZ7A T 10 A_Look
+    loop
+  See:
+    EZ7A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    EZ7A EF 5 A_FaceTarget
+	EZ7A G 0 A_PlayWeaponSound("en/beretta")
+    EZ7A G 8 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    EZ7A F 8
+    goto See
+  Pain:
+    EZ7A H 3
+    EZ7A H 3 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(60,"ThroatS")
+    EZ7A I 5
+    EZ7A J 5 A_Scream
+    EZ7A K 5 A_NoBlocking
+    EZ7A L 5
+    EZ7A M -1
+    stop
+  ThroatS:
+    EZ7A N 5 A_PlaySound("girl/neckcut")
+    EZ7A O 5
+    EZ7A P 5 A_NoBlocking
+    EZ7A Q 5
+    EZ7A R -1
+    stop
+  Death.Weak:
+    EZ7B I 6 
+    EZ7B J 6 A_PlaySound("fthug/pain")
+    EZ7B K 6
+	EZ7B L 6
+    EZ7B M -1 A_NoBlocking
+    stop
+  Idle:
+    EZ7A AA 4 A_Wander
+    EZ7A A 0 A_Look
+    EZ7A BB 4 A_Wander
+	EZ7A A 0 A_Look
+    EZ7A CC 4 A_Wander
+    EZ7A A 0 A_Look
+    EZ7A DD 4 A_Wander
+    EZ7A A 0 A_Look
+    loop
+  }
+}
+
+actor scumFA : scumF
+{
+  Translation "192:207=96:111","48:79=64:79"
+}
+
+actor scumFred : scumF
+{
+  Translation "192:207=96:111","112:127=16:47"
+}
+
+actor scumFredkak : scumF
+{
+  Translation "192:207=152:159","112:127=16:47"
+}
+
+actor scumFredA : scumF
+{
+  Translation "192:207=96:111","112:127=16:47","48:79=64:79"
+}
+
+actor scumFtan : scumF
+{
+  Translation "192:207=96:111","112:127=144:151"
+}
+
+actor scumFtankak : scumF
+{
+  Translation "192:207=152:159","112:127=144:151"
+}
+
+actor scumFblack : scumF
+{
+  Translation "192:207=96:111","114:126=5:8"
+}
+
+actor scumFblackkak : scumF
+{
+  Translation "192:207=152:159","114:126=5:8"
+}
+
+actor scumFblackA : scumF
+{
+  Translation "192:207=96:111","114:126=5:8","48:79=64:79"
+}
+
+actor scumFblackblueA : scumF
+{
+  Translation "192:207=240:245","114:126=5:8","48:79=64:79"
+}
+
+actor scumFwhite : scumF
+{
+  Translation "192:207=96:111","114:126=80:99"
+}
+
+actor scumFwhiteA : scumF
+{
+  Translation "192:207=96:111","114:126=80:99","48:79=64:79"
+}
+
+actor scumFwhiteredA : scumF
+{
+  Translation "192:207=16:47","114:126=80:99","48:79=64:79"
+}
+
+actor scumFwhiteblueA : scumF
+{
+  Translation "192:207=240:245","114:126=80:99","48:79=64:79"
+}
+
+actor goonF : HumanFb
+{
+  scale 1.0
+  obituary "%o was shot by a goon."
+  health 20
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "fthug/See"
+  painsound "fthug/pain"
+  deathsound "fthug/die"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Tag "Goon"
+  Translation "192:207=80:111"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EZ8A T 10 A_Look
+    loop
+  See:
+    EZ8A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    EZ8A EF 5 A_FaceTarget
+	EZ8A G 0 A_PlayWeaponSound("en/beretta")
+    EZ8A G 8 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    EZ8A F 8
+    goto See
+  Pain:
+    EZ8A H 3
+    EZ8A H 3 A_Pain
+    goto See
+  Death:
+    EZ8A I 5
+    EZ8A J 5 A_Scream
+    EZ8A K 5 A_NoBlocking
+    EZ8A L 5
+    EZ8A M -1
+    stop
+  Death.Weak:
+    EZ8B I 6 
+    EZ8B J 6 A_PlaySound("fthug/pain")
+    EZ8B K 6
+	EZ8B L 6
+    EZ8B M -1 A_NoBlocking
+    stop
+  Idle:
+    EZ8A AA 4 A_Wander
+    EZ8A A 0 A_Look
+    EZ8A BB 4 A_Wander
+	EZ8A A 0 A_Look
+    EZ8A CC 4 A_Wander
+    EZ8A A 0 A_Look
+    EZ8A DD 4 A_Wander
+    EZ8A A 0 A_Look
+    loop
+  }
+}
+
+actor goonFblack : goonF
+{
+ Translation "192:207=80:111","117:127=5:8"
+}
+
+actor goonFblacktan : goonF
+{
+ Translation "192:207=128:143","117:127=5:8"
+}
+
+actor goonFbrown : goonF
+{
+ Translation "192:207=80:111","112:127=64:79"
+}
+
+actor goonFred : goonF
+{
+ Translation "192:207=80:111","112:127=176:191"
+}
+
+actor goonFredtan : goonF
+{
+ Translation "192:207=128:143","112:127=176:191"
+}
+
+actor goonFblue : goonF
+{
+ Translation "192:207=80:111","112:127=197:207"
+}
+
+actor goonFbluetan : goonF
+{
+ Translation "192:207=128:143","112:127=197:207"
+}
+
+actor goonFwhite : goonF
+{
+ Translation "192:207=128:143","117:127=80:98"
+}
+
+actor Tramp : HumanFb
+{
+  scale 1.0
+  obituary "%o was shot by a Tramp."
+  health 20
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "rastf/see"
+  painsound "rastf/pan"
+  deathsound "rastf/pan"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Tag "Tramp"
+  Translation "192:207=5:8"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EZ9A T 10 A_Look
+    loop
+  See:
+    EZ9A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    EZ9A EF 5 A_FaceTarget
+	EZ9A G 0 A_PlayWeaponSound("en/beretta")
+    EZ9A G 8 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    EZ9A F 8
+    goto See
+  Pain:
+    EZ9A H 3
+    EZ9A H 3 A_Pain
+    goto See
+  Death:
+    EZ9A I 5
+    EZ9A J 5 A_Scream
+    EZ9A K 5 A_NoBlocking
+    EZ9A L 5
+    EZ9A M -1
+    stop
+  Death.Weak:
+    EZ9B I 6 
+    EZ9B J 6 A_PlaySound("rastf/pan")
+    EZ9B K 6
+	EZ9B L 6
+    EZ9B M -1 A_NoBlocking
+    stop
+  Idle:
+    EZ9A AA 4 A_Wander
+    EZ9A A 0 A_Look
+    EZ9A BB 4 A_Wander
+	EZ9A A 0 A_Look
+    EZ9A CC 4 A_Wander
+    EZ9A A 0 A_Look
+    EZ9A DD 4 A_Wander
+    EZ9A A 0 A_Look
+    loop
+  }
+}
+
+actor TrampRed : Tramp
+{
+  Translation "112:127=176:191","192:207=5:8"
+}
+
+actor TrampBlue : Tramp
+{
+  Translation "112:127=198:207","192:207=5:8"
+    seesound "asia/see"
+  painsound "fthug/pain"
+  deathsound "fthug/die"
+      states
+  {
+    Death.Weak:
+    EZ9B I 6 
+    EZ9B J 6 A_PlaySound("fthug/pain")
+    EZ9B K 6
+	EZ9B L 6
+    EZ9B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor TrampRedbrown : Tramp
+{
+  Translation "112:127=176:191","192:207=64:79"
+}
+
+actor Trampgreybrown : Tramp
+{
+  Translation "112:127=96:111","192:207=64:79"
+  seesound "milChic/see"
+  painsound "milGirl/pain"
+  deathsound "milGirl/pain"
+      states
+  {
+    Death.Weak:
+    EZ9B I 6 
+    EZ9B J 6 A_PlaySound("milGirl/pain")
+    EZ9B K 6
+	EZ9B L 6
+    EZ9B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor TrampBlondeRed : Tramp
+{
+  Translation "112:127=176:191","192:207=160:166"
+  seesound "fthug/See"
+  painsound "fthug/pain"
+  deathsound "fthug/die"
+      states
+  {
+    Death.Weak:
+    EZ9B I 6 
+    EZ9B J 6 A_PlaySound("fthug/pain")
+    EZ9B K 6
+	EZ9B L 6
+    EZ9B M -1 A_NoBlocking
+    stop
+	}
+}
+
+actor TrampBlondeBlack: Tramp
+{
+  Translation "112:123=106:111","124:127=5:8","192:207=160:166"
+   seesound "fthug/See"
+  painsound "fthug/pain"
+  deathsound "fthug/die"
+      states
+  {
+    Death.Weak:
+    EZ9B I 6 
+    EZ9B J 6 A_PlaySound("fthug/pain")
+    EZ9B K 6
+	EZ9B L 6
+    EZ9B M -1 A_NoBlocking
+    stop
+	}
+}
+
+actor ScumM : HumanMb
+{
+  scale 1.0
+  obituary "%o was shot by a Scumbag."
+  health 20
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "drugy/See"
+  painsound "drugy/Pain"
+  deathsound "drugy/Death"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Translation "192:207=80:109"
+  Tag "Scum"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EZ4A T 10 A_Look
+    loop
+  See:
+    EZ4A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    EZ4A EF 5 A_FaceTarget
+	EZ4A G 0 A_PlayWeaponSound("en/beretta")
+    EZ4A G 8 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    EZ4A F 8
+    goto See
+  Pain:
+    EZ4A H 3
+    EZ4A H 3 A_Pain
+    goto See
+  Death:
+    EZ4A I 5
+    EZ4A J 5 A_Scream
+    EZ4A K 5 A_NoBlocking
+    EZ4A L 5
+    EZ4A m -1
+    stop
+   Death.Weak:
+    EZ4B I 6
+    EZ4B J 6 A_PlaySound("drugy/Pain")
+    EZ4B K 6
+	EZ4B L 6
+    EZ4B M -1 A_NoBlocking
+    stop
+  Idle:
+    EZ4A AA 4 A_Wander
+    EZ4A A 0 A_Look
+    EZ4A BB 4 A_Wander
+    EZ4A A 0 A_Look
+    EZ4A CC 4 A_Wander
+    EZ4A A 0 A_Look
+    EZ4A DD 4 A_Wander
+    EZ4A A 0 A_Look
+    loop
+  }
+}
+
+actor ScumMA : ScumM
+{
+  Translation "192:207=80:109","48:79=64:79"
+}
+
+actor ScumMred : ScumM
+{
+  Translation "192:207=80:109","112:127=16:47"
+}
+
+actor ScumMredA : ScumM
+{
+  Translation "192:207=80:109","112:127=16:47","48:79=64:79"
+}
+
+actor ScumMredtan : ScumM
+{
+  Translation "192:207=144:151","112:127=16:47"
+}
+
+actor ScumMblue : ScumM
+{
+  Translation "192:207=80:109","112:127=196:207"
+}
+
+actor ScumMblueA : ScumM
+{
+  Translation "192:207=80:109","112:127=196:207","48:79=64:79"
+}
+
+actor ScumMbluetan : ScumM
+{
+  Translation "192:207=144:151","112:127=196:207"
+}
+
+actor ScumMblack : ScumM
+{
+  Translation "192:207=80:109","119:127=5:8"
+  seesound "skin1/see"
+  painsound "Hood1/pain"
+  deathsound "Hood1/die"
+  states
+  {
+     Death.Weak:
+    EZ4B I 6
+    EZ4B J 6 A_PlaySound("Hood1/pain")
+    EZ4B K 6
+	EZ4B L 6
+    EZ4B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor ScumMblackA : ScumM
+{
+  Translation "192:207=80:109","119:127=5:8","48:79=64:79"
+}
+
+actor ScumMwhite : ScumM
+{
+  Translation "192:207=80:109","119:127=80:103"
+  seesound "skin1/see"
+  painsound "Hood1/pain"
+  deathsound "Hood1/die"
+  states
+  {
+     Death.Weak:
+    EZ4B I 6
+    EZ4B J 6 A_PlaySound("Hood1/pain")
+    EZ4B K 6
+	EZ4B L 6
+    EZ4B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor ScumMwhiteA : ScumM
+{
+  Translation "192:207=80:109","119:127=80:103","48:79=64:79"
+}
+
+actor ScumMwhitetan : ScumM
+{
+  Translation "192:207=144:151","119:127=80:103"
+}
+
+actor Skingrey : ScumM
+{
+  Translation "192:207=80:109","112:127=96:111"
+  seesound "skin2/see"
+  painsound "Hood1/pain"
+  deathsound "Hood1/die"
+  states
+  {
+     Death.Weak:
+    EZ4B I 6
+    EZ4B J 6 A_PlaySound("Hood1/pain")
+    EZ4B K 6
+	EZ4B L 6
+    EZ4B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor Skinbrown : ScumM
+{
+  Translation "192:207=80:109","112:127=64:79"
+  seesound "skin2/see"
+  painsound "Hood1/pain"
+  deathsound "Hood1/die"
+  states
+  {
+     Death.Weak:
+    EZ4B I 6
+    EZ4B J 6 A_PlaySound("Hood1/pain")
+    EZ4B K 6
+	EZ4B L 6
+    EZ4B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor Skinkak : ScumM
+{
+  Translation "192:207=80:109","112:127=152:159"
+  seesound "skin2/see"
+  painsound "Hood1/pain"
+  deathsound "Hood1/die"
+  states
+  {
+     Death.Weak:
+    EZ4B I 6
+    EZ4B J 6 A_PlaySound("Hood1/pain")
+    EZ4B K 6
+	EZ4B L 6
+    EZ4B M -1 A_NoBlocking
+    stop
+  }
+}
+
+actor crook : HumanMb
+{
+  scale 1.0
+  obituary "%o was shot by a Criminal."
+  health 20
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "drugy/See"
+  painsound "drugy/Pain"
+  deathsound "drugy/Death"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Tag "Criminal"
+  Translation "192:207=80:111"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EZ5A T 10 A_Look
+    loop
+  See:
+    EZ5A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    EZ5A EF 5 A_FaceTarget
+	EZ5A G 0 A_PlayWeaponSound("en/beretta")
+    EZ5A G 8 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    EZ5A F 8
+    goto See
+  Pain:
+    EZ5A H 3
+    EZ5A H 3 A_Pain
+    goto See
+  Death:
+    TNT1 A 0 A_Jump(60,"ThroatS")
+    EZ5A I 5
+    EZ5A J 5 A_Scream
+    EZ5A K 5 A_NoBlocking
+    EZ5A L 5
+    EZ5A m -1
+    stop
+  ThroatS:
+	EZ5A N 5 A_PlaySound("man/neckcut")
+    EZ5A O 5
+    EZ5A P 5 A_NoBlocking
+    EZ5A Q 5
+    EZ5A R -1
+    stop
+   Death.Weak:
+    TNT1 A 0 A_Jump(80,"Weak2")
+    EZ5B I 6
+    EZ5B J 6 A_PlaySound("drugy/Pain")
+    EZ5B K 6
+	EZ5B L 6
+    EZ5B M -1 A_NoBlocking
+    stop
+   Weak2:
+    EZ5B N 6
+    EZ5B O 6 A_PlaySound("drugy/Pain")
+    EZ5B P 6
+	EZ5B Q 6
+    EZ5B R -1 A_NoBlocking
+    stop
+  Idle:
+    EZ5A AA 4 A_Wander
+    EZ5A A 0 A_Look
+    EZ5A BB 4 A_Wander
+    EZ5A A 0 A_Look
+    EZ5A CC 4 A_Wander
+    EZ5A A 0 A_Look
+    EZ5A DD 4 A_Wander
+    EZ5A A 0 A_Look
+    loop
+  }
+}
+
+actor crookA : crook
+{
+  Translation "192:207=80:111","48:79=64:79"
+}
+
+actor crookbrown : crook
+{
+  Translation "192:207=80:111","112:127=64:79"
+}
+
+actor crookbrownnavy : crook
+{
+  Translation "192:207=240:246","112:127=64:79"
+}
+
+actor crookred : crook
+{
+  Translation "192:207=80:111","112:127=16:47"
+}
+
+actor crookredtan : crook
+{
+  Translation "192:207=144:151","112:127=16:47"
+}
+
+actor crookredA : crook
+{
+  Translation "192:207=80:111","112:127=16:47","48:79=64:79"
+}
+
+actor crookgrey : crook
+{
+  Translation "192:207=80:111","112:127=96:111"
+}
+
+actor crookgreyRed : crook
+{
+  Translation "192:207=16:47","112:127=96:111"
+}
+
+actor crookgreynavy : crook
+{
+  Translation "192:207=240:246","112:127=96:111"
+}
+
+actor crookgreytan : crook
+{
+  Translation "192:207=144:151","112:127=96:111"
+}
+
+actor crookgreyA : crook
+{
+  Translation "192:207=80:111","112:127=96:111","48:79=64:79"
+}
+
+actor crookgreyredA : crook
+{
+  Translation "192:207=16:47","112:127=96:111","48:79=64:79"
+}
+
+actor crookblue : crook
+{
+  Translation "192:207=80:111","112:127=193:207"
+}
+
+actor crookbluetan : crook
+{
+  Translation "192:207=144:151","112:127=193:207"
+}
+
+actor crookblueA : crook
+{
+  Translation "192:207=80:111","112:127=193:207","48:79=64:79"
+}
+
+actor crooknavy : crook
+{
+  Translation "192:207=80:111","118:127=240:245"
+}
+
+actor crookkak : crook
+{
+  Translation "192:207=80:111","118:127=152:159"
+}
+
+actor crookkakred : crook
+{
+  Translation "192:207=16:47","118:127=152:159"
+}
+
+actor crookblack : crook
+{
+  Translation "192:207=80:111","116:123=109:111","124:127=5:8"
+}
+
+actor crookblacknavy : crook
+{
+  Translation "192:207=240:246","116:123=109:111","124:127=5:8"
+}
+
+actor crookblacktan : crook
+{
+  Translation "192:207=144:151","116:123=109:111","124:127=5:8"
+}
+
+actor crookblackA : crook
+{
+  Translation "192:207=80:111","116:123=109:111","124:127=5:8","48:79=64:79"
+}
+
+actor crookblackredA : crook
+{
+  Translation "192:207=16:47","116:123=109:111","124:127=5:8","48:79=64:79"
+}
+
+actor Hoody : HumanMb
+{
+  scale 1.0
+  obituary "%o was shot by a Hoodlum."
+  health 20
+  radius 20
+  height 56
+  mass 100
+  speed 8
+  painchance 200
+  seesound "grove/See"
+  painsound "drugy/Pain"
+  deathsound "drugy/Death"
+  activesound ""
+  dropitem "Thuggundropper" 256
+  Tag "Hoodlum"
+  Translation "48:79=64:79","192:207=80:110"
+  DamageFactor "Enemy", 0.0
+  MONSTER
+  +FLOORCLIP
+  +NOTARGET
+  +NOINFIGHTING
+  states
+  {
+  Spawn:
+    EZ3A T 10 A_Look
+    loop
+  See:
+    EZ3A AABBCCDD 4 A_Chase
+    loop
+  Missile:
+    EZ3A EF 5 A_FaceTarget
+	EZ3A G 0 A_PlayWeaponSound("en/beretta")
+    EZ3A G 8 BRIGHT A_CustomMissile("EnemyPistolTracer",38,0,random(-8,8))
+    EZ3A F 8
+    goto See
+  Pain:
+    EZ3A H 3
+    EZ3A H 3 A_Pain
+    goto See
+  Death:
+    EZ3A I 5
+    EZ3A J 5 A_Scream
+    EZ3A K 5 A_NoBlocking
+    EZ3A L 5
+    EZ3A m -1
+    stop
+   Death.Weak:
+    EZ3B I 6
+    EZ3B J 6 A_PlaySound("drugy/Pain")
+    EZ3B K 6
+	EZ3B L 6
+    EZ3B M -1 A_NoBlocking
+    stop
+  Idle:
+    EZ3A AA 4 A_Wander
+    EZ3A A 0 A_Look
+    EZ3A BB 4 A_Wander
+    EZ3A A 0 A_Look
+    EZ3A CC 4 A_Wander
+    EZ3A A 0 A_Look
+    EZ3A DD 4 A_Wander
+    EZ3A A 0 A_Look
+    loop
+  }
+}
+
+actor HoodyGreen : Hoody
+{
+  seesound "drugy/See"
+  Translation "192:207=80:110"
+}
+
+actor HoodyGreenA2 : Hoody
+{
+  Translation "48:79=64:79"
+}
+
+actor Hoodyblue : Hoody
+{
+  seesound "drugy/See"
+  Translation "192:207=80:110","114:127=202:207"
+}
+
+actor HoodyblueA : Hoody
+{
+  Translation "192:207=80:110","114:127=202:207","48:79=64:79"
+}
+
+actor Hoodybluetan : Hoody
+{
+  seesound "drugy/See"
+  Translation "192:207=144:151","114:127=202:207"
+}
+
+actor Hoodytan : Hoody
+{
+  seesound "drugy/See"
+  Translation "192:207=80:110","114:127=144:151"
+}
+
+actor Hoodyred : Hoody
+{
+  seesound "drugy/See"
+  Translation "192:207=80:110","114:127=16:47"
+}
+
+actor HoodyredA : Hoody
+{
+  Translation "192:207=80:110","114:127=16:47","48:79=64:79"
+}
+
+actor Hoodyredtan : Hoody
+{
+  seesound "drugy/See"
+  Translation "192:207=144:151","114:127=16:47"
+}
